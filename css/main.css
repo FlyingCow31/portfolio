@@ -1,0 +1,37 @@
+:root {
+     --navcolor: #051236;
+     --explorercolor: #060621;
+     --bodycolor: #000c19;
+     --detailsbar: #11182d;
+}
+
+/* Page display  */
+
+body {
+     margin: 0px;
+     padding: 0px;
+     display: flex;
+     flex-direction: column;
+     overflow: hidden;
+}
+
+main {
+     display: flex;
+     flex-direction: row;
+     width: 100%;
+}
+
+nav {
+     background-color: var(--navcolor);
+     display: flex;
+     flex-direction: column;
+     width: 5%;
+}
+
+.explorer {
+     background-color: var(--explorercolor);
+}
+.maincontainer {
+     background-color: var(--bodycolor);
+     flex: 1;
+}
