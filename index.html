@@ -4,11 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gaël Tournier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link href="css/main.css" rel="stylesheet" />
+    <link href="css/animations.css" rel="stylesheet" />
   </head>
   <body>
-    <section>
-      <p>Test</p>
+    <section class="editbar">
+      <img src="img/icon/vscode.png" />
+      <p>File</p>
+      <p>Edit</p>
+      <p>Selection</p>
+      <p>View</p>
+      <p>Help</p>
+
+      <p class="pagename">Gaël Tournier - Portfolio</p>
     </section>
 
     <main>
@@ -18,39 +32,140 @@
         <img src="img/icon/git-compare.svg" />
         <img src="img/icon/debug-alt.svg" />
         <img src="img/icon/extensions.svg" />
-        <img src="img/icon/account.svg" />
-        <img src="img/icon/settings-gear.svg" />
+        <img src="img/icon/account.svg" class="accicon" />
+        <img src="img/icon/settings-gear.svg" class="seticon" />
       </nav>
 
       <section class="explorer">
-        <div>
+        <div class="startofex">
           <p>Explorer</p>
-          <p>...</p>
+          <p class="troispoints">...</p>
         </div>
 
-        <div>
-          <p>Gaël-Portfolio</p>
-          <p>README.md</p>
-        </div>
-        <div>
-          <p>> Projects</p>
-        </div>
-        <div>
-          <p>about-me.css</p>
-          <p>contact.json</p>
-        </div>
+        <div class="endofex">
+          <p class="menuexp">> Open Editor</p>
+          <p class="menuexp">> Portfolio</p>
 
-        <div>
-          <p>> Outline</p>
+          <div class="filecontainer">
+            <p>> .next</p>
+            <p>> node_modules</p>
+            <p>> Public</p>
+
+            <div class="projectarb">
+              <img src="img/langicon/typescript.png" /> about_me.ts
+            </div>
+
+            <p>> src</p>
+
+            <div class="projectarb">
+              <img src="img/langicon/electron-icon.svg" /> FlyingToDo
+            </div>
+
+            <div class="projectarb">
+              <img src="img/langicon/GitHub_Invertocat_White.svg" /> Epi Studio
+            </div>
+
+            <div class="projectarb">
+              <img src="img/langicon/c-sharp.png" /> Project Shadow
+            </div>
+
+            <p>> img</p>
+            <div class="projectarb">
+              <img src="img/langicon/picture.png" /> CV_Gael_Design
+            </div>
+          </div>
+
+          <p class="menuexp">> Outline</p>
+          <p class="menuexp">> Timeline</p>
+          <p class="menuexp">> Scripts</p>
         </div>
       </section>
 
       <section class="maincontainer">
-        <div>
-          <p>Tab Open</p>
+        <div class="tabcontainer">
+          <div class="tab">
+            <img src="img/langicon/js.png" />
+            <p>TabName</p>
+            <button>X</button>
+          </div>
+          <div class="tab">
+            <img src="img/langicon/js.png" />
+            <p>TabName</p>
+            <button>X</button>
+          </div>
+          <div class="tab">
+            <img src="img/langicon/js.png" />
+            <p>TabName</p>
+            <button>X</button>
+          </div>
         </div>
-        <div>
-          <p>Text Here</p>
+
+        <div class="activepage">
+          <div class="readme">
+            <div class="titlecontainer">
+              <p># Gaël Tournier</p>
+              <picture>
+                <source
+                  srcset="
+                    https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.webp
+                  "
+                  type="image/webp"
+                />
+                <img
+                  src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.gif"
+                  alt="👋"
+                  width="32"
+                  height="32"
+                />
+              </picture>
+            </div>
+            <div class="jobcontainer">
+              <p>> In search of an Internship /</p>
+              <div class="moovingtext">Web Development</div>
+            </div>
+            <p>
+              - 20 Years old Web developer, I mainly work in Epi Studio, the
+              non-profit development studio that I created?
+            </p>
+            <br />
+            <p>
+              - My specialities are HTML/CSS and JS. You can find all the
+              details of my skills on my CV.
+            </p>
+
+            <a href="https://github.com/FlyingCow31"
+              ><img
+                src="img/langicon/GitHub_Invertocat_White.svg"
+                class="clickgit"
+                href="https://github.com/FlyingCow31"
+            /></a>
+
+            <button class="contactmereadme">Contact Me →</button>
+            <!-- TODO Insérer une animation de fleche vers le bas -->
+
+            <div class="hrcontainer">
+              <hr class="onehr" />
+              <hr class="twohr" />
+            </div>
+
+            <div class="worktitle">
+              <img src="img/icon/briefcase.png" /> Work Experience
+            </div>
+
+            <p>
+              ## Learner Developer since 2024. Interested in JS, Node.JS, Java
+              and C#. Has worked on 4 professional websites.
+            </p>
+
+            <div class="workexpcontainer">
+              <p># professional Web-Design</p>
+              <p>
+                - Creation of guidelines with the client, including style,
+                colors, etc.
+              </p>
+              <p>- Use of Figma to show the</p>
+            </div>
+          </div>
         </div>
       </section>
     </main>

@@ -1,8 +1,10 @@
 :root {
      --navcolor: #051236;
-     --explorercolor: #060621;
-     --bodycolor: #000c19;
-     --detailsbar: #11182d;
+     --editbar: #11192d;
+     --font-color: #92959b;
+     --font: 'Fira Code', 'Consolas', 'Courier New', monospace;
+     --accent-color: #122b72;
+     --font-color-main: #bfbfbf;
 }
 
 /* Page display  */
@@ -13,25 +15,218 @@ body {
      display: flex;
      flex-direction: column;
      overflow: hidden;
+     font-family: var(--font);
+     height: 100vh;
 }
+
+.editbar {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     
+     width: 100%;
+     height: 6%;
+     color: var(--font-color);
+     background-color: var(--editbar);
+     user-select: none;
+     
+}
+.editbar p {
+     padding: 10px;
+
+}
+.editbar img {
+     padding: 10px;
+     width: 2%;
+     height: auto;
+     margin-right: 1%;
+}
+.pagename {
+     margin-left: 15%;
+}
+
+
 
 main {
      display: flex;
      flex-direction: row;
      width: 100%;
+     height: 100vh;
 }
 
+
+/* * Navbar  */
 nav {
-     background-color: var(--navcolor);
      display: flex;
      flex-direction: column;
+     align-items: center;
+     justify-content: flex-start;
+     gap: 10px;
+     
      width: 5%;
+     
+     background-color: var(--navcolor);
+     padding-top: 20px;
+     border-top: 1px black solid;
+}
+nav img {
+     width: 50%;
+     height: auto;
+     filter: brightness(1) saturate(100%) opacity(0.5);
+     user-select: none;
+}
+.accicon {
+     margin-top: auto;
 }
 
+
+
+
+/* * Explorer */
 .explorer {
-     background-color: var(--explorercolor);
+     background-color: var(--navcolor);
+     color: white;
+     width: 19%;
+     border-right: 1px black solid;
+     border-top: 1px black solid;
+     user-select: none;
 }
+.troispoints {
+     padding: 1px;
+}
+.startofex {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+}
+.endofex .menuexp {
+     padding-top: 5px;
+     padding-bottom: 5px;
+     margin: 0px;
+     
+     font-weight: bold;
+     font-family: var(--font);
+     border-top: black 1px solid;
+}
+
+
+/* * Projects style */
+.filecontainer * {
+     margin: 0px 0px 0px 15px;
+}
+.projectarb {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     margin-top: 5px;
+     margin-bottom: 5px;
+     margin-left: 30px;
+}
+.projectarb img {
+     height: 20px;
+     margin-right: 10px;
+     width: auto;
+}
+
+
+/* * Main Container  */
 .maincontainer {
-     background-color: var(--bodycolor);
+     background-color: var(--navcolor);
      flex: 1;
+     display: flex;
+     flex-direction: column;
+     min-height: 0;
+}
+/** Tabs */
+.tabcontainer {
+     background-color: var(--navcolor);
+     padding: 1px;
+     margin: 0px;
+     color: var(--font-color);
+     font-family: var(--font);
+     border: 1px solid black;
+     display: flex;
+     flex-direction: row;
+}
+.tab {
+     margin: 0px;
+     border-right: 1px black solid;
+     border-bottom: var(--accent-color) 1px solid;
+     width: 15%;
+
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+     user-select: none;
+}
+.tab button {
+     background-color: transparent;
+     border: none;
+     flex: 1;
+     color: var(--font-color);
+}
+.tab img {
+    height: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+}
+
+
+
+/* * Active Page  */
+.activepage {
+     flex: 1;
+     min-height: 0;
+     overflow-y: auto;
+}
+
+/** README Style  */
+.titlecontainer, .jobcontainer {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     gap: 10px;
+}
+.contactmereadme {
+     background-color: var(--font-color-main);
+     border: none;
+     border-radius: 15px;
+}
+.clickgit {
+     height: 100px;
+     width: auto;
+}
+
+.hrcontainer {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     gap: 10px;
+     align-items: center;
+     margin-top: 15px;
+}
+.onehr {
+     margin: 0;
+     width: 3%;
+     height: 2px;
+     border: none;
+     background-color: var(--font-color-main);
+}
+.twohr {
+     margin: 0;
+     width: 80%;
+     height: 2px;
+     border: none;
+     background-color: var(--accent-color);
+}
+.worktitle {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+}
+.worktitle img {
+     height: 100px;
+     width: auto;
 }

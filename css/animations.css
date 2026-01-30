@@ -1,0 +1,24 @@
+.editbar p:hover {
+     background-color: rgba(175, 175, 175, 0.126);
+
+}
+
+nav img:hover {
+     filter: brightness(1) saturate(100%) opacity(1);
+}
+
+.troispoints:hover {
+     background-color: rgba(175, 175, 175, 0.126);
+     border-radius: 5px;
+}
+.tab button:hover {
+     transform: scale(1.2);
+     transition: all 0.2s linear;
+}
+.projectarb:hover {
+     background-color: rgba(175, 175, 175, 0.126) ;
+     width: 100%;
+}
+.filecontainer p:hover {
+     background-color: rgba(80, 80, 80, 0.252);
+}
