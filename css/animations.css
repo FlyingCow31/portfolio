@@ -1,3 +1,33 @@
+@keyframes bounce {
+
+     0%,
+     100% {
+          transform: translateY(0);
+     }
+
+     50% {
+          transform: translateY(20px);
+     }
+}
+
+@keyframes float {
+     0%, 100% {
+          transform: translateY(0) translateX(0);
+     }
+     25% {
+          transform: translateY(-8px) translateX(3px);
+     }
+     50% {
+          transform: translateY(-5px) translateX(-3px);
+     }
+     75% {
+          transform: translateY(-10px) translateX(2px);
+     }
+}
+
+
+
+
 .editbar p:hover {
      background-color: rgba(175, 175, 175, 0.126);
 
@@ -21,4 +51,22 @@ nav img:hover {
 }
 .filecontainer p:hover {
      background-color: rgba(80, 80, 80, 0.252);
+}
+
+
+/** active animation for skills in readme  */
+.skillname.active {
+     border-bottom: 2px var(--accent-color) solid;
+     color: var(--accent-color);
+     font-weight: 600;
+}
+.skillname:hover {
+     background-color: rgba(128, 128, 128, 0.156);
+     border-radius: 5px;
+}
+
+.licontainer:hover {
+     background-color: rgba(128, 128, 128, 0.292);
+     transform: scale(1.1);
+     transition: all 0.2s linear;
 }
