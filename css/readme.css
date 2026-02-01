@@ -1,0 +1,352 @@
+/** README Style  */
+.readme {
+     display: none;
+     margin-left: 10%;
+}
+.readme p {
+     max-width: 70%;
+}
+
+.titlecontainer,
+.jobcontainer {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     gap: 10px;
+     margin: 0px;
+}
+
+.titlecontainer p {
+     font-size: 3rem;
+}
+
+.titlecontainer picture {
+     margin: 0px;
+}
+
+.jobcontainer p,
+.jobcontainer div {
+     margin: 0px;
+     margin-top: -50px;
+}
+
+.buttonscontainer {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     gap: 20px;
+}
+
+.contactmereadme {
+     color: black;
+     padding: 10px;
+     background-color: white;
+     border: none;
+     border-radius: 10px;
+}
+
+.buttonscontainer img {
+     height: 30px;
+     width: auto;
+}
+
+.down-arrow {
+     width: 100px;
+     height: auto;
+     display: block;
+     margin: 20% 0% 5% 40%;
+     filter: invert(1) opacity(0.5);
+     animation: bounce 2s infinite;
+}
+
+
+/** About me */
+.aboutmereadme {
+     display: flex;
+     flex-direction: row;
+     gap: 50px;
+     flex-wrap: wrap;
+     margin-bottom: 200px;
+}
+
+.iconuser {
+     margin-top: 30px;
+     margin-right: 20px;
+     width: 50px;
+     height: auto;
+}
+
+.aboutmeoui {
+     font-size: 3rem;
+}
+
+.descaboutme {
+     font-size: 2rem;
+}
+
+.profilepicture {
+     box-shadow: 1px 1px 6px rgb(0, 0, 0, 0.1);
+     height: 200px;
+     border-radius: 40px;
+     width: auto;
+     animation: float 5s infinite;
+}
+
+.textaboutme {
+     max-width: 50%;
+}
+
+.textaboutme p {
+     margin: 2px;
+}
+
+.textaboutme .moretextaboutme {
+     margin-top: 20px;
+     opacity: 0.7;
+}
+
+.titlemoreinfos {
+     color: rgb(71, 183, 71);
+     border-left: 3px solid rgb(71, 183, 71);
+     margin: 10px 0px 0px 0px;
+     padding-left: 10px;
+}
+
+.epistudioaboutme {
+     background-color: rgb(4, 17, 51);
+     border: rgba(128, 128, 128, 0.315) 1px solid;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     margin: 20px;
+     gap: 20px;
+     border-radius: 15px;
+}
+
+.epistudioaboutme img {
+     height: 150px;
+     width: auto;
+     margin-left: 10%;
+     border-radius: 30px;
+}
+
+
+.worktitle {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+}
+
+.worktitle2 {
+     font-size: 3rem;
+     margin-top: 20px;
+     color: orange;
+}
+
+
+/** Work Experience  */
+.introwork {
+     font-size: 30px;
+}
+
+.workexpcontainer {
+     border-left: 1px var(--markorange) solid;
+     padding-left: 15px;
+     width: 80%;
+     margin-bottom: 200px;
+}
+
+.itemwork {
+     margin-left: 20px;
+}
+
+.workexpcontainer hr {
+     border: 1px solid rgba(255, 166, 0, 0.334);
+}
+
+.titlework {
+     color: var(--markorange);
+     font-weight: bold;
+}
+
+/* * Skills sections  */
+
+.ulcontainer img {
+     width: 150px;
+     height: auto;
+}
+
+.titleskills {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     margin-left: -20px;
+}
+
+.titleskills p {
+     font-size: 3rem;
+     margin: 0;
+}
+
+.bookskills {
+     margin: 0px;
+     height: 100px;
+     width: auto;
+}
+
+.listcontainer {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: center;
+     gap: 40px;
+     width: 80%;
+}
+
+.skillname {
+     margin: 0;
+     padding: 10px;
+     cursor: pointer;
+}
+
+
+/** Flex board for the skills  */
+.ullanguages {
+     margin-top: 20px;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: space-around;
+     width: 80%;
+     gap: 40px;
+}
+
+.licontainer {
+     width: fit-content;
+     display: flex;
+     flex-direction: column;
+     background-color: rgba(128, 128, 128, 0.096);
+     padding: 20px;
+     align-items: center;
+     border-radius: 15px;
+}
+
+.licontainer p {
+     text-align: center;
+
+}
+
+.licontainer.csharp {
+     margin-right: auto;
+     margin-left: 20px;
+}
+
+.ulapps {
+     margin-top: 20px;
+     display: none;
+     /*TODO à remplacer lors du click*/
+     flex-direction: row;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: space-around;
+     width: 80%;
+     gap: 40px;
+}
+
+.ulsoftskills {
+     margin-top: 20px;
+     display: none;
+     /*TODO à remplacer lors du click*/
+     flex-direction: row;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: space-around;
+     width: 80%;
+     gap: 40px;
+}
+
+.skillsreadme {
+     margin-bottom: 200px;
+}
+
+/** My Works  */
+.myworks {
+     margin-bottom: 200px;
+}
+
+.myworks p {
+     font-size: 3rem;
+     color: var(--markorange);
+}
+
+
+
+/* * Contact section  */
+
+.contactmesection {
+     padding-bottom: 100px;
+}
+
+.contactmesection p {
+     font-size: 3rem;
+}
+
+.formcontainer {
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     align-items: flex-start;
+     margin-bottom: 30px;
+}
+
+.formcontainer input {
+     box-shadow: 1px 1px 6px rgb(0, 0, 0, 0.1);
+     width: 80%;
+     height: 3rem;
+     border: var(--accent-color) 3px solid;
+     border-radius: 10px;
+     background-color: transparent;
+}
+
+.formcontainer input:focus {
+     outline: none;
+     border: white 3px solid;
+}
+
+.formcontainer input::placeholder {
+     color: white;
+     padding: 15px;
+}
+
+
+.sendcontact {
+     padding: 10px 30px 10px 30px;
+     border: var(--accent-color) 3px solid;
+     background-color: var(--accent-color);
+     border-radius: 10px;
+     color: white;
+
+}
+
+/* *Markdown colors  */
+.markorange {
+     color: var(--markorange);
+     scale: 1.1;
+}
+
+.markblue {
+     color: var(--markblue);
+}
+
+.markgreen {
+     color: var(--markgreen);
+}
+
+.bold {
+     font-weight: bold;
+}
+
+.opacity {
+     opacity: 0.7;
+}
