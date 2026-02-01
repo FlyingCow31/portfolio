@@ -336,7 +336,13 @@
 }
 
 .markblue {
-     color: var(--markblue);
+     background: linear-gradient(135deg,
+               #2b5aed 0%,
+               #3f87ff 40%,
+               #47e1ff 100%);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-clip: text;
 }
 
 .markgreen {
