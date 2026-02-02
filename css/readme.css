@@ -1,7 +1,10 @@
 /** README Style  */
 .readme {
-     display: none;
+     display: block;
      margin-left: 10%;
+}
+.readme.active {
+     animation: load 0.3s linear;
 }
 .readme p {
      max-width: 70%;
@@ -336,10 +339,12 @@
 }
 
 .markblue {
-     background: linear-gradient(135deg,
-               #2b5aed 0%,
-               #3f87ff 40%,
-               #47e1ff 100%);
+     background: linear-gradient(
+     135deg,
+     #2b5aed 0%,
+     #3f87ff 40%,
+     #47e1ff 100%
+     );
      -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
      background-clip: text;

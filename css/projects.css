@@ -1,12 +1,12 @@
 
 /** Style of all project pages  */
 .flyingtododiv {
-     display: none;
+
      font-family: var(--font);
      padding-bottom: 100px;
 }
 .epistudiosprojects {
-     display: block;
+
      font-family: var(--font);
      padding-bottom: 100px;
 }

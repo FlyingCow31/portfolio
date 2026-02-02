@@ -205,6 +205,7 @@ nav img {
      color: white;
      margin-left: 0px;
      font-family: var(--font);
+     padding-bottom: 100px;
 }
 
 ::-webkit-scrollbar {
@@ -247,4 +248,19 @@ nav img {
      height: 2px;
      border: none;
      background-color: var(--accent-color);
+}
+
+.cvmainpage {
+     width: 50%;
+     height: auto;
+     display: block;
+     margin: 1% auto;
+}
+.petitepicture {
+     width: 1%;
+     height: auto;
+}
+.textcv {
+     opacity: 0.4;
+     margin-left: 1%;
 }
