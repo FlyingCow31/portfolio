@@ -361,3 +361,8 @@
 .opacity {
      opacity: 0.7;
 }
+
+
+.readmeicon {
+     filter: invert(1);
+}

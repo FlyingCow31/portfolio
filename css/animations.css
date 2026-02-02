@@ -55,10 +55,11 @@ nav img:hover {
      transform: scale(1.2);
      transition: all 0.2s linear;
 }
-.projectarb:hover {
+.projectarb div:hover {
      background-color: rgba(175, 175, 175, 0.126) ;
      width: 100%;
 }
+
 .filecontainer p:hover {
      background-color: rgba(80, 80, 80, 0.252);
 }
@@ -80,3 +81,48 @@ nav img:hover {
      transform: scale(1.1);
      transition: all 0.2s linear;
 }
+
+
+
+/**Nav animations  */
+.filecontainer {
+     height: 0px;
+     display: none;
+}
+.filecontainer.active {
+     height: auto;
+     display: block;
+}
+.aboutmesec {
+     height: 0px;
+     display: none;
+}
+.aboutmesec.active {
+     height: auto;
+     display: block;
+}
+.projects {
+     height: 0px;
+     display: none;
+}
+.projects.active{
+     height: auto;
+     display: block;
+}
+.imgcate {
+     height: 0px;
+     display: none;
+}
+
+.imgcate.active {
+     height: auto;
+     display: block;
+}
+
+
+
+
+/**Nav background for active p  */
+.nav-active {
+     background-color: rgba(128, 128, 128, 0.292);
+};

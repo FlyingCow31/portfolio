@@ -128,17 +128,25 @@ nav img {
 }
 .projectarb {
      display: flex;
-     flex-direction: row;
-     align-items: center;
+     flex-direction: column;
+     flex-wrap: wrap;
+     gap: 5px;
      margin-top: 5px;
      margin-bottom: 5px;
-     margin-left: 30px;
+
 }
 .projectarb img {
      height: 20px;
-     margin-right: 10px;
      width: auto;
 }
+.projectarb div {
+     display: flex;
+     flex-direction: row;
+}
+.projectarb p {
+     margin-left: 5px;
+}
+
 .menufile {
      font-weight: 400;
 }

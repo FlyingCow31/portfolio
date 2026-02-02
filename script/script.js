@@ -11,8 +11,8 @@ async function loadPage(pageName) {
           const text = await response.text();
 
           pagecontainer.innerHTML = text;
-          
           pagecontainer.scrollTop = 0;
+          activePageInNav(pageName);
      } catch (error) {
           pagecontainer.innerHTML = "<p>Error while loading the page</p>";
           console.error(error);
@@ -22,16 +22,21 @@ async function loadPage(pageName) {
 //* Display of readme on page loading 
 document.addEventListener('DOMContentLoaded', () => {
      loadPage('readme');
+     activePageInNav('readme');
+     filecontainer.classList.toggle('active');
+     portfolio.innerText = "⌄ Portfolio";
+     aboutsec.classList.toggle('active');
+     publicbtn.innerText = "⌄ Public";
 });
 
 // * Buttons (instead of adding a onClick to each HTML button)
 
-const aboutme = document.querySelector('.aboutmebtn');
-const flyingbtn = document.querySelector('.FlyingToDoarb');
-const epibtn = document.querySelector('.epistudiobtn');
-const shadowbtn = document.querySelector('.projectshadowbtn');
-const drivebtn = document.querySelector('.drivebtn');
-const cvbtn = document.querySelector('.cvbtn');
+const aboutme = document.querySelector('.divreadme');
+const flyingbtn = document.querySelector('.divflying');
+const epibtn = document.querySelector('.divepi');
+const shadowbtn = document.querySelector('.divshadow');
+const drivebtn = document.querySelector('.divdrive');
+const cvbtn = document.querySelector('.divcv');
 
 aboutme.addEventListener('click', () => {
      loadPage('readme');
@@ -58,9 +63,6 @@ cvbtn.addEventListener('click', () => {
      loadPage('cv');
      console.log("click cv!");
 });
-
-//* Close all function
-
 
 
 // * Animation handler 
@@ -91,3 +93,58 @@ pagecontainer.addEventListener('scroll', () => {
           scrollTimeout = null;
      }, 50);
 });
+
+
+//* NavBar behavior
+const portfolio = document.getElementById('portbtn');
+const filecontainer = document.querySelector('.filecontainer');
+
+portfolio.addEventListener('click', () => {
+     filecontainer.classList.toggle('active');
+     const isOpen = filecontainer.classList.contains('active');
+     portfolio.innerText = isOpen ? "⌄ Portfolio" : "> Portfolio";
+});
+
+const publicbtn = document.querySelector('.publicbtn');
+const aboutsec = document.getElementById('catabout');
+publicbtn.addEventListener('click', () => {
+     aboutsec.classList.toggle('active');
+     const isOpen = aboutsec.classList.contains('active');
+     publicbtn.innerText = isOpen ? "⌄ Public" : "> Public";
+});
+
+const srcbtn = document.querySelector('.srcbtn');
+const projsec = document.getElementById('projsec');
+srcbtn.addEventListener('click', () => {
+     projsec.classList.toggle('active');
+     const isOpen = projsec.classList.contains('active');
+     srcbtn.innerText = isOpen ? "⌄ src" : "> src";
+});
+
+const imgbtn = document.querySelector('.imgcat');
+const imgsec = document.getElementById('imgcsec');
+imgbtn.addEventListener('click', () => {
+     imgsec.classList.toggle('active');
+     const isOpen = imgsec.classList.contains('active');
+     imgbtn.innerText = isOpen ? "⌄ img" : "> img";
+});
+
+
+const listOfPages = {
+     readme: ".divreadme",
+     flyingtodo: ".divflying",
+     epistudio: ".divepi",
+     projectshadow: ".divshadow",
+     drive: ".divdrive",
+     cv: ".divcv",
+};
+
+function activePageInNav(pageName) {
+     const selector = listOfPages[pageName];
+     if (!selector) return;
+
+     document.querySelectorAll('.nav-active').forEach(el => el.classList.remove('nav-active'));
+
+     const target = document.querySelector(selector);
+     target.classList.add('nav-active');
+};
