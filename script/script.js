@@ -12,6 +12,7 @@ async function loadPage(pageName) {
 
           pagecontainer.innerHTML = text;
           pagecontainer.scrollTop = 0;
+          changeTabName(pageName);
           activePageInNav(pageName);
      } catch (error) {
           pagecontainer.innerHTML = "<p>Error while loading the page</p>";
@@ -148,3 +149,30 @@ function activePageInNav(pageName) {
      const target = document.querySelector(selector);
      target.classList.add('nav-active');
 };
+
+
+
+// * Actualise Tab
+
+const tabname = document.querySelector('.tabname');
+
+function changeTabName(pageName) {
+     tabname.innerText = `${pageName}`;
+};
+
+
+//** Very-left nav animations
+const navicon = document.querySelectorAll('.navicon');
+
+navicon.forEach(icon => {
+
+     icon.addEventListener('click', () => {
+          
+          if (icon.classList.contains('active')) {
+               icon.classList 
+          } else {
+               icon.classList.toggle('active');
+          }
+          // ! à modifier
+     });
+});
