@@ -28,7 +28,7 @@ async function loadPage(pageName) {
 
 //* Display of readme on page loading 
 document.addEventListener('DOMContentLoaded', () => {
-     loadPage('flyingtodo');
+     loadPage('readme');
      activePageInNav('readme');
      filecontainer.classList.toggle('active');
      portfolio.innerText = "⌄ Portfolio";
@@ -216,7 +216,7 @@ pagecontainer.addEventListener('click', (event) => {
      contactform.classList.add('animated');
 });
 
-// TODO Faire l'animation type de index 
+
 // * Readme internship animation 
 const texttoput = "Web development";
 
@@ -232,3 +232,30 @@ function typingAnimation() {
           }, i * 50);
      };
 };
+
+
+
+// * Menue
+
+pagecontainer.addEventListener('click', (event) => {
+     const langbtn = event.target.closest('.skillname:nth-child(1)');
+     const toolbtn = event.target.closest('.skillname:nth-child(2)');
+     const softskillsbtn = event.target.closest('.skillname:nth-child(3)');
+     
+     if (langbtn) {
+          document.querySelectorAll('.ullanguages, .ulapps, .ulsoftskills').forEach(el => el.style.display = 'none');
+          document.querySelector('.ullanguages').style.display = 'flex';
+          document.querySelectorAll('.skillname').forEach(s => s.classList.remove('active'));
+          langbtn.classList.add('active');
+     } else if (toolbtn) {
+          document.querySelectorAll('.ullanguages, .ulapps, .ulsoftskills').forEach(el => el.style.display = 'none');
+          document.querySelector('.ulapps').style.display = 'flex';
+          document.querySelectorAll('.skillname').forEach(s => s.classList.remove('active'));
+          toolbtn.classList.add('active');
+     } else if (softskillsbtn) {
+          document.querySelectorAll('.ullanguages, .ulapps, .ulsoftskills').forEach(el => el.style.display = 'none');
+          document.querySelector('.ulsoftskills').style.display = 'flex';
+          document.querySelectorAll('.skillname').forEach(s => s.classList.remove('active'));
+          softskillsbtn.classList.add('active');
+     }
+});
