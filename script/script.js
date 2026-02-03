@@ -14,6 +14,12 @@ async function loadPage(pageName) {
           pagecontainer.scrollTop = 0;
           changeTabName(pageName);
           activePageInNav(pageName);
+
+          if (pageName == "readme") {
+               typingAnimation();
+               setInterval(typingAnimation, 4000);
+          };
+
      } catch (error) {
           pagecontainer.innerHTML = "<p>Error while loading the page</p>";
           console.error(error);
@@ -22,12 +28,16 @@ async function loadPage(pageName) {
 
 //* Display of readme on page loading 
 document.addEventListener('DOMContentLoaded', () => {
-     loadPage('readme');
+     loadPage('flyingtodo');
      activePageInNav('readme');
      filecontainer.classList.toggle('active');
      portfolio.innerText = "⌄ Portfolio";
      aboutsec.classList.toggle('active');
      publicbtn.innerText = "⌄ Public";
+     projsec.classList.toggle('active');
+     srcbtn.innerText = "⌄ src";
+     imgsec.classList.toggle('active');
+     imgbtn.innerText ="⌄ img";
 });
 
 // * Buttons (instead of adding a onClick to each HTML button)
@@ -83,6 +93,8 @@ function animationHandler() {
      };
      });  
 };
+
+
 // * Timeout to prevent heavy load for animations 
 let scrollTimeout; 
 
@@ -121,6 +133,7 @@ srcbtn.addEventListener('click', () => {
      const isOpen = projsec.classList.contains('active');
      srcbtn.innerText = isOpen ? "⌄ src" : "> src";
 });
+
 
 const imgbtn = document.querySelector('.imgcat');
 const imgsec = document.getElementById('imgcsec');
@@ -161,18 +174,61 @@ function changeTabName(pageName) {
 };
 
 
-//** Very-left nav animations
+//** Very-left nav animations && behavior
 const navicon = document.querySelectorAll('.navicon');
-
+const explorer = document.querySelector('.explorer');
+const explorerel = document.querySelectorAll('.explorer > *');
 navicon.forEach(icon => {
 
      icon.addEventListener('click', () => {
           
-          if (icon.classList.contains('active')) {
-               icon.classList 
+          if (icon.classList.contains('active')){
+               icon.classList.remove('active');
+               explorer.style.display = "none";
+
           } else {
-               icon.classList.toggle('active');
+               deleteAllBorders();
+               icon.classList.add('active');
+               explorer.style.display = "block";
           }
-          // ! à modifier
      });
 });
+
+
+function deleteAllBorders() {
+     navicon.forEach(icon => {
+          icon.classList.remove('active');
+     });
+}
+
+// * Contact form scrolling to prevent it from being invisible
+pagecontainer.addEventListener('click', (event) => {
+     const contactbtn = event.target.closest('.contactmereadme');
+     if (!contactbtn) return;
+
+     const contactform = pagecontainer.querySelector('.contactmesection');
+     if (!contactform) return;
+
+     pagecontainer.scrollTo({
+          top: contactform.offsetTop,
+          behavior: 'smooth',
+     });
+     contactform.classList.add('animated');
+});
+
+// TODO Faire l'animation type de index 
+// * Readme internship animation 
+const texttoput = "Web development";
+
+function typingAnimation() {
+     const containermovingtext = document.querySelector('.moovingtext');
+
+     
+     containermovingtext.innerHTML = "";
+
+     for(let i = 0; i < texttoput.length; i++) {
+          setTimeout(() => {
+               containermovingtext.innerHTML += texttoput[i];
+          }, i * 50);
+     };
+};

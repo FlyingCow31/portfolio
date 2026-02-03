@@ -75,6 +75,7 @@ nav {
      gap: 10px;
      
      width: 5%;
+     max-height: 100vh;
      
      background-color: var(--navcolor);
      padding-top: 20px;
@@ -89,6 +90,10 @@ nav img {
 .accicon {
      margin-top: auto;
 }
+.seticon {
+     padding-bottom: 50px;
+}
+
 
 
 

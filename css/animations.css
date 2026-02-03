@@ -34,6 +34,9 @@
 .load-in {
      animation: load 0.6s ease both;
 }
+.floatanim {
+     animation: float 5s infinite;
+}
 
 
 
