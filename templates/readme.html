@@ -250,17 +250,32 @@
       <span class="markgreen">let's work together</span>!
     </p>
 
-    <div class="formcontainer">
-      <input type="text" class="formname scrollanim" placeholder="Name" />
-      <input type="email" class="formemail scrollanim" placeholder="Email" />
+    <form class="formcontainer" id="contact-form">
+      <input
+        type="text"
+        class="formname scrollanim"
+        placeholder="Name"
+        id="nameform"
+      />
+      <input
+        type="email"
+        class="formemail scrollanim"
+        placeholder="Email"
+        id="emailform"
+      />
       <input
         type="text"
         class="formbusiness scrollanim"
         placeholder="Company"
+        id="companyform"
       />
-      <input type="text" class="formtext scrollanim" placeholder="Message" />
-    </div>
-
-    <button class="sendcontact scrollanim">Send</button>
+      <input
+        type="text"
+        class="formtext scrollanim"
+        placeholder="Message"
+        id="messageform"
+      />
+      <button type="submit" class="sendcontact scrollanim">Send</button>
+    </form>
   </div>
 </div>

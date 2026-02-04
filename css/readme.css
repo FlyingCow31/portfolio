@@ -310,16 +310,23 @@
      border: var(--accent-color) 3px solid;
      border-radius: 10px;
      background-color: transparent;
+     color: whitesmoke;
 }
 
 .formcontainer input:focus {
      outline: none;
      border: white 3px solid;
+     scale: 1.1;
+     color: whitesmoke;
+
 }
 
 .formcontainer input::placeholder {
      color: white;
      padding: 15px;
+}
+.formcontainer input::after {
+     color: whitesmoke;
 }
 
 

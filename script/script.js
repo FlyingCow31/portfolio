@@ -1,3 +1,4 @@
+emailjs.init("F45wTY4jxI9XCwtZd");
 const pagecontainer = document.querySelector('.activepage');
 
 
@@ -259,3 +260,36 @@ pagecontainer.addEventListener('click', (event) => {
           softskillsbtn.classList.add('active');
      }
 });
+
+
+
+
+//* Form submit
+
+document.addEventListener('submit', function(evt) {
+    // On vérifie si c'est bien notre formulaire de contact qui est soumis
+    if (evt.target && evt.target.id === 'contact-form') {
+        sendContactEmail(evt);
+    }
+});
+
+function sendContactEmail(evt) {
+    evt.preventDefault();
+
+
+    const params = {
+        from_name: document.getElementById('nameform').value,
+        contact_email: document.getElementById('emailform').value,
+        companyname: document.getElementById('companyform').value,
+        message: document.getElementById('messageform').value
+    };
+
+    emailjs.send("service_36oqcnm", "template_n9ol3ip", params)
+        .then(() => {
+            // Ici tu peux appeler ta fonction de notification VS Code
+            alert("Message Sent"); 
+            evt.target.reset(); // Vide le formulaire
+        }, (error) => {
+            console.error("Failed...", error);
+        });
+}
