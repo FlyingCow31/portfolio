@@ -21,7 +21,7 @@ export default function Home() {
 
                   <div className="flex items-center gap-4 mt-5">
 
-                      <ButtonMain label={"Discutez de votre projet"}/>
+                      <ButtonMain label={"Discutez de votre projet"} href={"/contact"}/>
 
 
                       <Link href={"https://www.linkedin.com/in/gael-tournier32/?locale=fr"} target={"_blank"} className="ml-auto">
