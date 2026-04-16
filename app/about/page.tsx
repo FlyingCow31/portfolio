@@ -1,0 +1,69 @@
+"use client";
+import MobileNav from "@/app/components/MobileNav";
+import {useState} from "react";
+import ExpertiseModale from "@/app/components/ExpertiseModale";
+import Link from "next/link";
+import BackgroundModale from "@/app/components/BackgroundModale";
+import WorkflowsModale from "@/app/components/WorkflowsModale";
+
+
+
+export default function About() {
+    const [activeTab, setActiveTab] = useState("expertise");
+
+    return (
+      <main className={"bg-bg min-h-screen no-scrollbar"}>
+          <div className={"overflow-y-auto overflow-x-hidden h-[96vh] flex flex-col items-center no-scrollbar"}
+               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+
+              <div className={"shadow-big bg-white border-3 border-black w-80 mt-10 mb-10"}>
+                  <p className={"border-3 border-black shadow-small bg-sec px-5 max-w-fit ml-3 mt-3 font-bold"}> A PROPOS </p>
+                  <h1 className={"font-extrabold ml-3 mt-3 text-4xl"}>
+                      WEB-APPS, <br/>
+                      SITES WEB, <br/>
+                      SUR-MESURE.
+                  </h1>
+
+                  <p className={"ml-3 mt-3 mb-3 w-75 font-semibold"}>
+                      J&#39;apporte une expertise à vos projets grâce à mon experience dans le
+                  domaine du web. Mes workflows augmentés à l&#39;IA me permettent une rapidité tout en
+                  conservant une fiabilité dans le code produit.
+                  </p>
+                  <hr className={"w-50 border border-main ml-auto mr-4"}/>
+                  <button className={"text-main font-bold w-fit block ml-auto mr-4 pb-5 mt-2 cursor-pointer"}>Découvrir mes projets</button>
+              </div>
+
+              <div className={"flex flex-row gap-2"}>
+                  <button onClick={() => setActiveTab("expertise")}
+                          className={` font-bold text-sm py-2 px-4 border border-black shadow-small ${activeTab === "expertise" ? "bg-main text-white" : "bg-white"}`}>
+                      EXPERTISE
+                  </button>
+                  <button onClick={() => setActiveTab("background")}
+                          className={` font-bold py-2 px-3  text-sm border border-black shadow-small ${activeTab === "background" ? "bg-main text-white" : "bg-white"}`}>
+                      BACKGROUND
+                  </button>
+                  <button onClick={() => setActiveTab("workflows")}
+                          className={` font-bold py-2 px-3 text-sm border border-black shadow-small ${activeTab === "workflows" ? "bg-main text-white" : "bg-white"}`}>
+                      WORKFLOWS
+                  </button>
+              </div>
+
+              <div className={"mt-10 pt-3 bg-bg h-fit w-80 border-3 border-black shadow-small flex flex-col items-center"}>
+                  {activeTab === 'expertise' && <ExpertiseModale/>}
+                  {activeTab === 'background' && <BackgroundModale/>}
+                  {activeTab === 'workflows' && <WorkflowsModale/>}
+              </div>
+
+              <Link href={"/contact"}>
+                  <button className={"bg-main border-3 border-black shadow-small mb-30 mt-10 text-white p-3 font-bold"}>
+                      Construisons ensemble!
+                  </button>
+              </Link>
+
+          </div>
+
+          <MobileNav/>
+      </main>
+    );
+};

@@ -4,6 +4,7 @@
     --bg-color: #C4A1FF;
     --small-dropshadow: 4px 6px 0px rgba(0, 0, 0, 1);
     --big-dropshadow: 7px 10px 0px rgba(0, 0, 0, 1);
+    --big-dropshadoww: 7px 10px 0px rgb(151, 35, 201);
     --color-main: #9723C9;
     --color-sec: #E2A1FF;
     --border: 50px solid #000000;
@@ -13,6 +14,15 @@
     --color-bg: var(--bg-color);
     --shadow-small: var(--small-dropshadow);
     --shadow-big: var(--big-dropshadow);
+    --shadow-secbig: var(--big-dropshadoww);
     --color-main: var(--color-main);
     --color-sec: var(--color-sec);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}
+
+.no-scrollbar {
+    scrollbar-width: none; /* Firefox */
 }

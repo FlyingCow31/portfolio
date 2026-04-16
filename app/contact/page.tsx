@@ -1,7 +1,4 @@
 import MobileNav from "@/app/components/MobileNav";
-import Image from "next/image";
-import Link from "next/link";
-import ButtonMain from "@/app/components/ButtonMain";
 import Contactbtn from "@/app/components/Contactbtn";
 
 export default function contact() {
