@@ -53,7 +53,8 @@ export default function Portfolio() {
         <main className={"bg-bg min-h-screen no-scrollbar"}>
             <div className={" flex flex-col items-center"}>
                 <p className={" self-start m-3 border-3 border-black shadow-big bg-main text-white text-sm font-bold p-2 w-fit"}>
-                    PORTFOLIO</p>
+                    PORTFOLIO
+                </p>
 
                 <h1 className={"self-start ml-3 text-4xl font-extrabold"}>CREATIONS & PROJETS.</h1>
                 <hr className={"border-main border-3 w-80 self-start ml-3 mt-3"}/>
