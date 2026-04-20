@@ -4,7 +4,7 @@ import {AppWindow, Glasses, LayoutTemplate} from "lucide-react";
 import SolutionDiv from "@/app/components/SolutionsDiv";
 import ProcessDiv from "@/app/components/ProcessDiv";
 import Link from "next/link";
-import ButtonMain from "@/app/components/ButtonMain";
+
 
 const solutions = [
     {
