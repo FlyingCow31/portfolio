@@ -7,7 +7,7 @@ import PcNav from "@/app/components/PcNav";
 
 export default function Home() {
   return (
-      <main className="bg-bg min-h-screen md:flex md:flex-row">
+      <main className="bg-bg min-h-screen ">
           <PcNav/>
           {/*Page Container*/}
           <div className="flex flex-col justify-center md:flex-1">

@@ -4,10 +4,12 @@ interface ProcessProps {
     number: string,
     title: string,
     description: string,
-    arrow?: boolean
+    arrow?: boolean,
+    down?: boolean,
+    left?: boolean
 }
 
-export default function ProcessDiv({number, title, description, arrow}: ProcessProps) {
+export default function ProcessDiv({number, title, description, arrow, down, left}: ProcessProps) {
     return (
         <div className={"relative bg-white border-2 shadow-small"}>
             <div className={"relative ml-3"}>
@@ -16,7 +18,10 @@ export default function ProcessDiv({number, title, description, arrow}: ProcessP
             </div>
 
             <p className={"ml-3 mt-3 pb-3"}>{description}</p>
-            {arrow ? <div className={"rotate-90 absolute -bottom-10 right-29 z-10 opacity-25"}><Image src={"/arrowProcess.svg"} alt={"arrow"} width={80} height={80}/> </div> : ""}
+            {arrow ? <div className={`rotate-90 absolute -bottom-10 right-29 z-10 opacity-25 md:hidden `}>
+                <Image src={"/arrowProcess.svg"} alt={"arrow"} width={80} height={80}/>
+            </div>
+                : ""}
         </div>
     )
 }
