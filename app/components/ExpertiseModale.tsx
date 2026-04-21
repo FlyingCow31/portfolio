@@ -1,6 +1,7 @@
 
 import { Telescope, Wrench, ChevronLeft, ChevronRight } from "lucide-react";
 import {useState} from "react";
+import { useIsDesktop } from "@/app/hooks/useIsDesktop";
 
 const texts = [
     "J’utilise des technologies modernes (Next.JS, React, Tailwind) pour produire\n" +
@@ -33,7 +34,7 @@ const expertise = [
 ]
 
 export default function ExpertiseModale() {
-
+    const isDesktop = useIsDesktop();
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const rightArrow = () => {
@@ -45,31 +46,32 @@ export default function ExpertiseModale() {
 
 
     return(
-        <div className={"relative"}>
+        <div className={"relative md:flex-row md:flex md:gap-6 md:items-stretch"}>
             {expertise.map((item, Index) => {
-                if (Index !== currentIndex) return null;
+                if (!isDesktop && Index !== currentIndex) return null;
                 return (
-                    <div key={item.name} className={"bg-white border-3 border-black shadow-small w-60 h-fit mb-3"}>
+
+                    <div key={item.name} className={"relative bg-white border-3 border-black shadow-small w-60 mb-3 md:w-90 "}>
                         <div className={"bg-main w-fit p-3 border shadow-small mt-3 ml-3"}>{item.image}</div>
 
                         <div className={"absolute right-5 top-10"}>{item.emojis}</div>
-                        <h1 className={"text-4xl font-extrabold ml-3 mt-3"}>{item.name}</h1>
-                        <p className={"ml-3 mt-3 max-w-50"}>{item.text}</p>
+                        <h1 className={"text-4xl font-extrabold ml-3 mt-3 md:text-5xl"}>{item.name}</h1>
+                        <p className={"ml-3 mt-3 w-50 md:text-xl md:w-80"}>{item.text}</p>
 
                         <div className={"flex flex-wrap gap-3 ml-3 mt-3 pb-10"}>
                             {item.tags.map((tag) => (
-                                <div key={tag} className={"font-bold border border-black shadow-small bg-sec w-fit p-2"}>
+                                <div key={tag} className={"font-bold border border-black shadow-small bg-sec w-fit p-2 md:text-xl"}>
                                     <p>{tag}</p>
                                 </div>
                             ))}
                         </div>
-                    </div> )
+                    </div>)
 
                 })}
-            <button onClick={leftArrow} className="opacity-25 hover:opacity-100 absolute top-1/2 -left-7 z-10 bg-main p-2 border-2 border-black shadow-small text-white">
+            <button onClick={leftArrow} className="opacity-25 hover:opacity-100 absolute top-1/2 -left-7 z-10 bg-main p-2 border-2 border-black shadow-small text-white md:hidden">
             <ChevronLeft />
             </button>
-            <button onClick={rightArrow} className="opacity-25 hover:opacity-100 absolute top-1/2 -right-7 z-10 bg-main p-2 border-2 border-black shadow-small text-white">
+            <button onClick={rightArrow} className="opacity-25 hover:opacity-100 absolute top-1/2 -right-7 z-10 bg-main p-2 border-2 border-black shadow-small text-white md:hidden">
                 <ChevronRight />
             </button>
 
