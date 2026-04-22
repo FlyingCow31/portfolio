@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 
 interface ProjectDivProps {
@@ -9,14 +10,16 @@ interface ProjectDivProps {
     description: string,
     tags: string[],
     upTag: string,
-    cta: string
+    cta: string,
+    href: string
 }
 
 
 
-export default function ProjectDiv({studyCase, icone, type, title, description, tags, upTag, cta}: ProjectDivProps) {
+export default function ProjectDiv({studyCase, icone, type, title, description, tags, upTag, cta, href}: ProjectDivProps) {
     return (
-        <div className={`relative ${studyCase ? "bg-main col-span-2" : "bg-bg"} border-3 shadow-small`}>
+        <Link href={href} className={`${studyCase ? "col-span-2" : ""}`}>
+        <div className={`relative ${studyCase ? "bg-main col-span-2" : "bg-bg"} border-3 shadow-small clicanim`}>
             <p className={"font-bold opacity-50 text-white ml-3 mt-3 text-sm md:text-xl"}>{type}</p>
             <hr className={"border-2 border-white w-60 mt-1 opacity-50 ml-3"}/>
             <div className={"flex items-center"}>
@@ -37,8 +40,9 @@ export default function ProjectDiv({studyCase, icone, type, title, description, 
             </div>
 
             <div className={"font-extrabold absolute -top-4 right-5 bg-white border-3 shadow-small w-fit px-3 "}><p className={"md:text-lg"}>{upTag}</p></div>
-            <p className={"text-white opacity-50 text-right mr-3 mt-6 pb-3 md:text-2xl"}>{cta}</p>
+            <p className={"text-white opacity-50 text-right mr-3 mt-6 pb-3 md:text-2xl ctahover"}>{cta}</p>
         </div>
+        </Link>
     )
 
 }

@@ -7,7 +7,7 @@ interface ButtonProps {
 
 export default function ButtonMain({label, href}: ButtonProps) {
     return (
-        <Link href={href || "/"} className={" cursor-pointer text-white text-center flex-1 bg-main p-3 border-3 border-black shadow-small"}>
+        <Link href={href || "/"} className={" cursor-pointer text-white text-center flex-1 bg-main p-3 border-3 border-black shadow-small hover-btn-dark"}>
             {label}
         </Link>
     )

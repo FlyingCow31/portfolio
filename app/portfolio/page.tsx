@@ -7,6 +7,8 @@ import {useState} from "react";
 import {ChevronLeft, ChevronRight} from "lucide-react";
 import { useIsDesktop } from "@/app/hooks/useIsDesktop";
 import PcNav from "@/app/components/PcNav";
+import Footer from "@/app/components/Footer";
+import {motion} from "framer-motion"
 
 const projects = [
     {
@@ -20,7 +22,8 @@ const projects = [
             "d’équipe.",
         tags: ["FULLSTACK", "GESTION D'EQUIPES", "NEXT.JS"],
         upTag: "CASE STUDY",
-        cta: "Découvrir le case study ->"
+        cta: "Découvrir le case study →",
+        href: "/portfolio/epistudios"
     },
     {
         studyCase: false,
@@ -34,7 +37,8 @@ const projects = [
             "journée !",
         tags: ["ELECTRON", "JAVASCRIPT", "DEPLOIEMENT"],
         upTag: "NEW",
-        cta: "Découvrir le projet ->"
+        cta: "Découvrir le projet →",
+        href: "/portfolio/flyingtodo"
     }
 ]
 
@@ -70,7 +74,12 @@ export default function Portfolio() {
 
                 {/*TODO: Add a modal when clicking on project */}
 
-                <div className={"relative bg-white w-83 border-3 shadow-big py-4 px-3 flex flex-col gap-2 self-start mt-3 ml-3 md:grid md:grid-cols-2 md:w-[80%] md:gap-6"}>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6}}
+                    viewport={{ once: true }}
+                    className={"relative bg-white w-83 border-3 shadow-big py-4 px-3 flex flex-col gap-2 self-start mt-3 ml-3 md:grid md:grid-cols-2 md:w-[80%] md:gap-6"}>
                     {projects.map((project, index) => {
                         if (!isDesktop && index !== currentIndex) return null;
                         return (
@@ -86,9 +95,10 @@ export default function Portfolio() {
                     <button onClick={rightArrow} className="opacity-25 hover:opacity-100 absolute top-1/2 -right-3 z-10 bg-main p-2 border-2 border-black shadow-small text-white  md:hidden">
                         <ChevronRight />
                     </button>
-                </div>
+                </motion.div>
 
             </div>
+            <Footer/>
             <MobileNav/>
         </main>
     )

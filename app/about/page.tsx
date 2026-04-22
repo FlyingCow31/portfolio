@@ -7,6 +7,8 @@ import BackgroundModale from "@/app/components/BackgroundModale";
 import WorkflowsModale from "@/app/components/WorkflowsModale";
 import { useIsDesktop } from "@/app/hooks/useIsDesktop";
 import PcNav from "@/app/components/PcNav";
+import Footer from "@/app/components/Footer";
+import {motion} from "framer-motion"
 
 
 
@@ -14,13 +16,19 @@ export default function About() {
     const [activeTab, setActiveTab] = useState("expertise");
     const isDesktop = useIsDesktop();
     return (
-      <main className={"bg-bg min-h-screen no-scrollbar"}>
+
+      <main className={"bg-bg min-h-screen "}>
           <PcNav/>
-          <div className={"overflow-y-auto overflow-x-hidden h-[96vh] flex flex-col items-center no-scrollbar md:ml-60 md:items-start"}
-               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          <div className={"overflow-x-hidden h-full flex flex-col items-center md:ml-60 md:items-start"}
           >
 
-              <div className={"shadow-big bg-white border-3 border-black w-80 mt-10 mb-10 md:w-[90%] md:grid md:grid-cols-2"}>
+              <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ x: 7, y: 10, boxShadow: "1px 1px 0px rgba(0,0,0,1)", transition: { duration: 0.1, ease: "easeOut" } } }
+                  transition={{ duration: 0.6}}
+                  viewport={{ once: true }}
+                  className={"shadow-big bg-white border-3 border-black w-80 mt-10 mb-10 md:w-[90%] md:grid md:grid-cols-2"}>
                   <p className={"border-3 border-black shadow-small bg-sec px-5 max-w-fit ml-3 mt-3 font-bold md:col-span-2 md:text-xl"}> A PROPOS </p>
                   <h1 className={"font-extrabold ml-3 mt-3 text-4xl md:text-6xl"}>
                       WEB-APPS, <br/>
@@ -34,25 +42,25 @@ export default function About() {
                   conservant une fiabilité dans le code produit.
                   </p>
                   <hr className={"w-50 border border-main ml-auto mr-4 md:hidden"}/>
-                  <button className={"text-main font-bold w-fit block ml-auto mr-4 pb-5 mt-2 cursor-pointer md:col-start-2 md:text-3xl md:mt-10"}>Découvrir mes projets</button>
-              </div>
+                  <button className={"text-main font-bold w-fit block ml-auto mr-4 pb-5 mt-2 cursor-pointer md:col-start-2 md:text-3xl md:mt-10 ctahover"}>Découvrir mes projets →</button>
+              </motion.div>
 
               <div className={"md:flex md:gap-10 md:w-[90%] md:pb-30"}>
                   <div className={"flex flex-row gap-2 md:flex-col md:*:text-4xl md:gap-6 "}>
                       <button onClick={() => setActiveTab("expertise")}
-                              className={` font-bold text-sm py-2 px-4 border border-black shadow-small ${activeTab === "expertise" ? "bg-main text-white" : "bg-white"} md:py-4 `}>
+                              className={`clicanim font-bold text-sm py-2 px-4 border border-black shadow-small ${activeTab === "expertise" ? "bg-main text-white" : "bg-white"} md:py-4 `}>
                           EXPERTISE
                       </button>
                       <button onClick={() => setActiveTab("background")}
-                              className={` font-bold py-2 px-3  text-sm border border-black shadow-small ${activeTab === "background" ? "bg-main text-white" : "bg-white"} md:py-4`}>
+                              className={`clicanim font-bold py-2 px-3  text-sm border border-black shadow-small ${activeTab === "background" ? "bg-main text-white" : "bg-white"} md:py-4`}>
                           BACKGROUND
                       </button>
                       <button onClick={() => setActiveTab("workflows")}
-                              className={` font-bold py-2 px-3 text-sm border border-black shadow-small ${activeTab === "workflows" ? "bg-main text-white" : "bg-white"} md:py-4`}>
+                              className={`clicanim font-bold py-2 px-3 text-sm border border-black shadow-small ${activeTab === "workflows" ? "bg-main text-white" : "bg-white"} md:py-4`}>
                           WORKFLOWS
                       </button>
                       {isDesktop && <Link href={"/contact"} className={"md:mt-auto"}>
-                          <button className={"bg-main border-3 border-black shadow-small mb-30 mt-10 text-white p-3 font-bold md:mt-auto md:mb-0"}>
+                          <button className={"bg-main border-3 border-black shadow-small mb-30 mt-10 text-white p-3 font-bold md:mt-auto md:mb-0 clicanim"}>
                               Construisons ensemble!
                           </button>
                       </Link>}
@@ -66,13 +74,14 @@ export default function About() {
               </div>
 
               {!isDesktop && <Link href={"/contact"}>
-                  <button className={"bg-main border-3 border-black shadow-small mb-30 mt-10 text-white p-3 font-bold"}>
+                  <button className={"bg-main border-3 border-black shadow-small mb-30 mt-10 text-white p-3 font-bold clicanim"}>
                       Construisons ensemble!
                   </button>
               </Link>}
 
 
           </div>
+          <Footer/>
 
           <MobileNav/>
       </main>

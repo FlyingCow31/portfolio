@@ -5,7 +5,9 @@
     --small-dropshadow: 4px 6px 0px rgba(0, 0, 0, 1);
     --big-dropshadow: 7px 10px 0px rgba(0, 0, 0, 1);
     --big-dropshadoww: 7px 10px 0px rgb(151, 35, 201);
+    --shadow-anim: 1px 1px 0px rgba(0, 0, 0, 1);
     --color-main: #9723C9;
+    --color-hover-main: #bb4aee;
     --color-sec: #E2A1FF;
     --border: 50px solid #000000;
 }
@@ -15,6 +17,7 @@
     --shadow-small: var(--small-dropshadow);
     --shadow-big: var(--big-dropshadow);
     --shadow-secbig: var(--big-dropshadoww);
+    --shadow-anim: var(--shadow-anim);
     --color-main: var(--color-main);
     --color-sec: var(--color-sec);
 }
@@ -25,4 +28,41 @@
 
 .no-scrollbar {
     scrollbar-width: none; /* Firefox */
+}
+
+
+@layer utilities {
+    .hover-btn-dark {
+        transition: all 150ms ease;
+    }
+    .hover-btn-dark:hover {
+        background-color: var(--color-hover-main);
+        transform: translate(4px, 6px);
+        box-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+    }
+
+    .nav-hover {
+        transition: all 150ms ease;
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
+    }
+    .nav-hover:hover {
+        background-color: var(--bg-color);
+        border: black 3px solid;
+        box-shadow: 4px 6px 0px rgba(0, 0, 0, 1);
+    }
+    .clicanim {
+        transition: all 150ms ease;
+    }
+    .clicanim:hover {
+        transform: translate(4px, 6px);
+        box-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+    }
+
+    .ctahover {
+        transition: all 200ms ease;
+    }
+    .ctahover:hover {
+        transform: translateX(6px);
+        opacity: 1;
+    }
 }

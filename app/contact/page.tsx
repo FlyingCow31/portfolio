@@ -22,9 +22,9 @@ export default function contact() {
                     projets qui vous anime, <span className={"bg-main text-white p-1 border-black border leading-loose"}>Contactez-moi</span> !
                 </p>
                 <div className={"flex flex-col gap-4 mt-5 "}>
-                    <Contactbtn icon={"/mail.svg"} href={"mailto:contact@gaeltournier.dev"} text={"contact@gaeltournier.dev"}/>
-                    <Contactbtn icon={"/githubicon.svg"} href={"https://github.com/FlyingCow31"} text={"Gaël Tournier"}/>
-                    <Contactbtn icon={"/linkedinincon.svg"} href={"https://www.linkedin.com/in/gael-tournier32/?locale=fr"} text={"Gaël Tournier"}/>
+                    <Contactbtn delay={0.1} icon={"/mail.svg"} href={"mailto:contact@gaeltournier.dev"} text={"contact@gaeltournier.dev"}/>
+                    <Contactbtn delay={0.2 }icon={"/githubicon.svg"} href={"https://github.com/FlyingCow31"} text={"Gaël Tournier"}/>
+                    <Contactbtn delay={0.3} icon={"/linkedinincon.svg"} href={"https://www.linkedin.com/in/gael-tournier32/?locale=fr"} text={"Gaël Tournier"}/>
                 </div>
             </div>
 

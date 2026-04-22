@@ -1,4 +1,7 @@
+"use client"
 import React from "react";
+import {motion} from "framer-motion"
+import Link from "next/link";
 
 
 interface SolutionDivProps {
@@ -6,12 +9,19 @@ interface SolutionDivProps {
     title: string,
     description: string,
     upTag: { title: string; left?: boolean }[],
-    cta: string
+    cta: string,
+    delay: number
 }
 
-export default function SolutionDiv({icone, title, description, upTag, cta}: SolutionDivProps) {
+export default function SolutionDiv({icone, title, description, upTag, cta, delay}: SolutionDivProps) {
     return (
-        <div className={`relative bg-white border-3 shadow-small`}>
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ x: 4, y: 6, boxShadow: "1px 1px 0px rgba(0,0,0,1)", transition: { duration: 0.1, ease: "easeOut" } } }
+            transition={{ duration: 0.6, delay}}
+            viewport={{ once: true }}
+            className={`relative bg-white border-3 shadow-small`}>
 
 
             <div className={"bg-main border-3 shadow-small w-fit p-2 m-3 mt-6 "}>{icone}</div>
@@ -28,7 +38,10 @@ export default function SolutionDiv({icone, title, description, upTag, cta}: Sol
             </div>
 
             <hr className={"ml-auto border-2 border-main w-60 opacity-50 mt-6 mr-3 md:w-80"}/>
-            <p className={"text-main opacity-50 text-right mr-3 mt-1 pb-3 md:text-2xl"}>{cta}</p>
-        </div>
+            <Link href={"/contact"}>
+                <p className={"text-main opacity-50 text-right mr-3 mt-1 pb-3 md:text-2xl ctahover"}>{cta + " →"}</p>
+            </Link>
+
+        </motion.div>
     )
 }

@@ -1,9 +1,10 @@
-
+"use client"
 import MobileNav from "./components/MobileNav";
 import Image from "next/image";
 import Link from "next/link";
 import ButtonMain from "./components/ButtonMain";
 import PcNav from "@/app/components/PcNav";
+import { motion } from "framer-motion"
 
 export default function Home() {
   return (
@@ -13,7 +14,12 @@ export default function Home() {
           <div className="flex flex-col justify-center md:flex-1">
 
               {/* Hero */}
-              <div className="bg-white border-3 border-black *:ml-3 w-85 md:w-[50%] md:h-[60%] shadow-big pt-3 pb-10 mt-10 mx-auto">
+              <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="bg-white border-3 border-black *:ml-3 w-85 md:w-[50%] md:h-[60%] shadow-big pt-3 pb-10 mt-10 mx-auto">
                   <p className="opacity-30 font-bold text-xl">Développeur Web Freelance</p>
                   <hr className="border border-black w-70 opacity-30 mt-2"/>
                   <h1 className="font-extrabold text-5xl text-black mt-3 md:text-7xl">GAEL <br/> TOURNIER</h1>
@@ -23,7 +29,7 @@ export default function Home() {
 
                   <div className="flex items-center gap-4 mt-5 md:mt-10">
 
-                      <ButtonMain label={"Discutez de votre projet"} href={"/contact"} />
+                      <ButtonMain label={"Discutez de votre projet →"} href={"/contact"} />
 
                         <div className={"flex ml-10 md:gap-6 md:mr-3"}>
                             <Link href={"https://www.linkedin.com/in/gael-tournier32/?locale=fr"} target={"_blank"} className="ml-auto">
@@ -37,7 +43,7 @@ export default function Home() {
 
                   </div>
 
-              </div>
+              </motion.div>
             {/* Avis*/}
 
               {/*<div className="relative bg-white border-3 border-black *:ml-3 w-70 shadow-big pt-3 pb-10 mt-10">*/}

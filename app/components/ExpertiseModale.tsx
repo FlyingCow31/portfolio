@@ -46,12 +46,12 @@ export default function ExpertiseModale() {
 
 
     return(
-        <div className={"relative md:flex-row md:flex md:gap-6 md:items-stretch"}>
+        <div className={"relative md:flex-row md:flex md:gap-6 md:items-stretch "}>
             {expertise.map((item, Index) => {
                 if (!isDesktop && Index !== currentIndex) return null;
                 return (
 
-                    <div key={item.name} className={"relative bg-white border-3 border-black shadow-small w-60 mb-3 md:w-90 "}>
+                    <div key={item.name} className={"relative bg-white border-3 border-black shadow-small w-60 mb-3 md:w-90 clicanim"}>
                         <div className={"bg-main w-fit p-3 border shadow-small mt-3 ml-3"}>{item.image}</div>
 
                         <div className={"absolute right-5 top-10"}>{item.emojis}</div>

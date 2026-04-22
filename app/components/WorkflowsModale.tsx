@@ -23,15 +23,15 @@ export default function WorkflowsModale() {
     return (
 
             <div className={"flex flex-col items-center w-[90%] md:w-[100%]"}>
-                <div className={"flex flex-row items-center mb-3 md:self-start"}>
+                <div className={"flex flex-row items-center mb-3 md:self-start "}>
                     <div className={"bg-main p-2 border shadow-small ml-3"}><BrainCircuit color="#ffffff" className={"md:h-14 md:w-14"}/></div>
 
                     <h1 className={"ml-3 text-white font-extrabold text-2xl md:text-5xl"}>Workflows augmentés à l&#39;IA</h1>
                 </div>
 
-                <div className={"md:grid-cols-2 md:grid-rows-2 md:grid md:gap-6 md:px-3 md:mt-6"}>
+                <div className={"md:grid-cols-2 md:grid-rows-2 md:grid md:gap-6 md:px-3 md:mt-6 "}>
 
-                    <div className={"bg-white w-full border shadow-small mb-3 md:row-end-1"}>
+                    <div className={"bg-white w-full border shadow-small mb-3 md:row-end-1 clicanim"}>
                         <div className={"flex gap-2 ml-3 pt-3 items-center"}>
                             <span className={"bg-main p-1 border"}><FastForward color="#ffffff" className={"md:w-12 md:h-12"}/></span>
                             <p className={"font-bold text-xl md:text-4xl"}>Rapidité</p>
@@ -40,7 +40,7 @@ export default function WorkflowsModale() {
                         <p className={"ml-3 mt-3 pb-3 font-semibold opacity-50"}>{texts[0]}</p>
                     </div>
 
-                    <div className={"bg-white w-full border shadow-small mb-3 md:row-span-1"}>
+                    <div className={"bg-white w-full border shadow-small mb-3 md:row-span-1 clicanim"}>
                         <div className={"flex gap-2 ml-3 pt-3 items-center"}>
                             <span className={"bg-main p-1 border"}><Focus color="#ffffff" className={"md:w-12 md:h-12"}/></span>
                             <p className={"font-bold text-xl md:text-4xl"}>Focus</p>
@@ -48,7 +48,7 @@ export default function WorkflowsModale() {
                         <p className={"ml-3 mt-3 pb-3  font-semibold opacity-50"}>{texts[1]}</p>
                     </div>
 
-                    <div className={"bg-white w-full border shadow-small mb-3 md:row-end-1 md:row-span-2"}>
+                    <div className={"bg-white w-full border shadow-small mb-3 md:row-end-1 md:row-span-2 clicanim"}>
                         <div className={"flex gap-2 ml-3 pt-3 items-center"}>
                             <span className={"bg-main p-1 border"}><Bot color="#ffffff" className={"md:w-12 md:h-12"}/></span>
                             <p className={"font-bold text-xl text-main md:text-4xl"}>L&#39;IA et moi</p>
