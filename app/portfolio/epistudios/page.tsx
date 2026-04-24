@@ -1,14 +1,75 @@
+"use client"
 import PcNav from "@/app/components/PcNav";
 import MobileNav from "@/app/components/MobileNav";
+import {motion} from "framer-motion"
+import {useState} from "react";
+import {Book, Layers, ScanEye} from "lucide-react";
+import ProblemDiv from "@/app/components/ResumeDiv";
+import Link from "next/link";
+import GalerieDiv from "@/app/components/GalerieDiv";
+import StackDiv from "@/app/components/StackDiv";
+
+
+const tags = ["FULLSTACK", "NEXT.JS", "DESIGN"];
+const colors = ["","sec", "white" , "main"];
 
 
 export default function EpiPage() {
+            const [activeTab, setActiveTab] = useState("resume");
     return (
-        <main>
+        <main className={"min-h-screen bg-bg flex flex-col items-center pb-15"}>
             <PcNav/>
             <MobileNav/>
-            <div>
-                <h1>Test</h1>
+                {/*TODO: floating button to come back to projects*/}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                    whileHover={{ x: 7, y: 10, boxShadow: "1px 1px 0px rgba(0,0,0,1)", transition: { duration: 0.1, ease: "easeOut" } } }
+                    className={"bg-white border-3 shadow-big w-[90%] my-10"}
+                >
+                    <div className={"flex gap-3 m-2"}>
+                        {tags.map((tag, index) => {
+                            return (
+                                <div key={index} className={`bg-${colors[index + 1]} px-2 border-2 shadow-small`}>
+                                    <p>{tag}</p>
+                                </div>
+                            )
+                        })}
+                    </div>
+
+                    <h1 className={"font-extrabold text-3xl ml-3"}>EPISTUDIOS.FR</h1>
+                    <p className={"ml-3 font-semibold my-3"}>
+                        Design professionnel, pages simples et développement fullstack: EPI Studio
+                        avait besoin qu&#39;on représente sa marque et ses valeurs dans un site web.
+                    </p>
+
+                    <div className={'bg-sec  border-t-3  *:border-2 *:shadow-small flex gap-3 items-center p-3 *:p-1'}>
+                        <button onClick={() => setActiveTab("resume")} className={`${activeTab === "resume" ? "bg-main" : "bg-white"}`}>
+                            <Book height={45} width={45}/>
+                        </button>
+                        <button onClick={() => setActiveTab("galery")} className={`${activeTab === "galery" ? "bg-main" : "bg-white"}`}>
+                            <ScanEye height={45} width={45}/>
+                        </button>
+
+                        <button onClick={() => setActiveTab("stack")} className={`${activeTab === "stack" ? "bg-main" : "bg-white"}`}>
+                            <Layers height={45} width={45} />
+                        </button>
+                    </div>
+                </motion.div>
+            {activeTab === "resume" && <ProblemDiv/>}
+            {activeTab === "galery" && <GalerieDiv/>}
+            {activeTab === "stack" && <StackDiv/>}
+
+
+            <div className={"bg-white border-t-3 p-6 w-full mt-6"}>
+                <p className={" font-extrabold text-3xl"}>Ce projet vous intéresse?</p>
+                <Link href={"/contact"}>
+                    <motion.button
+                        whileHover={{ x: 4, y: 6, boxShadow: "1px 1px 0px rgba(0,0,0,1)", transition: { duration: 0.1, ease: "easeOut" } } }
+                        className={'bg-main border-black border-3 p-3 shadow-small mt-3 text-white'}>Parlons-en!</motion.button>
+                </Link>
             </div>
         </main>
     )

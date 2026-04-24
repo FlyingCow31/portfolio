@@ -1,6 +1,7 @@
 import { House, ListChecks, UserRound, BriefcaseBusiness, Mail } from "lucide-react";
 import Link from "next/link";
 
+// TODO: faire les animations de la navbar
 export default function MobileNav() {
     return (
       <nav className="fixed bottom-0 w-full flex flex-row justify-around  bg-white p-4

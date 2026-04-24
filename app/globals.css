@@ -2,6 +2,8 @@
 
 :root {
     --bg-color: #C4A1FF;
+    --color-colerr: #FF6B6B;
+    --color-colsol: #7FBC8C;
     --small-dropshadow: 4px 6px 0px rgba(0, 0, 0, 1);
     --big-dropshadow: 7px 10px 0px rgba(0, 0, 0, 1);
     --big-dropshadoww: 7px 10px 0px rgb(151, 35, 201);
@@ -14,6 +16,8 @@
 
 @theme inline {
     --color-bg: var(--bg-color);
+    --color-colerr: var(--color-colerr);
+    --color-colsol: var(--color-colsol);
     --shadow-small: var(--small-dropshadow);
     --shadow-big: var(--big-dropshadow);
     --shadow-secbig: var(--big-dropshadoww);
@@ -64,5 +68,26 @@
     .ctahover:hover {
         transform: translateX(6px);
         opacity: 1;
+    }
+
+    .errordiv {
+        background-color: var(--color-colerr);
+        border-bottom: 3px black solid;
+        padding: 2px;
+    }
+
+    .soldiv {
+        background-color: var(--color-colsol);
+        border-bottom: 3px black solid;
+        padding: 2px;
+    }
+    .titlecardproj {
+        margin-left: 1rem;
+        font-size: large;
+        font-weight: bold;
+    }
+    .desccardproj {
+        margin-left: 1.5rem;
+        opacity: 50;
     }
 }
