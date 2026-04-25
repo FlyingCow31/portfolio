@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import {useIsDesktop} from "@/app/hooks/useIsDesktop";
+
 import {useState} from "react";
 import {ChevronLeft, ChevronRight} from "lucide-react";
 import {motion} from "framer-motion"
@@ -28,7 +28,6 @@ const galerie = [
 ];
 
 export default function GalerieDiv() {
-    const isDesktop = useIsDesktop();
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const rightArrow = () => {
