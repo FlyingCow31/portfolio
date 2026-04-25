@@ -10,7 +10,7 @@ export default function StackDiv() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
                 className={"border-3 shadow-big bg-white w-full"}>
-                <h1 className={"bg-[#87CEEB] font-extrabold text-2xl p-3"}>Front-End</h1>
+                <h1 className={"bg-[#87CEEB] font-extrabold text-2xl p-3 font-title"}>Front-End</h1>
                 <p className={"titlecardproj underline decoration-[#87CEEB] decoration-3"}>Next.JS </p>
                 <p className={"desccardproj"}>Rapidité, facilité et lisibilité pour un projet Open-Source.</p>
                 <p className={"titlecardproj underline decoration-[#87CEEB] decoration-3"}>React.JS</p>
@@ -24,27 +24,23 @@ export default function StackDiv() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
                 className={"border-3 shadow-big bg-white w-full"}>
-                <h1 className={"bg-[#90EE90] font-extrabold text-2xl p-3"}>Back-End</h1>
+                <h1 className={"bg-[#90EE90] font-extrabold text-2xl p-3 font-title"}>Back-End</h1>
                 <p className={"titlecardproj underline decoration-[#90EE90] decoration-3"}>Node.JS </p>
                 <p className={"desccardproj"}>Rester dans l&#39;environnement JS avec Node m&#39;a permi d&#39;être plus productif.</p>
-                <p className={"titlecardproj underline decoration-[#90EE90] decoration-3"}>Title 2</p>
-                <p className={"desccardproj"}>text 2</p>
-                <p className={"titlecardproj underline decoration-[#90EE90] decoration-3"}>Title 3</p>
-                <p className={"desccardproj"}>Text 3</p>
+                <p className={"titlecardproj underline decoration-[#90EE90] decoration-3"}>Email.JS</p>
+                <p className={"desccardproj"}>Un système simple, modifiable par tous niveaux, et adapté aux besoins de l&#39;association.</p>
             </motion.div>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className={"border-3 shadow-big bg-white w-full"}>
-                <h1 className={"bg-[#F4D738] font-extrabold text-2xl p-3"}>DevOps & design</h1>
+                className={"border-3 shadow-big bg-white w-full "}>
+                <h1 className={"bg-[#F4D738] font-extrabold text-2xl p-3 font-title"}>DevOps & design</h1>
                 <p className={"titlecardproj underline decoration-[#F4D738] decoration-3"}>Docker </p>
-                <p className={"desccardproj"}>text1</p>
+                <p className={"desccardproj"}>Pour un déploiement facile et optimisé.</p>
                 <p className={"titlecardproj underline decoration-[#F4D738] decoration-3"}>Figma</p>
-                <p className={"desccardproj"}>text 2</p>
-                <p className={"titlecardproj underline decoration-[#F4D738] decoration-3"}>Title 3</p>
-                <p className={"desccardproj"}>Text 3</p>
+                <p className={"desccardproj"}>Un long travail de design, en collaboration avec les graphistes de l&#39;association.</p>
             </motion.div>
         </div>
     )

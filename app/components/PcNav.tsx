@@ -20,7 +20,7 @@ export default function PcNav() {
 
             </Link>
 
-            <p className="text-main -rotate-90 text-5xl font-extrabold p-3 ">Menu</p>
+            <p className="text-main -rotate-90 text-5xl font-extrabold p-3 font-title">Menu</p>
 
             <Link href={"/about"}>
                 <div className={`p-3 border-3 ${pathname === "/about" ? "bg-main shadow-small border-black " : "border-transparent nav-hover"} `}>

@@ -55,12 +55,12 @@ export default function ExpertiseModale() {
                         <div className={"bg-main w-fit p-3 border shadow-small mt-3 ml-3"}>{item.image}</div>
 
                         <div className={"absolute right-5 top-10"}>{item.emojis}</div>
-                        <h1 className={"text-4xl font-extrabold ml-3 mt-3 md:text-5xl"}>{item.name}</h1>
+                        <h1 className={"text-4xl font-extrabold ml-3 mt-3 md:text-5xl font-title"}>{item.name}</h1>
                         <p className={"ml-3 mt-3 w-50 md:text-xl md:w-80"}>{item.text}</p>
 
                         <div className={"flex flex-wrap gap-3 ml-3 mt-3 pb-10"}>
                             {item.tags.map((tag) => (
-                                <div key={tag} className={"font-bold border border-black shadow-small bg-sec w-fit p-2 md:text-xl"}>
+                                <div key={tag} className={"font-title font-bold border border-black shadow-small bg-sec w-fit p-2 md:text-xl"}>
                                     <p>{tag}</p>
                                 </div>
                             ))}

@@ -35,14 +35,14 @@ export default function EpiPage() {
                     <div className={"flex gap-3 m-2"}>
                         {tags.map((tag, index) => {
                             return (
-                                <div key={index} className={`bg-${colors[index + 1]} px-2 border-2 shadow-small`}>
+                                <div key={index} className={`bg-${colors[index + 1]} px-2 border-2 shadow-small font-title`}>
                                     <p>{tag}</p>
                                 </div>
                             )
                         })}
                     </div>
 
-                    <h1 className={"font-extrabold text-3xl ml-3"}>EPISTUDIOS.FR</h1>
+                    <h1 className={"font-extrabold text-3xl ml-3 font-title"}>EPISTUDIOS.FR</h1>
                     <p className={"ml-3 font-semibold my-3"}>
                         Design professionnel, pages simples et développement fullstack: EPI Studio
                         avait besoin qu&#39;on représente sa marque et ses valeurs dans un site web.

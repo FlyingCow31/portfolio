@@ -80,10 +80,10 @@ export default function Solutions() {
         <main className={"bg-bg min-h-screen items-center md:flex-row md:overflow-x-hidden w-full"}>
             <PcNav/>
             <div className={"flex flex-col items-center md:block md:ml-40 md:max-w-150 lg:max-w-none lg:ml-60 lg:w-[90%] pb-20"}>
-                <p className={"self-start my-3 border-3 border-black shadow-big bg-main text-white text-sm font-bold p-2 w-fit md:text-3xl"}>
+                <p className={"ml-3 font-title self-start my-3 border-3 border-black shadow-big bg-main text-white text-sm font-bold p-2 w-fit md:text-3xl"}>
                     Services
                 </p>
-                <h1 className={"self-start text-5xl font-extrabold mb-10 md:text-7xl"}>MES <br/> SOLUTIONS</h1>
+                <h1 className={"self-start text-5xl font-extrabold mb-10 md:text-7xl font-title ml-3"}>MES <br/> SOLUTIONS</h1>
 
                 <div className={"w-85 flex flex-col gap-6 md:w-[100%] lg:max-w-[90%]"}>
                     {solutions.map((solutions, index) => {
@@ -129,7 +129,7 @@ export default function Solutions() {
                         projet gagnera une vision concrète;
                         Pas un devis vide de sens.</p>
                     <Link href={"/contact"}>
-                        <button className={"bg-white font-bold border-3 shadow-small p-2 w-75  hover-btn-dark"}>
+                        <button className={"font-title bg-white font-bold border-3 shadow-small p-2 w-75  hover-btn-dark"}>
                             DISCUTONS DE VOTRE PROJET →
                         </button>
                     </Link>

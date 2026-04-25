@@ -24,6 +24,9 @@
     --shadow-anim: var(--shadow-anim);
     --color-main: var(--color-main);
     --color-sec: var(--color-sec);
+
+    --font-title: var(--font-public-sans);
+    --font-body: var(--font-open-sans);
 }
 
 .no-scrollbar::-webkit-scrollbar {

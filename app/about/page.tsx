@@ -30,7 +30,7 @@ export default function About() {
                   viewport={{ once: true }}
                   className={"shadow-big bg-white border-3 border-black w-80 mt-10 mb-10 md:w-[90%] md:grid md:grid-cols-2"}>
                   <p className={"border-3 border-black shadow-small bg-sec px-5 max-w-fit ml-3 mt-3 font-bold md:col-span-2 md:text-xl"}> A PROPOS </p>
-                  <h1 className={"font-extrabold ml-3 mt-3 text-4xl md:text-6xl"}>
+                  <h1 className={"font-extrabold ml-3 mt-3 text-4xl md:text-6xl font-title"}>
                       WEB-APPS, <br/>
                       SITES WEB, <br/>
                       SUR-MESURE.
@@ -49,19 +49,19 @@ export default function About() {
 
                   <div className={"flex flex-row gap-2 md:flex-col md:*:text-4xl md:gap-6 md:max-w-[90%] "}>
                       <button onClick={() => setActiveTab("expertise")}
-                              className={`clicanim font-bold text-sm py-2 px-4 border border-black shadow-small ${activeTab === "expertise" ? "bg-main text-white" : "bg-white"} md:py-4 `}>
+                              className={` font-title clicanim font-bold text-sm py-2 px-4 border border-black shadow-small ${activeTab === "expertise" ? "bg-main text-white" : "bg-white"} md:py-4 `}>
                           EXPERTISE
                       </button>
                       <button onClick={() => setActiveTab("background")}
-                              className={`clicanim font-bold py-2 px-3  text-sm border border-black shadow-small ${activeTab === "background" ? "bg-main text-white" : "bg-white"} md:py-4`}>
+                              className={`font-title clicanim font-bold py-2 px-3  text-sm border border-black shadow-small ${activeTab === "background" ? "bg-main text-white" : "bg-white"} md:py-4`}>
                           BACKGROUND
                       </button>
                       <button onClick={() => setActiveTab("workflows")}
-                              className={`clicanim font-bold py-2 px-3 text-sm border border-black shadow-small ${activeTab === "workflows" ? "bg-main text-white" : "bg-white"} md:py-4`}>
+                              className={`font-title clicanim font-bold py-2 px-3 text-sm border border-black shadow-small ${activeTab === "workflows" ? "bg-main text-white" : "bg-white"} md:py-4`}>
                           WORKFLOWS
                       </button>
                       {isDesktop && <Link href={"/contact"} className={"md:mt-auto"}>
-                          <button className={"bg-main border-3 border-black shadow-small mb-30 mt-10 text-white p-3 font-bold md:mt-auto md:mb-0 clicanim"}>
+                          <button className={"font-title bg-main border-3 border-black shadow-small mb-30 mt-10 text-white p-3 font-bold md:mt-auto md:mb-0 clicanim"}>
                               Construisons ensemble!
                           </button>
                       </Link>}
@@ -75,7 +75,7 @@ export default function About() {
               </div>
 
               {!isDesktop && <Link href={"/contact"}>
-                  <button className={"bg-main border-3 border-black shadow-small mb-30 mt-10 text-white p-3 font-bold clicanim"}>
+                  <button className={"font-title bg-main border-3 border-black shadow-small mb-30 mt-10 text-white p-3 font-bold clicanim"}>
                       Construisons ensemble!
                   </button>
               </Link>}

@@ -23,7 +23,7 @@ export default function ProcessDiv({number, title, description, arrow, down, lef
             className={"relative bg-white border-2 shadow-small"}>
             <div className={"relative ml-3"}>
                 <p className={"font-extrabold text-7xl opacity-10"}>{number}</p>
-                <p className={"absolute bottom-1 left-11 font-extrabold text-4xl"}>{title}</p>
+                <p className={"absolute bottom-1 left-11 font-extrabold text-4xl font-title"}>{title}</p>
             </div>
 
             <p className={"ml-3 mt-3 pb-3"}>{description}</p>

@@ -25,7 +25,7 @@ export default function SolutionDiv({icone, title, description, upTag, cta, dela
 
 
             <div className={"bg-main border-3 shadow-small w-fit p-2 m-3 mt-6 "}>{icone}</div>
-            <p className={"ml-3 font-extrabold text-2xl text-black md:text-4xl"}>{title}</p>
+            <p className={"ml-3 font-extrabold text-2xl text-black md:text-4xl font-title"}>{title}</p>
 
             <p className={"ml-3 mt-3 text-black opacity-50 text-sm md:text-xl font-semibold"}>{description}</p>
 
@@ -39,7 +39,7 @@ export default function SolutionDiv({icone, title, description, upTag, cta, dela
 
             <hr className={"ml-auto border-2 border-main w-60 opacity-50 mt-6 mr-3 md:w-80"}/>
             <Link href={"/contact"}>
-                <p className={"text-main opacity-50 text-right mr-3 mt-1 pb-3 md:text-2xl ctahover"}>{cta + " →"}</p>
+                <p className={"text-main opacity-50 text-right mr-3 mt-1 pb-3 md:text-2xl ctahover font-title"}>{cta + " →"}</p>
             </Link>
 
         </motion.div>

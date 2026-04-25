@@ -59,11 +59,11 @@ export default function Portfolio() {
         <main className={"bg-bg min-h-screen no-scrollbar"}>
             <PcNav/>
             <div className={" flex flex-col items-center md:ml-40 lg:ml-60 md:mb-60 lg:mb-20"}>
-                <p className={" self-start m-3 border-3 border-black shadow-big bg-main text-white text-sm font-bold p-2 w-fit md:text-2xl"}>
+                <p className={"font-title self-start m-3 border-3 border-black shadow-big bg-main text-white text-sm font-bold p-2 w-fit md:text-2xl"}>
                     PORTFOLIO
                 </p>
 
-                <h1 className={"self-start ml-3 text-4xl font-extrabold md:text-6xl"}>CREATIONS <br/> & PROJETS.</h1>
+                <h1 className={"font-title self-start ml-3 text-4xl font-extrabold md:text-6xl"}>CREATIONS <br/> & PROJETS.</h1>
                 <hr className={"border-main border-3 w-80 self-start ml-3 mt-3 md:w-100"}/>
                 <p className={"ml-3 mt-3 font-semibold w-85 self-start md:w-[80%] md:text-xl"}>
                     Chaque projet résoud un problème.

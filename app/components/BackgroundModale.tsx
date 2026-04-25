@@ -18,7 +18,7 @@ export default function BackgroundModale() {
             <div className={"flex flex-row items-center mb-3"}>
                 <div className={"bg-main p-2 border shadow-small"}><UserCog color="#ffffff" className={"md:w-20 md:h-20"}/></div>
 
-                <h1 className={"ml-4 text-white font-extrabold text-2xl md:text-6xl"}>TECHNICAL LEADER</h1>
+                <h1 className={"ml-4 text-white font-extrabold text-2xl md:text-6xl font-title"}>TECHNICAL LEADER</h1>
             </div>
 
             <div className={"border-3 shadow-small bg-white w-73 mb-5 *:ml-3 *:w-65 py-5 md:w-[80%] md:*:w-[90%] md:*:text-2xl md:mt-10 clicanim"}>

@@ -9,9 +9,9 @@ export default function contact() {
             <MobileNav/>
             <div className={"flex flex-col ml-6 gap-2 md:ml-35 lg:ml-60"}>
                 <div className={"shadow-small border-3 bg-main w-fit py-2 px-4 mt-6 md:text-2xl"}>
-                    <p className={"text-center text-white font-bold"}>CONTACT</p>
+                    <p className={"text-center text-white font-bold font-title"}>CONTACT</p>
                 </div>
-                <p className={"text-5xl font-extrabold mt-3 md:text-6xl"}>
+                <p className={"text-5xl font-extrabold mt-3 md:text-6xl font-title"}>
                     AVANCONS <br/>
                     ENSEMBLE.
                 </p>
