@@ -6,14 +6,14 @@ import {Lightbulb, Zap} from "lucide-react";
 
 export default function ProblemDiv() {
     return (
-        <div className={"flex flex-col items-center gap-6"}>
+        <div className={"flex flex-col items-center gap-6 md:flex-row md:flex-wrap"}>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
                 whileHover={{ x: 7, y: 10, boxShadow: "1px 1px 0px rgba(0,0,0,1)", transition: { duration: 0.1, ease: "easeOut" } } }
-                className={"bg-white border-3 shadow-big w-[90%] pb-3"}
+                className={"bg-white border-3 shadow-big w-[90%] pb-3 md:w-[30%] md:self-start md:ml-60 md:h-[320px]"}
             >
                 <div className={'flex gap-3 items-center bg-colerr p-3 '}>
                     <Zap height={40} width={40} color={"#000000"}/>
@@ -32,7 +32,7 @@ export default function ProblemDiv() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
                 whileHover={{ x: 7, y: 10, boxShadow: "1px 1px 0px rgba(0,0,0,1)", transition: { duration: 0.1, ease: "easeOut" } } }
-                className={"bg-white border-3 shadow-big w-[90%] pb-3"}
+                className={"bg-white border-3 shadow-big w-[90%] pb-3 md:w-[30%] md:self-start md:ml-60"}
             >
                 <div className={'flex gap-3 items-center bg-colsol p-3 '}>
                     <Lightbulb height={40} width={40} color={"#000000"}/>
@@ -45,16 +45,16 @@ export default function ProblemDiv() {
                 <p>✔️ <span className={"soldiv w-fit font-semibold"}>Portfolio intégré par CTA</span></p>
             </motion.div>
 
-            <div className={"flex flex-col gap-6 w-full items-center"}>
-                <div className={"w-[50%] flex flex-col items-center bg-black py-3"}>
+            <div className={"flex flex-col gap-6 w-full items-center md:flex-row md:flex-1 md:self-start md:ml-60 md:max-w-[83%] md:mt-10"}>
+                <div className={"w-[50%] flex flex-col items-center bg-black py-3 md:w-[30%]"}>
                     <h1 className={"text-white font-extrabold text-3xl italic"}>Moderne</h1>
                     <p className={"text-white font-bold text-xl"}>Design</p>
                 </div>
-                <div className={"w-[50%] flex flex-col items-center bg-black py-3"}>
+                <div className={"w-[50%] flex flex-col items-center bg-black py-3 md:w-[30%]"}>
                     <h1 className={"text-white font-extrabold text-3xl italic"}>Next.JS</h1>
                     <p className={"text-white font-bold text-xl"}>Stack principale</p>
                 </div>
-                <div className={"w-[50%] flex flex-col items-center bg-black py-3"}>
+                <div className={"w-[50%] flex flex-col items-center bg-black py-3 md:w-[30%]"}>
                     <h1 className={"text-white font-extrabold text-3xl italic"}>CTA</h1>
                     <p className={"text-white font-bold text-xl"}>Focus</p>
                 </div>

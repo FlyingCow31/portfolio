@@ -8,6 +8,8 @@ import ProblemDiv from "@/app/components/ResumeDiv";
 import Link from "next/link";
 import GalerieDiv from "@/app/components/GalerieDiv";
 import StackDiv from "@/app/components/StackDiv";
+import BackButton from "@/app/components/BackButton";
+import {useIsDesktop} from "@/app/hooks/useIsDesktop";
 
 
 const tags = ["FULLSTACK", "NEXT.JS", "DESIGN"];
@@ -16,18 +18,19 @@ const colors = ["","sec", "white" , "main"];
 
 export default function EpiPage() {
             const [activeTab, setActiveTab] = useState("resume");
+            const isDesktop = useIsDesktop();
     return (
-        <main className={"min-h-screen bg-bg flex flex-col items-center pb-15"}>
+        <main className={"min-h-screen bg-bg flex flex-col items-center pb-15 md:pb-0 overflow-x-hidden"}>
             <PcNav/>
             <MobileNav/>
-                {/*TODO: floating button to come back to projects*/}
+            <BackButton href={"/portfolio"} pc={isDesktop}/>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
-                    whileHover={{ x: 7, y: 10, boxShadow: "1px 1px 0px rgba(0,0,0,1)", transition: { duration: 0.1, ease: "easeOut" } } }
-                    className={"bg-white border-3 shadow-big w-[90%] my-10"}
+                    whileHover={{ x: 4, y: 6, boxShadow: "1px 1px 0px rgba(0,0,0,1)", transition: { duration: 0.1, ease: "easeOut" } } }
+                    className={`bg-white border-3 shadow-big w-[90%] my-10 ${isDesktop ? "md:w-[50%] md:self-start md:ml-60" : "mt-25"}`}
                 >
                     <div className={"flex gap-3 m-2"}>
                         {tags.map((tag, index) => {
@@ -63,12 +66,15 @@ export default function EpiPage() {
             {activeTab === "stack" && <StackDiv/>}
 
 
-            <div className={"bg-white border-t-3 p-6 w-full mt-6"}>
+            <div className={"bg-white border-t-3 p-6 w-full mt-6 md:ml-60"}>
                 <p className={" font-extrabold text-3xl"}>Ce projet vous intéresse?</p>
                 <Link href={"/contact"}>
                     <motion.button
                         whileHover={{ x: 4, y: 6, boxShadow: "1px 1px 0px rgba(0,0,0,1)", transition: { duration: 0.1, ease: "easeOut" } } }
-                        className={'bg-main border-black border-3 p-3 shadow-small mt-3 text-white'}>Parlons-en!</motion.button>
+                        className={'bg-main border-black border-3 p-3 shadow-small mt-3 text-white mb-3'}>Parlons-en!</motion.button>
+                </Link>
+                <Link href={"https://www.epistudios.fr"} >
+                    <p className={"ctahover"}>Découvrez le site web →</p>
                 </Link>
             </div>
         </main>

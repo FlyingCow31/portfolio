@@ -1,10 +1,15 @@
-
-
+"use client"
+import {motion} from "framer-motion"
 
 export default function StackDiv() {
     return (
-        <div className={"flex flex-col gap-6 w-[90%]"}>
-            <div className={"border-3 shadow-big bg-white w-full"}>
+        <div className={"flex flex-col gap-6 w-[90%] md:flex-row md:w-[80%] md:ml-45 *:pb-3"}>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className={"border-3 shadow-big bg-white w-full"}>
                 <h1 className={"bg-[#87CEEB] font-extrabold text-2xl p-3"}>Front-End</h1>
                 <p className={"titlecardproj underline decoration-[#87CEEB] decoration-3"}>Next.JS </p>
                 <p className={"desccardproj"}>Rapidité, facilité et lisibilité pour un projet Open-Source.</p>
@@ -12,8 +17,13 @@ export default function StackDiv() {
                 <p className={"desccardproj"}>Simplicité de code grâce aux componants et à sa syntaxe en TS.</p>
                 <p className={"titlecardproj underline decoration-[#87CEEB] decoration-3"}>Tailwind.CSS</p>
                 <p className={"desccardproj"}>Moderne, Tailwind nous permet d&#39;aller plus vite dans le code.</p>
-            </div>
-            <div className={"border-3 shadow-big bg-white w-full"}>
+            </motion.div>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className={"border-3 shadow-big bg-white w-full"}>
                 <h1 className={"bg-[#90EE90] font-extrabold text-2xl p-3"}>Back-End</h1>
                 <p className={"titlecardproj underline decoration-[#90EE90] decoration-3"}>Node.JS </p>
                 <p className={"desccardproj"}>Rester dans l&#39;environnement JS avec Node m&#39;a permi d&#39;être plus productif.</p>
@@ -21,8 +31,13 @@ export default function StackDiv() {
                 <p className={"desccardproj"}>text 2</p>
                 <p className={"titlecardproj underline decoration-[#90EE90] decoration-3"}>Title 3</p>
                 <p className={"desccardproj"}>Text 3</p>
-            </div>
-            <div className={"border-3 shadow-big bg-white w-full"}>
+            </motion.div>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className={"border-3 shadow-big bg-white w-full"}>
                 <h1 className={"bg-[#F4D738] font-extrabold text-2xl p-3"}>DevOps & design</h1>
                 <p className={"titlecardproj underline decoration-[#F4D738] decoration-3"}>Docker </p>
                 <p className={"desccardproj"}>text1</p>
@@ -30,7 +45,7 @@ export default function StackDiv() {
                 <p className={"desccardproj"}>text 2</p>
                 <p className={"titlecardproj underline decoration-[#F4D738] decoration-3"}>Title 3</p>
                 <p className={"desccardproj"}>Text 3</p>
-            </div>
+            </motion.div>
         </div>
     )
 }

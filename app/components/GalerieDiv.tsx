@@ -3,6 +3,8 @@ import Image from "next/image";
 import {useIsDesktop} from "@/app/hooks/useIsDesktop";
 import {useState} from "react";
 import {ChevronLeft, ChevronRight} from "lucide-react";
+import {motion} from "framer-motion"
+
 const galerie = [
     {
         src: "/epistudios/indexepi.png",
@@ -36,12 +38,17 @@ export default function GalerieDiv() {
         setCurrentIndex((prev) => (prev + 1) % galerie.length);
     }
     return (
-        <div>
-            <div className={"relative flex flex-col items-center"}>
+        <div className={'md:w-[70%]'}>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className={"relative flex flex-col items-center md:items-start md:ml-3"}>
                 {galerie.map((image, index) => {
                     if (index !== currentIndex) return null;
                     return (
-                        <div key={index} className={"relative w-[95%] h-[300px] shadow-small "}>
+                        <div key={index} className={"relative w-[95%] h-[300px] shadow-small"}>
                             <Image src={`${image.src}`} alt={`${image.alt}`} fill
                                    className="object-contain p-3 border-black border-3"/>
                         </div>
@@ -54,12 +61,17 @@ export default function GalerieDiv() {
                 <button onClick={rightArrow} className="opacity-25 hover:opacity-100 absolute top-1/2 right-2 z-10 bg-main p-2 border-2 border-black shadow-small text-white  md:hidden">
                     <ChevronRight />
                 </button>
-            </div>
-            <div className={"hidden md:flex flex-col items-center mt-3"}>
-                <div className={"md:flex flex-row gap-3 w-[95%] border-3 shadow-small py-3 bg-sec"}>
+            </motion.div>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                viewport={{ once: true }}
+                className={"hidden md:flex flex-col items-center mt-3 md:items-start md:ml-3"}>
+                <div className={"md:flex flex-row w-[95%] border-3 shadow-small py-3 bg-sec overflow-hidden flex-nowrap"}>
                 {galerie.map((image, index) => {
                     return (
-                        <div key={index} className={"relative w-[50%] h-[100px]"} onClick={() => setCurrentIndex(image.index - 1)}>
+                        <div key={index} style={{width: "calc(100% / 3)" }} className={"relative h-[100px] flex-shrink-0"} onClick={() => setCurrentIndex(image.index - 1)}>
                             <Image src={`${image.src}`} alt={`${image.alt}`} fill
                                    className="object-contain" />
                         </div>
@@ -67,8 +79,13 @@ export default function GalerieDiv() {
 
                 })}
                 </div>
-            </div>
-            <div className={"flex flex-col items-center mt-6"}>
+            </motion.div>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className={"flex flex-col items-center mt-6 md:items-start md:ml-3"}>
                 {galerie.map((image, index) => {
                     if (index !== currentIndex) return null;
                     return (
@@ -78,7 +95,7 @@ export default function GalerieDiv() {
                     )
 
                 })}
-            </div>
+            </motion.div>
         </div>
     )
 }
