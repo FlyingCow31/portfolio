@@ -38,7 +38,7 @@ export default function GalerieDiv() {
         setCurrentIndex((prev) => (prev + 1) % galerie.length);
     }
     return (
-        <div className={'md:w-[70%]'}>
+        <div className={'md:w-[70%] md:ml-50'}>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

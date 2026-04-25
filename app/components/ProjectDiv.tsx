@@ -19,7 +19,7 @@ interface ProjectDivProps {
 export default function ProjectDiv({studyCase, icone, type, title, description, tags, upTag, cta, href}: ProjectDivProps) {
     return (
         <Link href={href} className={`${studyCase ? "col-span-2" : ""}`}>
-        <div className={`relative ${studyCase ? "bg-main col-span-2" : "bg-bg"} border-3 shadow-small clicanim`}>
+        <div className={`relative ${studyCase ? "bg-main" : "bg-bg"} border-3 shadow-small clicanim`}>
             <p className={"font-bold opacity-50 text-white ml-3 mt-3 text-sm md:text-xl"}>{type}</p>
             <hr className={"border-2 border-white w-60 mt-1 opacity-50 ml-3"}/>
             <div className={"flex items-center"}>

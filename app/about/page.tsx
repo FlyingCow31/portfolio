@@ -19,7 +19,7 @@ export default function About() {
 
       <main className={"bg-bg min-h-screen "}>
           <PcNav/>
-          <div className={"overflow-x-hidden h-full flex flex-col items-center md:ml-60 md:items-start"}
+          <div className={"overflow-x-hidden h-full flex flex-col items-center md:ml-40 lg:ml-60 md:items-start"}
           >
 
               <motion.div
@@ -36,7 +36,7 @@ export default function About() {
                       SUR-MESURE.
                   </h1>
 
-                  <p className={"ml-3 mt-3 mb-3 w-75 font-semibold md:text-xl md:w-85"}>
+                  <p className={"ml-3 mt-3 mb-3 w-75 font-semibold md:text-xl md:w-60 lg:w-85"}>
                       J&#39;apporte une expertise à vos projets grâce à mon experience dans le
                   domaine du web. Mes workflows augmentés à l&#39;IA me permettent une rapidité tout en
                   conservant une fiabilité dans le code produit.
@@ -45,8 +45,9 @@ export default function About() {
                   <button className={"text-main font-bold w-fit block ml-auto mr-4 pb-5 mt-2 cursor-pointer md:col-start-2 md:text-3xl md:mt-10 ctahover"}>Découvrir mes projets →</button>
               </motion.div>
 
-              <div className={"md:flex md:gap-10 md:w-[90%] md:pb-30"}>
-                  <div className={"flex flex-row gap-2 md:flex-col md:*:text-4xl md:gap-6 "}>
+              <div className={"md:flex md:flex-col lg:flex-row md:gap-10 md:w-[100%] lg:w-[90%] md:pb-30 "}>
+
+                  <div className={"flex flex-row gap-2 md:flex-col md:*:text-4xl md:gap-6 md:max-w-[90%] "}>
                       <button onClick={() => setActiveTab("expertise")}
                               className={`clicanim font-bold text-sm py-2 px-4 border border-black shadow-small ${activeTab === "expertise" ? "bg-main text-white" : "bg-white"} md:py-4 `}>
                           EXPERTISE
@@ -66,7 +67,7 @@ export default function About() {
                       </Link>}
                   </div>
 
-                  <div className={"mt-10 pt-3 bg-bg h-fit w-80 border-3 border-black shadow-small flex flex-col items-center md:w-[100%] md:mt-0 mx-auto"}>
+                  <div className={"mt-10 pt-3 bg-bg h-fit w-80 border-3 border-black shadow-small flex flex-col items-center md:w-[90%] lg:w-[100%] md:mt-0 mx-auto min-w-0"}>
                       {activeTab === 'expertise' && <ExpertiseModale/>}
                       {activeTab === 'background' && <BackgroundModale/>}
                       {activeTab === 'workflows' && <WorkflowsModale/>}

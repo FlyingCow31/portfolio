@@ -7,7 +7,7 @@ export default function contact() {
         <main className="bg-bg min-h-screen">
             <PcNav/>
             <MobileNav/>
-            <div className={"flex flex-col ml-6 gap-2 md:ml-60"}>
+            <div className={"flex flex-col ml-6 gap-2 md:ml-35 lg:ml-60"}>
                 <div className={"shadow-small border-3 bg-main w-fit py-2 px-4 mt-6 md:text-2xl"}>
                     <p className={"text-center text-white font-bold"}>CONTACT</p>
                 </div>

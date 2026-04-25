@@ -19,7 +19,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
-                  className="bg-white border-3 border-black *:ml-3 w-85 md:w-[50%] md:h-[60%] shadow-big pt-3 pb-10 mt-10 mx-auto">
+                  className="bg-white border-3 border-black *:ml-3 w-85 md:w-[70%] md:ml-50 lg:w-[50%] md:h-[60%] shadow-big pt-3 pb-10 mt-10 mx-auto">
                   <p className="opacity-30 font-bold text-xl">Développeur Web Freelance</p>
                   <hr className="border border-black w-70 opacity-30 mt-2"/>
                   <h1 className="font-extrabold text-5xl text-black mt-3 md:text-7xl">GAEL <br/> TOURNIER</h1>

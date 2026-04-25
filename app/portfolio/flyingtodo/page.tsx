@@ -15,7 +15,7 @@ export default function TodoPage() {
             <MobileNav/>
             <PcNav/>
             <BackButton href={"/portfolio"} pc={isDesktop}/>
-            <div className={'bg-white border-3 shadow-big w-[90%] mx-auto mt-25 pb-6 mb-10 md:ml-40 md:w-[80%] md:mt-10'}>
+            <div className={'bg-white border-3 shadow-big w-[90%] mx-auto mt-25 pb-6 mb-10 md:ml-35 lg:ml-40 md:w-[80%] md:mt-10'}>
                 <div className={"m-3 w-fit bg-sec p-2 border-3 shadow-small"}>
                     <Image src={"/iconflyingtodovraie.ico"} alt={"Icone FlyingTodo"} height={50} width={50}/>
                 </div>
@@ -23,7 +23,7 @@ export default function TodoPage() {
                 <h1 className={"text-3xl font-extrabold m-3 md:text-4xl "}>FlyingTodo</h1>
                 <p className={'ml-3 w-70 text-xl md:w-full md:text-2xl'}>Logiciel de gestion de projet avec Todo List intégrée, avec un focus sur la simplicité.</p>
 
-                <div className={"relative h-[200px] md:h-[600px] w-[90%] md:w-[70%] mx-auto border-3 shadow-small my-3"}>
+                <div className={"relative h-[200px] lg:h-[600px] md:h-[400px] w-[90%] lg:w-[70%] mx-auto border-3 shadow-small my-3"}>
                     <Image src={"/flyingtodoscreen.png"} alt={"Screenshot de l'application"} fill/>
                 </div>
 

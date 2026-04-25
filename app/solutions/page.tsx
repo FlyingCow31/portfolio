@@ -77,15 +77,15 @@ const processes = [
 
 export default function Solutions() {
     return (
-        <main className={"bg-bg min-h-screen items-center md:flex-row md:overflow-x-hidden"}>
+        <main className={"bg-bg min-h-screen items-center md:flex-row md:overflow-x-hidden w-full"}>
             <PcNav/>
-            <div className={"flex flex-col items-center md:block     md:ml-60 md:w-[90%] pb-20"}>
+            <div className={"flex flex-col items-center md:block md:ml-40 md:max-w-150 lg:max-w-none lg:ml-60 lg:w-[90%] pb-20"}>
                 <p className={"self-start my-3 border-3 border-black shadow-big bg-main text-white text-sm font-bold p-2 w-fit md:text-3xl"}>
                     Services
                 </p>
                 <h1 className={"self-start text-5xl font-extrabold mb-10 md:text-7xl"}>MES <br/> SOLUTIONS</h1>
 
-                <div className={"w-85 flex flex-col gap-6 md:w-[90%]"}>
+                <div className={"w-85 flex flex-col gap-6 md:w-[100%] lg:max-w-[90%]"}>
                     {solutions.map((solutions, index) => {
                         return (
                             <SolutionDiv delay={index * 0.1} key={index} {...solutions}/>
@@ -93,7 +93,7 @@ export default function Solutions() {
                     })}
                 </div>
 
-                <div className={"flex flex-col items-center mt-6 md:flex-row md:gap-15 md:max-w-[90%] md:justify-center md:mt-15"}>
+                <div className={"flex flex-col items-center mt-6 md:flex-row md:gap-15 md:max-w-[100%] lg:max-w-[90%] md:justify-center md:mt-15"}>
                     <Link href={"/portfolio"} className={"ctahover"}>
                         <p className={"font-extrabold text-xl"}>PROJETS CONCRETS →</p>
                         <hr className={" border-3 w-50"}/>
@@ -109,7 +109,7 @@ export default function Solutions() {
                     <hr className={"flex-1 border-2 w-auto md:flex-none md:w-[73%]"}/>
                 </div>
 
-                <div className={"w-85 flex flex-col gap-10 mt-3 md:mt-6 md:grid md:grid-cols-2 md:w-[90%]"}>
+                <div className={"w-85 flex flex-col gap-10 mt-3 md:mt-6 md:grid md:grid-cols-2 lg:w-[90%] md:w-[100%] "}>
                     {processes.map((proc, index) => {
                         return (
                             <ProcessDiv delay={index * 0.1} key={index} {...proc}/>
@@ -122,7 +122,7 @@ export default function Solutions() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6}}
                     viewport={{ once: true }}
-                    className={"bg-main border-3 shadow-big w-85 flex flex-col items-center py-3 mt-6 md:w-[90%] "}>
+                    className={"bg-main border-3 shadow-big w-85 flex flex-col items-center py-3 mt-6 lg:w-[90%] md:w-[100%] "}>
                     <h1 className={"self-start ml-3 font-extrabold text-4xl text-white md:text-6xl"}>UN <br/> PROBLEME <br/> A RESOUDRE?</h1>
                     <p className={"self-start ml-3 mt-3 text-xl w-70 font-semibold mb-3 md:w-[80%]"}>Discutons de vos besoins pendant
                         30 minutes. C’est sans engagement et votre

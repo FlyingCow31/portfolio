@@ -46,7 +46,7 @@ export default function ExpertiseModale() {
 
 
     return(
-        <div className={"relative md:flex-row md:flex md:gap-6 md:items-stretch "}>
+        <div className={"relative md:flex-col lg:flex-row md:flex md:gap-6 md:items-stretch "}>
             {expertise.map((item, Index) => {
                 if (!isDesktop && Index !== currentIndex) return null;
                 return (

@@ -3,7 +3,7 @@ import {motion} from "framer-motion"
 
 export default function StackDiv() {
     return (
-        <div className={"flex flex-col gap-6 w-[90%] md:flex-row md:w-[80%] md:ml-45 *:pb-3"}>
+        <div className={"flex flex-col gap-6 w-[90%] md:flex-row md:w-[75%] lg:w-[80%] md:ml-40 lg:ml-45 *:pb-3"}>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

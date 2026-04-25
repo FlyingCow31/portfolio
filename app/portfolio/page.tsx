@@ -58,7 +58,7 @@ export default function Portfolio() {
     return (
         <main className={"bg-bg min-h-screen no-scrollbar"}>
             <PcNav/>
-            <div className={" flex flex-col items-center md:ml-60 md:mb-20"}>
+            <div className={" flex flex-col items-center md:ml-40 lg:ml-60 md:mb-60 lg:mb-20"}>
                 <p className={" self-start m-3 border-3 border-black shadow-big bg-main text-white text-sm font-bold p-2 w-fit md:text-2xl"}>
                     PORTFOLIO
                 </p>
@@ -72,14 +72,14 @@ export default function Portfolio() {
                     WebApps, Sites Webs, Designs...
                 </p>
 
-                {/*TODO: Add a modal when clicking on project */}
+
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6}}
                     viewport={{ once: true }}
-                    className={"relative bg-white w-83 border-3 shadow-big py-4 px-3 flex flex-col gap-2 self-start mt-3 ml-3 md:grid md:grid-cols-2 md:w-[80%] md:gap-6"}>
+                    className={"relative bg-white w-83 border-3 shadow-big py-4 px-3 flex flex-col gap-2 self-start mt-3 ml-3  md:flex md:flex-col lg:grid  lg:grid-cols-2  md:w-[90%] lg:w-[80%] md:gap-6"}>
                     {projects.map((project, index) => {
                         if (!isDesktop && index !== currentIndex) return null;
                         return (
