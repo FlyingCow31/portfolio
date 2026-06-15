@@ -12,6 +12,8 @@
     --color-hover-main: #bb4aee;
     --color-sec: #E2A1FF;
     --border: 50px solid #000000;
+    --color-testblack: #0a090c;
+    --color-testwhite: #f7f4f9;
 }
 
 @theme inline {
