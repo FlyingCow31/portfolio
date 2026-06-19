@@ -6,7 +6,7 @@ import ProjectDiv from "@/app/components/ProjectDiv";
 import {useState} from "react";
 import {ChevronLeft, ChevronRight} from "lucide-react";
 import { useIsDesktop } from "@/app/hooks/useIsDesktop";
-import PcNav from "@/app/components/PcNav";
+import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import {motion} from "framer-motion"
 
@@ -57,7 +57,7 @@ export default function Portfolio() {
 
     return (
         <main className={"bg-bg min-h-screen no-scrollbar"}>
-            <PcNav/>
+            <Navbar/>
             <div className={" flex flex-col items-center md:ml-40 lg:ml-60 md:mb-60 lg:mb-20"}>
                 <p className={"font-title self-start m-3 border-3 border-black shadow-big bg-main text-white text-sm font-bold p-2 w-fit md:text-2xl"}>
                     PORTFOLIO

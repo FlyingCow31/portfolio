@@ -40,7 +40,20 @@
 }
 
 
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 @layer utilities {
+    .float-anim {
+        animation: float 3s ease-in-out infinite;
+    }
+
     .hover-btn-dark {
         transition: all 150ms ease;
     }
@@ -95,4 +108,5 @@
         margin-left: 1.5rem;
         opacity: 50;
     }
+
 }

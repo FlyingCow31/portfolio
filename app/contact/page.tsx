@@ -1,11 +1,11 @@
 import MobileNav from "@/app/components/MobileNav";
 import Contactbtn from "@/app/components/Contactbtn";
-import PcNav from "@/app/components/PcNav";
+import Navbar from "@/app/components/Navbar";
 
 export default function contact() {
     return (
         <main className="bg-bg min-h-screen">
-            <PcNav/>
+            <Navbar/>
             <MobileNav/>
             <div className={"flex flex-col ml-6 gap-2 md:ml-35 lg:ml-60"}>
                 <div className={"shadow-small border-3 bg-sec w-fit py-2 px-4 mt-6 md:text-2xl"}>

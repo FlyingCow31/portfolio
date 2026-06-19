@@ -5,7 +5,7 @@ import {AppWindow, Glasses, LayoutTemplate} from "lucide-react";
 import SolutionDiv from "@/app/components/SolutionsDiv";
 import ProcessDiv from "@/app/components/ProcessDiv";
 import Link from "next/link";
-import PcNav from "@/app/components/PcNav";
+import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import {motion} from "framer-motion"
 
@@ -78,7 +78,7 @@ const processes = [
 export default function Solutions() {
     return (
         <main className={"bg-bg min-h-screen items-center md:flex-row md:overflow-x-hidden w-full"}>
-            <PcNav/>
+            <Navbar/>
             <div className={"flex flex-col items-center md:block md:ml-40 md:max-w-150 lg:max-w-none lg:ml-60 lg:w-[90%] pb-20"}>
                 <p className={"ml-3 font-title self-start my-3 border-3 border-black shadow-big bg-main text-white text-sm font-bold p-2 w-fit md:text-3xl"}>
                     Services

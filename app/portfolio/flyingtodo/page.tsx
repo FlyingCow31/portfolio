@@ -1,6 +1,6 @@
 "use client"
 import MobileNav from "@/app/components/MobileNav";
-import PcNav from "@/app/components/PcNav";
+import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import Image from "next/image";
 import BackButton from "@/app/components/BackButton";
@@ -13,7 +13,7 @@ export default function TodoPage() {
     return (
         <main className={"bg-bg min-h-screen flex flex-col items-star pb-10 md:pb-0"}>
             <MobileNav/>
-            <PcNav/>
+            <Navbar/>
             <BackButton href={"/portfolio"} pc={isDesktop}/>
             <div className={'bg-white border-3 shadow-big w-[90%] mx-auto mt-25 pb-6 mb-10 md:ml-35 lg:ml-40 md:w-[80%] md:mt-10'}>
                 <div className={"m-3 w-fit bg-sec p-2 border-3 shadow-small"}>

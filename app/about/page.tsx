@@ -6,7 +6,7 @@ import Link from "next/link";
 import BackgroundModale from "@/app/components/BackgroundModale";
 import WorkflowsModale from "@/app/components/WorkflowsModale";
 import { useIsDesktop } from "@/app/hooks/useIsDesktop";
-import PcNav from "@/app/components/PcNav";
+import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import {motion} from "framer-motion"
 
@@ -18,7 +18,7 @@ export default function About() {
     return (
 
       <main className={"bg-bg min-h-screen "}>
-          <PcNav/>
+          <Navbar/>
           <div className={"overflow-x-hidden h-full flex flex-col items-center md:ml-40 lg:ml-60 md:items-start"}
           >
 

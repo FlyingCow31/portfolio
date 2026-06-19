@@ -1,5 +1,5 @@
 "use client"
-import PcNav from "@/app/components/PcNav";
+import Navbar from "@/app/components/Navbar";
 import MobileNav from "@/app/components/MobileNav";
 import {motion} from "framer-motion"
 import {useState} from "react";
@@ -21,7 +21,7 @@ export default function EpiPage() {
             const isDesktop = useIsDesktop();
     return (
         <main className={"min-h-screen bg-bg flex flex-col items-center pb-15 md:pb-0 overflow-x-hidden"}>
-            <PcNav/>
+            <Navbar/>
             <MobileNav/>
             <BackButton href={"/portfolio"} pc={isDesktop}/>
                 <motion.div
