@@ -1,143 +1,123 @@
-"use client"
-import MobileNav from "@/app/components/MobileNav";
-import React from "react";
-import {AppWindow, Glasses, LayoutTemplate} from "lucide-react";
-import SolutionDiv from "@/app/components/SolutionsDiv";
-import ProcessDiv from "@/app/components/ProcessDiv";
-import Link from "next/link";
-import Navbar from "@/app/components/Navbar";
-import Footer from "@/app/components/Footer";
-import {motion} from "framer-motion"
-
-
+import { AppWindow, Glasses, LayoutTemplate } from "lucide-react"
+import SolutionDiv from "@/app/components/SolutionsDiv"
+import ProcessDiv from "@/app/components/ProcessDiv"
+import Link from "next/link"
+import { Navbar, MobileNav } from "@/app/components/Navbar"
+import Footer from "@/app/components/Footer"
+import { MainTitle, SectionHR } from "../components/textcomponents"
+import { CTAContact, CTAFinPage, CTAProjets } from "../components/AnimDivs"
 
 const solutions = [
-    {
-        icone: <LayoutTemplate color="#ffffff" height={35} width={35}/>,
-        title: "DEVELOPPEMENT WEB",
-        description: "Création de sites webs E-commerce, vitrines, ou tout autre besoin!\n" +
-            "Création d’une image de marque et d’un site dont vos clients se\n" +
-            "souviendront!",
-        upTag: [{title:"FULLSTACK", left: true}, {title:"DE A à Z"}],
-        cta: "Discuter de votre site web"
-    },
-    {
-        icone: <AppWindow color="#ffffff" height={35} width={35} />,
-        title: "SOFTWARES SUR-MESURE",
-        description: "Applications web, MVP, SAAS, Outils... Votre idée fonctionnelle et  \n" +
-            "vivante en quelques semaines grâce à des technologies modernes.",
-        upTag: [ {title:"SAAS", left: true}, {title:"MVP"}],
-        cta: "Discuter de votre app"
-    },
-    {
-        icone: <Glasses color="#ffffff" height={35} width={35} />,
-        title: "CHEF DE PROJET",
-        description: "Accompagnement dans la gestion de vos équipes, de la direction\n" +
-            "de vos projets et dans la création. Comptes, légal et recrutements\n" +
-            "inclus !",
-        upTag: [{title:"RECRUTEMENTS", left: true}, {title:"GESTION"}],
-        cta: "Discuter de votre site web"
-    }
+     {
+          icone: <LayoutTemplate color="#ffffff" height={35} width={35} />,
+          title: "DEVELOPPEMENT WEB",
+          description:
+               "Sites E-commerce, vitrines, ou tout autre besoin.\n" +
+               "Création d'une image de marque et d'un site dont vos clients se\n" +
+               "souviendront!",
+          upTag: [{ title: "FULLSTACK" }],
+          cta: "Discuter de votre site",
+     },
+     {
+          icone: <AppWindow color="#ffffff" height={35} width={35} />,
+          title: "SOFTWARES SUR-MESURE",
+          description:
+               "Applications web, MVP, SAAS, Outils... Votre idée fonctionnelle et  \n" +
+               "vivante en quelques semaines grâce à des technologies modernes.",
+          upTag: [{ title: "SAAS/MVP" }],
+          cta: "Discuter de votre app",
+     },
+     {
+          icone: <Glasses color="#ffffff" height={35} width={35} />,
+          title: "CHEF DE PROJET",
+          description:
+               "Accompagnement dans la gestion de vos équipes, la direction\n" +
+               "de vos projets et la création. Comptes, légal et recrutements\n" +
+               "inclus!",
+          upTag: [{ title: "GESTION" }],
+          cta: "Discuter de votre projet",
+     },
 ]
 
 const processes = [
-    {
-        number: "01",
-        title: "Besoins",
-        description: "Un appel rapide pour déterminer vos besoins. \n" +
-            "Pas de Cahier des charges ni d’étude de cas \n" +
-            "interminable: 30 minutes et je fais tout le travail ! ",
-        arrow: true
-    },
-    {
-        number: "02",
-        title: "Proposition",
-        description: "Proposition et devis clair avec toutes les spécificités techniques, prix et délai.\n" +
-            "Aucune surprise, tout est  clair. Proposition en moins de 24h. ",
-        arrow: true,
-        down: true
-    },
-    {
-        number: "03",
-        title: "Création",
-        description: "Phase de création du projet. Bilan et demos \n" +
-            "régulières, vous suivez et validez la construction\n" +
-            "de votre projet. ",
-        arrow: true,
-        left: true
-    },
-    {
-        number: "04",
-        title: "Livraison",
-        description: "Déploiement inclus, votre projet est livré autonome avec une documentation claire pour que votre projet fasse sens et vous appartienne\n" +
-            "complétement."
-    }
+     {
+          number: "01",
+          title: "Besoins",
+          description:
+               "Un appel rapide pour déterminer vos besoins. \n" +
+               "Pas de Cahier des charges ni d'étude de cas \n" +
+               "interminable: 30 minutes et je fais tout le travail ! ",
+     },
+     {
+          number: "02",
+          title: "Proposition",
+          description:
+               "Proposition et devis clair avec toutes les spécificités techniques, prix et délai.\n" +
+               "Aucune surprise, tout est  clair. Proposition en moins de 24h. ",
+     },
+     {
+          number: "03",
+          title: "Création",
+          description:
+               "Phase de création du projet. Bilan et demos \n" +
+               "régulières, vous suivez et validez la construction\n" +
+               "de votre projet. ",
+     },
+     {
+          number: "04",
+          title: "Livraison",
+          description:
+               "Déploiement inclus, votre projet est livré autonome avec une documentation claire pour que votre projet fasse sens et vous appartienne\n" +
+               "complétement.",
+     },
 ]
 
-
 export default function Solutions() {
-    return (
-        <main className={"bg-bg min-h-screen items-center md:flex-row md:overflow-x-hidden w-full"}>
-            <Navbar/>
-            <div className={"flex flex-col items-center md:block md:ml-40 md:max-w-150 lg:max-w-none lg:ml-60 lg:w-[90%] pb-20"}>
-                <p className={"ml-3 font-title self-start my-3 border-3 border-black shadow-big bg-main text-white text-sm font-bold p-2 w-fit md:text-3xl"}>
-                    Services
-                </p>
-                <h1 className={"self-start text-5xl font-extrabold mb-10 md:text-7xl font-title ml-3"}>MES <br/> SOLUTIONS</h1>
+     return (
+          <div className={"h-screen md:flex"}>
+               <Navbar />
 
-                <div className={"w-85 flex flex-col gap-6 md:w-[100%] lg:max-w-[90%]"}>
-                    {solutions.map((solutions, index) => {
-                        return (
-                            <SolutionDiv delay={index * 0.1} key={index} {...solutions}/>
-                        )
-                    })}
-                </div>
+               <main className="bg-bg flex flex-col md:flex-1 overflow-y-auto md:pl-6">
+                    <MainTitle text="CE QUE JE PROPOSE" title="SOLUTIONS." />
+                    <h1 className="text-justify text-xl font-semibold pb-10 m-3 lg:text-3xl lg:max-w-[80%]">
+                         Trois offres, un objectif: passer de l'idée au concret. Site web, software ou direction de
+                         projet, je prends tout en charge de A à Z.
+                    </h1>
 
-                <div className={"flex flex-col items-center mt-6 md:flex-row md:gap-15 md:max-w-[100%] lg:max-w-[90%] md:justify-center md:mt-15"}>
-                    <Link href={"/portfolio"} className={"ctahover"}>
-                        <p className={"font-extrabold text-xl"}>PROJETS CONCRETS →</p>
-                        <hr className={" border-3 w-50"}/>
-                    </Link>
-                    <Link href={"/contact"} className={"ctahover opacity-40"}>
-                        <p className={"font-extrabold text-sm mt-2 md:text-xl"}>CONTACTEZ-MOI →</p>
-                        <hr className={" border-2 w-30 md:w-43"}/>
-                    </Link>
-                </div>
+                    <SectionHR number="01" text="MES OFFRES" />
 
-                <div className={"flex gap-5 items-center mt-12"}>
-                    <p className={"font-extrabold md:text-4xl"}>ET APRES ?</p>
-                    <hr className={"flex-1 border-2 w-auto md:flex-none md:w-[73%]"}/>
-                </div>
+                    <div className={"flex flex-col gap-6 items-center my-12 lg:flex-row lg:w-[90%] lg:self-center"}>
+                         {solutions.map((solutions, index) => {
+                              return <SolutionDiv delay={index * 0.1} key={index} {...solutions} />
+                         })}
+                    </div>
 
-                <div className={"w-85 flex flex-col gap-10 mt-3 md:mt-6 md:grid md:grid-cols-2 lg:w-[90%] md:w-[100%] "}>
-                    {processes.map((proc, index) => {
-                        return (
-                            <ProcessDiv delay={index * 0.1} key={index} {...proc}/>
-                        )
-                    })}
-                </div>
+                    <SectionHR number="02" text="ET APRÈS ?" />
 
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6}}
-                    viewport={{ once: true }}
-                    className={"bg-main border-3 shadow-big w-85 flex flex-col items-center py-3 mt-6 lg:w-[90%] md:w-[100%] "}>
-                    <h1 className={"self-start ml-3 font-extrabold text-4xl text-white md:text-6xl"}>UN <br/> PROBLEME <br/> A RESOUDRE?</h1>
-                    <p className={"self-start ml-3 mt-3 text-xl w-70 font-semibold mb-3 md:w-[80%]"}>Discutons de vos besoins pendant
-                        30 minutes. C’est sans engagement et votre
-                        projet gagnera une vision concrète;
-                        Pas un devis vide de sens.</p>
-                    <Link href={"/contact"}>
-                        <button className={"font-title bg-white font-bold border-3 shadow-small p-2 w-75  hover-btn-dark"}>
-                            DISCUTONS DE VOTRE PROJET →
-                        </button>
-                    </Link>
-                </motion.div>
+                    <div
+                         className={
+                              "flex flex-col gap-10 my-12 items-center lg:grid lg:grid-cols-2 lg:w-[90%] lg:self-center"
+                         }
+                    >
+                         {processes.map((proc, index) => {
+                              return <ProcessDiv delay={index * 0.1} key={index} {...proc} />
+                         })}
+                    </div>
 
-            </div>
-            <Footer />
-            <MobileNav/>
-        </main>
-    )
+                    <SectionHR number="03" text="DÉCOUVRIR" />
+
+                    <div className=" flex flex-col gap-6 my-12 items-center lg:flex-row lg:w-[90%] lg:self-center">
+                         <CTAProjets />
+                         <CTAContact />
+                    </div>
+
+                    <div className="mb-40 flex flex-col items-center md:mb-20">
+                         <CTAFinPage />
+                    </div>
+
+                    <MobileNav />
+                    <Footer classname="md:-ml-3" />
+               </main>
+          </div>
+     )
 }
