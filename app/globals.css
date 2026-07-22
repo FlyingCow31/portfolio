@@ -49,6 +49,15 @@
      }
 }
 
+@keyframes marq {
+     0% {
+          transform: translateX(0);
+     }
+     100% {
+          transform: translateX(-50%);
+     }
+}
+
 @layer utilities {
      .float-anim {
           animation: float 3s ease-in-out infinite;
@@ -107,5 +116,32 @@
      .desccardproj {
           margin-left: 1.5rem;
           opacity: 50;
+     }
+
+     /* Slider anim */
+     .marquee {
+          overflow: hidden;
+          border: 3px solid #000000;
+          background-color: #000000;
+          padding: 10px 0px;
+          width: 100%;
+     }
+     .marquee-track {
+          display: flex;
+          width: max-content;
+          animation: marq 18s linear infinite;
+     }
+
+     .marquee-track p {
+          margin: 0;
+          white-space: nowrap;
+          font-family: var(--font-public-sans), sans-serif;
+          font-weight: 900;
+          font-size: 26px;
+          color: #ffffff;
+          letter-spacing: 1px;
+     }
+     .marquee:hover .marquee-track {
+          animation-play-state: paused;
      }
 }
