@@ -112,7 +112,7 @@ export default function Solutions() {
                     </div>
 
                     <div className="mb-40 flex flex-col items-center md:mb-20">
-                         <CTAFinPage />
+                         <CTAFinPage text="PRÊT À AVANÇER ?" ctatext="DISCUTONS DE VOTRE PROJET" />
                     </div>
 
                     <MobileNav />

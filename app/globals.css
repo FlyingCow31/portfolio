@@ -144,4 +144,15 @@
      .marquee:hover .marquee-track {
           animation-play-state: paused;
      }
+
+     .casestudyborder {
+          border-right: #000000 2px solid;
+     }
+
+     @media (max-width: 768px) {
+          .casestudyborder {
+               border-right: none;
+               border-bottom: #000000 2px solid;
+          }
+     }
 }

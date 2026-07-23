@@ -1,0 +1,129 @@
+import { Lightbulb, Zap } from "lucide-react"
+import Image from "next/image"
+
+interface ProjectProps {
+     type: string
+     title: string
+     desc: string
+     tags: string[]
+}
+interface ProblemedivProps {
+     challenge?: React.ReactNode // Formater comme ça: <>Texte, <span>texte</span>.</>
+     solution?: React.ReactNode
+}
+interface StatsProps {
+     Main: string
+     Sec: string
+}
+interface GalerieProps {
+     image: string
+     title: string
+     desc: string
+}
+interface StackCardProps {
+     title: string
+     items: stackItem[]
+     color: string
+}
+interface stackItem {
+     title: string
+     desc: string
+}
+
+export function HeroProjet({ type, title, desc, tags }: ProjectProps) {
+     return (
+          <div className="border-3 shadow-big bg-main text-white w-[90%] p-6 border-black">
+               <p className="text-2xl opacity-30">Case Study - {type}</p>
+               <hr className="opacity-30 w-70 mb-6 mt-2 border-2" />
+               <h2 className="font-black text-4xl mb-3">{title}</h2>
+               <h1 className="text-xl mb-6">{desc}</h1>
+               <div className="flex gap-3 flew-wrap">
+                    {tags.map((tag, index) => {
+                         return (
+                              <div
+                                   key={index}
+                                   className={`${index < 1 ? "bg-sec" : "bg-white"} text-black font-semibold px-3 border-2 shadow-small w-fit`}
+                              >
+                                   <p>{tag}</p>
+                              </div>
+                         )
+                    })}
+               </div>
+          </div>
+     )
+}
+
+export function ChallengeDiv({ challenge }: Pick<ProblemedivProps, "challenge">) {
+     return (
+          <div className="border-2 shadow-big flex flex-col gap-0 text-black">
+               <div className="bg-colerr  text-3xl font-bold border-b-2 p-3 flex gap-3 items-center">
+                    <Zap size={40} color="#000000" />
+                    <h2>Le Challenge</h2>
+               </div>
+               <div className="bg-white p-3 text-xl ">
+                    <p>{challenge}</p>
+               </div>
+          </div>
+     )
+}
+export function SolutionDiv({ solution }: Pick<ProblemedivProps, "solution">) {
+     return (
+          <div className="border-2 shadow-big flex flex-col gap-0 text-black">
+               <div className="bg-colsol  text-2xl font-bold border-b-2 p-3">
+                    <Zap size={40} color="#000000" />
+                    <h2>La Solution</h2>
+               </div>
+               <div className="bg-white p-3 text-xl ">
+                    <p>{solution}</p>
+               </div>
+          </div>
+     )
+}
+
+export function StatsDiv({ Main, Sec }: StatsProps) {
+     return (
+          <div className="w-full bg-black flex flex-col items-center text-white">
+               <h2 className="italic text-2xl">{Main}</h2>
+               <p className="opacity-50">{Sec}</p>
+          </div>
+     )
+}
+
+export function GalerieView({ image, title, desc }: GalerieProps) {
+     return (
+          <div className="flex flex-col gap-0 border-3 shadow-big">
+               <div className="casestudyborder bg-bg p-3 flex flex-col items-center">
+                    <div className="border-2 shadow-small">
+                         <Image height={1000} width={1000} alt={title} src={image} />
+                    </div>
+               </div>
+               <div className="p-3 bg-white">
+                    <h2 className="text-2xl font-semibold">{title}</h2>
+                    <hr className="border-2 border-main w-40 my-3" />
+                    <p className="text-xl">{desc}</p>
+               </div>
+          </div>
+     )
+}
+
+export function StackCard({ title, items, color }: StackCardProps) {
+     return (
+          <div className="border-2 shadow-small">
+               <div className={`bg-[${color}] p-4 border-b-2 text-3xl font-bold `}>{title}</div>
+               <div className="p-4 bg-white">
+                    {items.map((item, index) => {
+                         return (
+                              <div key={index} className="text-black">
+                                   <h2
+                                        className={`font-semibold underline decoration-[${color}] decoration-3 text-2xl`}
+                                   >
+                                        {item.title}
+                                   </h2>
+                                   <p className="opacity-50 text-xl">{item.desc}</p>
+                              </div>
+                         )
+                    })}
+               </div>
+          </div>
+     )
+}

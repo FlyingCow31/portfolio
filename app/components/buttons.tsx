@@ -29,3 +29,13 @@ export function ButtonCTA({ text, color, href, textcol, classname }: Props) {
           </Link>
      )
 }
+
+export default function BackButton() {
+     return (
+          <Link href={`/portfolio`}>
+               <div className="w-fit bg-white px-4 py-2 border-2 shadow-small clicanim m-6 text-2xl font-semibold">
+                    <p>{"← Projets"}</p>
+               </div>
+          </Link>
+     )
+}

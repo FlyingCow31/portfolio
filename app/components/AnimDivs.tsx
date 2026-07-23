@@ -5,6 +5,11 @@ import Link from "next/link"
 import { LiaBriefcaseSolid } from "react-icons/lia"
 import { PiChat } from "react-icons/pi"
 
+interface CTAFinPageProps {
+     text: string
+     ctatext: string
+}
+
 export function CTAProjets() {
      return (
           <Link href={"/portfolio"} className="block w-[90%]">
@@ -72,10 +77,10 @@ export function CTAContact() {
      )
 }
 
-export function CTAFinPage() {
+export function CTAFinPage({ text, ctatext }: CTAFinPageProps) {
      return (
           <div className="bg-sec p-3 border-3 shadow-big flex flex-col gap-6 w-[90%]">
-               <h2 className="text-3xl font-black lg:text-6xl lg:m-6 lg:mb-0">PRÊT À AVANÇER ?</h2>
+               <h2 className="text-3xl font-black lg:text-6xl lg:m-6 lg:mb-0">{text}</h2>
                <Link href={"/contact"}>
                     <motion.div
                          whileHover={{
@@ -86,7 +91,7 @@ export function CTAFinPage() {
                          }}
                          className="shadow-small border-2 bg-main p-3 lg:w-fit lg:m-6 lg:mt-0"
                     >
-                         <p className="text-white font-black text-l lg:text-3xl ">DISCUTONS DE VOTRE PROJET →</p>
+                         <p className="text-white font-black text-l lg:text-3xl ">{ctatext} →</p>
                     </motion.div>
                </Link>
           </div>

@@ -29,8 +29,8 @@ export function SectionHR({ number, text }: HRProps) {
      return (
           <div className="flex items-center gap-3 ml-3">
                <p className="text-white font-black bg-black p-1 px-2 text-xl lg:text-4xl">{number}</p>
-               <h2 className="w-fit font-black text-xl md:text-4xl lg:text-6xl">{text}</h2>
-               <hr className="border-2 border-black w-50 md:w-70 lg:w-[70%] lg:ml-3" />
+               <h2 className="w-fit font-black text-xl md:text-4xl lg:text-6xl whitespace-nowrap">{text}</h2>
+               <hr className="border-2 border-black w-50 md:w-70 lg:w-[70%] lg:ml-3 max-w-[60%]" />
           </div>
      )
 }
@@ -41,5 +41,13 @@ export function BoxStats({ bigText, smallText, color, textCol = "black" }: BoxPr
                <h2 className="text-4xl font-black">{bigText}</h2>
                <p>{smallText}</p>
           </div>
+     )
+}
+
+export function TitleDivProject({ text }: { text: string }) {
+     return (
+          <h2 className="underline decoration-3 decoration-main underline-offset-7 text-3xl font-semibold mb-6">
+               {text}
+          </h2>
      )
 }
