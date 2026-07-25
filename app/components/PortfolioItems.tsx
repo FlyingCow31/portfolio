@@ -72,8 +72,8 @@ export function ProjectDiv({
      iconalt = `Icone du projet ${title}`,
 }: ProjectProps) {
      return (
-          <div className="bg-white p-5 relative border-2 border-black text-main shadow-small lg:p-8 clicanim">
-               <div className="absolute -top-5 right-5 bg-main shadow-small px-3 w-fit border-2 border-black text-white lg:text-4xl">
+          <div className="bg-white p-5 relative border-2 border-black text-main shadow-small lg:p-8 clicanim flex-1 lg:basis-[calc(50%-12px)]">
+               <div className="absolute -top-5 right-5 bg-main shadow-small px-3 py-1 w-fit border-2 border-black text-white lg:text-4xl">
                     <p className="font-bold">NEW</p>
                </div>
                <div className="flex gap-3 lg:gap-6">
@@ -99,7 +99,7 @@ export function ProjectDiv({
                          return (
                               <div
                                    key={index}
-                                   className="bg-sec text-black border shadow-small px-3 font-semibold text-xl lg:text-2xl"
+                                   className="bg-sec text-black border shadow-small px-3 py-1 font-semibold text-xl lg:text-2xl"
                               >
                                    <p>{tag}</p>
                               </div>

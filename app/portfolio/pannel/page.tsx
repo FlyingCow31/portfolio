@@ -15,11 +15,10 @@ export default function EpiPage() {
                     <BackButton />
                     <div className="flex flex-col items-center">
                          <HeroProject
-                              type="Software"
-                              scale="Projet Personnel"
-                              title="FLYINGTODO"
-                              desc="Logiciel de gestion de projet avec Todo List intégrée, avec un focus sur la simplicité."
-                              icon="iconflyingtodovraie.ico"
+                              type="Site Web"
+                              scale="Projet Professionnel"
+                              title="PANNEL GAELTOURNIER.DEV"
+                              desc="Pannel de gestion de commande pour que mes clients puissent suivre l'avancée de leur commande plus facilement."
                          />
                     </div>
 
@@ -27,10 +26,10 @@ export default function EpiPage() {
                          <TitleDivProject text="APERÇU" />
                          <div className="flex justify-center">
                               <Image
-                                   src={"/flyingtodoscreen.png"}
+                                   src={"/pannelscreen.png"}
                                    width={840}
                                    height={840}
-                                   alt={"Page d'accueil de l'application FlyingTodo"}
+                                   alt={"Page d'accueil du site web de gestion de commandes"}
                                    priority
                                    className="border-3 border-black shadow-small"
                               />
@@ -40,8 +39,8 @@ export default function EpiPage() {
                     <div className="flex flex-col bg-sec border-b-3 p-6">
                          <TitleDivProject text="FEATURES" />
                          <FeatureDiv
-                              title="La simplicité avant tout"
-                              desc="La feature principale est la simplicité: le but de cette application est d'avoir le moins de friction possible entre l'ouverture et la création de TODO. Stockage en local grâce à une DB orientée web. Intégration de la prise de note, ainsi que d'outils tels que les tags pour organiser ses tâches et ses projets plus efficacement."
+                              title="Authentification & Permissions"
+                              desc="Ce panel est entièrement géré par un backend en Node.JS qui authentifie les users, leur procure des permissions et charge leurs infos. Un compte administrateur a accès à toutes les commandes, peut rajouter et supprimer des documents et ajouter/supprimer des comptes. Usage de Vercel Blob et de Neon DB pour le stockage, cryptage des données et mots de passes (jamais stockés en clair)."
                          />
                     </div>
 
@@ -49,8 +48,8 @@ export default function EpiPage() {
                          <TitleDivProject text="LA STACK" />
                          <TechnoDiv
                               title="Technologies"
-                              desc="Interface en Raw JS/HTML/CSS; Electron pour un build simple et accessible sur windows; Dexie.JS pour une DB orientée Web, simple à découvrir et fiable."
-                              tags={["ELECTRON", "JAVASCRIPT", "DEXIE.JS"]}
+                              desc="Frontend en Next.JS, React et Typescript. Bases de données utilisant Neon (base de donnée PostgreSQL) et Vercel Blob pour le stockage de documents. Sécurité gérée par jsonwebtoken (& Jose), hash et validation avec bcryptjs et zod, et rate limiting avec redis. Utilisation des cookies pour le token."
+                              tags={["REACT.JS", "POSTGRESQL", "REDIS"]}
                          />
                     </div>
 
@@ -59,7 +58,7 @@ export default function EpiPage() {
 
                          <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-12">
                               <ButtonCTA text="Parlons-en" color="white" href="contact" textcol="black" />
-                              <Link href={"https://github.com/FlyingCow31/FlyingToDo"}>
+                              <Link href={"https://github.com/FlyingCow31/portfolioclient"}>
                                    <p className="text-white text-2xl font-bold ctahover">Découvrez le Projet →</p>
                               </Link>
                          </div>

@@ -1,8 +1,10 @@
 import { Navbar, MobileNav } from "@/app/components/Navbar"
 import Footer from "@/app/components/Footer"
 import { MainTitle, SectionHR } from "../components/textcomponents"
-import { CTAFinPage } from "../components/AnimDivs"
+import { CTAFinPage, CTAVotreProjet } from "../components/AnimDivs"
 import { CaseStudy, ProjectDiv } from "../components/PortfolioItems"
+import { desc } from "framer-motion/client"
+import { Tags } from "lucide-react"
 
 const caseStudies = [
      {
@@ -23,9 +25,17 @@ const projects = [
           desc: "Notion a trop de features, on s'y perd. J'ai créé une application simple pour organiser mes projets et ma journée.",
           tags: ["ELECTRON", "JAVASCRIPT", "DEPLOIEMENT"],
           ctatitle: "Découvrir le projet",
-          ctahref: "/contact",
+          ctahref: "/portfolio/flyingtodo",
           iconhref: "/iconflyingtodovraie.ico",
           iconalt: "Icone d'une main tenant une checkmark symbolisant une todo.",
+     },
+     {
+          type: "Site Web",
+          title: "ESPACE MEMBRE",
+          desc: "Pannel de gestion de commande pour mon activité de freelance. Le client peut suivre l'avancée de sa commande et retrouver ses documents (devis, facture, etc.) en deux clics.",
+          tags: ["FULLSTACK", "NEXT.JS", "AUTH", "PERMISSIONS"],
+          ctatitle: "Découvrir le site",
+          ctahref: "/portfolio/pannel",
      },
 ]
 
@@ -49,10 +59,11 @@ export default function Portfolio() {
                     </div>
 
                     <SectionHR number="02" text="AUTRES PROJETS" />
-                    <div className=" my-12 w-[90%] self-center">
+                    <div className=" my-12 w-[90%] self-center flex flex-col gap-6 lg:flex-row items-stretch lg:flex-wrap">
                          {projects.map((proj, index) => {
                               return <ProjectDiv key={index} {...proj} />
                          })}
+                         <CTAVotreProjet />
                     </div>
                     <div className="flex flex-col items-center md:mb-12">
                          <CTAFinPage text="ON TRAVAILLE ENSEMBLE ?" ctatext="DÉMARRER UN PROJET" />

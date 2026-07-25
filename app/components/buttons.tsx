@@ -24,7 +24,7 @@ export function ButtonCTA({ text, color, href, textcol, classname }: Props) {
                     transition={{ duration: 0.6 }}
                     className={`bg-${color} ${classname} py-2 px-4 shadow-small border-black border-2 w-fit`}
                >
-                    <p className={`text-${textcol} font-semibold`}>{text + "→"}</p>
+                    <p className={`text-${textcol} font-semibold lg:text-2xl`}>{text + "→"}</p>
                </motion.div>
           </Link>
      )

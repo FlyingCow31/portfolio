@@ -1,129 +1,71 @@
-import { Lightbulb, Zap } from "lucide-react"
 import Image from "next/image"
 
-interface ProjectProps {
+interface HeroProps {
      type: string
+     scale: string
+     title: string
+     desc: string
+     icon?: string
+}
+
+interface FeaturesProps {
+     title: string
+     desc: string
+}
+interface TechnoProps {
      title: string
      desc: string
      tags: string[]
 }
-interface ProblemedivProps {
-     challenge?: React.ReactNode // Formater comme ça: <>Texte, <span>texte</span>.</>
-     solution?: React.ReactNode
-}
-interface StatsProps {
-     Main: string
-     Sec: string
-}
-interface GalerieProps {
-     image: string
-     title: string
-     desc: string
-}
-interface StackCardProps {
-     title: string
-     items: stackItem[]
-     color: string
-}
-interface stackItem {
-     title: string
-     desc: string
+
+export function HeroProject({ type, scale, title, desc, icon }: HeroProps) {
+     return (
+          <div className="flex flex-col w-[90%] self-center p-4 border-3 text-black shadow-big bg-white lg:w-[50%] lg:mr-auto lg:ml-24 lg:flex-row lg:items-center lg:gap-4">
+               {icon && (
+                    <div className="w-fit h-fit bg-sec border-2 shadow-small p-3 mb-3">
+                         <Image src={`/${icon}`} height={80} width={80} alt={title} />
+                    </div>
+               )}
+               <div>
+                    <p className="opacity-70 text-xl lg:text-2xl">
+                         {type} - {scale}
+                    </p>
+                    <h1 className="text-4xl font-bold lg:text-4xl">{title}</h1>
+                    <p className="text-2xl lg:text-3xl">{desc}</p>
+               </div>
+          </div>
+     )
 }
 
-export function HeroProjet({ type, title, desc, tags }: ProjectProps) {
+export function FeatureDiv({ title, desc }: FeaturesProps) {
      return (
-          <div className="border-3 shadow-big bg-main text-white w-[90%] p-6 border-black lg:w-[50%] lg:mr-auto lg:ml-24">
-               <p className="text-2xl opacity-30">Case Study - {type}</p>
-               <hr className="opacity-30 w-70 mb-6 mt-2 border-2" />
-               <h2 className="font-black text-4xl mb-3 lg:text-6xl">{title}</h2>
-               <h1 className="text-xl mb-6 lg:text-2xl lg:font-semibold">{desc}</h1>
-               <div className="flex gap-3 flew-wrap">
+          <div className="border-3 shadow-big lg:w-[60%]">
+               <div className="bg-bg border-b-3 p-3">
+                    <p className="text-2xl font-bold lg:text-4xl">{title}</p>
+               </div>
+               <div className="bg-white p-3 text-xl lg:text-2xl">{desc}</div>
+          </div>
+     )
+}
+
+export function TechnoDiv({ title, desc, tags }: TechnoProps) {
+     return (
+          <>
+               <div className="border-3 shadow-big mb-6 lg:w-[60%]">
+                    <div className="bg-bg border-b-3 p-3">
+                         <p className="text-2xl font-bold lg:text-4xl">{title}</p>
+                    </div>
+                    <div className="bg-white p-3 text-xl lg:text-2xl">{desc}</div>
+               </div>
+               <div className="flex gap-3">
                     {tags.map((tag, index) => {
                          return (
-                              <div
-                                   key={index}
-                                   className={`${index < 1 ? "bg-sec" : "bg-white"} text-black font-semibold px-3 border-2 shadow-small w-fit lg:text-xl`}
-                              >
+                              <div key={index} className="border-2 shadow-small px-4 py-1 lg:text-2xl font-bold">
                                    <p>{tag}</p>
                               </div>
                          )
                     })}
                </div>
-          </div>
-     )
-}
-
-export function ChallengeDiv({ challenge }: Pick<ProblemedivProps, "challenge">) {
-     return (
-          <div className="border-2 shadow-big flex flex-col gap-0 text-black lg:flex-1">
-               <div className="bg-colerr  text-3xl font-bold border-b-2 p-3 flex gap-3 items-center">
-                    <Zap size={40} color="#000000" />
-                    <h2>Le Challenge</h2>
-               </div>
-               <div className="bg-white p-3 text-xl ">
-                    <p>{challenge}</p>
-               </div>
-          </div>
-     )
-}
-export function SolutionDiv({ solution }: Pick<ProblemedivProps, "solution">) {
-     return (
-          <div className="border-2 shadow-big flex flex-col gap-0 text-black lg:flex-1">
-               <div className="bg-colsol text-3xl font-bold border-b-2 p-3 flex gap-3 items-center">
-                    <Lightbulb size={40} color="#000000" />
-                    <h2>La Solution</h2>
-               </div>
-               <div className="bg-white p-3 text-xl ">
-                    <p>{solution}</p>
-               </div>
-          </div>
-     )
-}
-
-export function StatsDiv({ Main, Sec }: StatsProps) {
-     return (
-          <div className="w-full bg-black flex flex-col items-center text-white py-2">
-               <h2 className="italic text-2xl">{Main}</h2>
-               <p className="opacity-50">{Sec}</p>
-          </div>
-     )
-}
-
-export function GalerieView({ image, title, desc }: GalerieProps) {
-     return (
-          <div className="flex flex-col gap-0 border-4 shadow-big lg:flex-row">
-               <div className="casestudyborder bg-bg p-3 flex flex-col items-center lg:flex-1">
-                    <div className="border-2 shadow-small">
-                         <Image height={1000} width={1000} alt={title} src={image} />
-                    </div>
-               </div>
-               <div className="p-4 bg-white lg:flex flex-col lg:justify-center lg:flex-1">
-                    <h2 className="text-2xl font-semibold lg:text-5xl lg:font-bold">{title}</h2>
-                    <hr className="border-2 border-main w-40 my-3" />
-                    <p className="text-xl lg:text-2xl lg:font-semibold">{desc}</p>
-               </div>
-          </div>
-     )
-}
-
-export function StackCard({ title, items, color }: StackCardProps) {
-     return (
-          <div className="border-2 shadow-small flex-1">
-               <div className={`bg-[${color}] p-4 border-b-2 text-3xl font-bold lg:text-4xl`}>{title}</div>
-               <div className="p-4 bg-white">
-                    {items.map((item, index) => {
-                         return (
-                              <div key={index} className="text-black">
-                                   <h2
-                                        className={`font-semibold underline decoration-[${color}] decoration-3 text-2xl lg:text-3xl`}
-                                   >
-                                        {item.title}
-                                   </h2>
-                                   <p className="opacity-50 text-xl lg:text-2xl">{item.desc}</p>
-                              </div>
-                         )
-                    })}
-               </div>
-          </div>
+          </>
      )
 }

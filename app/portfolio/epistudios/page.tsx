@@ -1,11 +1,9 @@
 import BackButton, { ButtonCTA } from "@/app/components/buttons"
 import Footer from "@/app/components/Footer"
 import { MobileNav, Navbar } from "@/app/components/Navbar"
-import { ChallengeDiv, GalerieView, HeroProjet, SolutionDiv, StackCard, StatsDiv } from "@/app/components/ProjectPage"
+import { ChallengeDiv, GalerieView, HeroProjet, SolutionDiv, StackCard, StatsDiv } from "@/app/components/CaseStudyPage"
 import { TitleDivProject } from "@/app/components/textcomponents"
-import { desc } from "framer-motion/client"
 import Link from "next/link"
-import { title } from "process"
 
 const challenge = (
      <>

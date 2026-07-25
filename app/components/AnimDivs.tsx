@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { Plus } from "lucide-react"
 import Link from "next/link"
 import { LiaBriefcaseSolid } from "react-icons/lia"
 import { PiChat } from "react-icons/pi"
@@ -95,5 +96,32 @@ export function CTAFinPage({ text, ctatext }: CTAFinPageProps) {
                     </motion.div>
                </Link>
           </div>
+     )
+}
+
+export function CTAVotreProjet() {
+     return (
+          <Link href={"/contact"} className="flex-1 lg:h-fit">
+               <motion.div
+                    whileHover={{
+                         x: 4,
+                         y: 6,
+                         boxShadow: "1px 1px 0px rgb(151, 35, 201)",
+                         transition: { duration: 0.2, ease: "easeOut" },
+                    }}
+                    className="shadow-secbig bg-black text-white p-6 lg:h-full"
+               >
+                    <Plus color="#ffffff" size={70} />
+                    <h2 className="text-4xl font-black my-3 lg:text-6xl">
+                         VOTRE <br />
+                         PROJET ICI?
+                    </h2>
+                    <p className="opacity-70 text-xl mb-3 lg:text-4xl">
+                         Le prochain case study, c'est peut-être le vôtre. Discutons-en.
+                    </p>
+
+                    <p className="text-sec text-2xl font-bold ctahover lg:text-5xl">Parlons-en →</p>
+               </motion.div>
+          </Link>
      )
 }
