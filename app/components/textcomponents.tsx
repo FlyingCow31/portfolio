@@ -46,7 +46,7 @@ export function BoxStats({ bigText, smallText, color, textCol = "black" }: BoxPr
 
 export function TitleDivProject({ text }: { text: string }) {
      return (
-          <h2 className="underline decoration-3 decoration-main underline-offset-7 text-3xl font-semibold mb-6">
+          <h2 className="underline decoration-3 decoration-main underline-offset-7 text-3xl font-semibold mb-6 lg:text-4xl">
                {text}
           </h2>
      )

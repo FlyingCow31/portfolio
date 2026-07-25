@@ -117,11 +117,11 @@ export default function EpiPage() {
 
                     <div className="bg-white border-y-3 p-6 mt-12">
                          <TitleDivProject text="LE PROJET" />
-                         <div className="flex flex-col gap-6">
+                         <div className="flex flex-col gap-6 lg:flex-row">
                               <ChallengeDiv challenge={challenge} />
                               <SolutionDiv solution={solution} />
                          </div>
-                         <div className="grid grid-cols-2 gap-3 my-6">
+                         <div className="grid grid-cols-2 gap-3 my-6 lg:flex">
                               <StatsDiv Main="Moderne" Sec="Design" />
                               <StatsDiv Main="Next.JS" Sec="Stack principale" />
                               <StatsDiv Main="CTA" Sec="Focus" />
@@ -140,15 +140,15 @@ export default function EpiPage() {
 
                     <div className="flex flex-col bg-white border-b-3 p-6">
                          <TitleDivProject text="LA STACK" />
-                         <div className="flex flex-col gap-6">
+                         <div className="flex flex-col gap-6 lg:flex-row">
                               {stackCards.map((card, index) => {
                                    return <StackCard key={index} {...card} />
                               })}
                          </div>
                     </div>
 
-                    <div className="flex flex-col gap-3 p-3 bg-main pb-40">
-                         <h2 className="text-white text-5xl font-black">Ce projet vous intéresse?</h2>
+                    <div className="flex flex-col gap-3 p-3 bg-main pb-40 md:p-6 md:gap-6">
+                         <h2 className="text-white text-5xl font-black lg:text-6xl">Ce projet vous intéresse?</h2>
 
                          <ButtonCTA text="Parlons-en" color="white" href="contact" textcol="black" />
                          <Link href={"https://epistudio.fr"}>
