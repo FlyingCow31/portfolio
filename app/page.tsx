@@ -25,7 +25,7 @@ const projets = [
           desc: "Panel de gestion et de suivi de commandes pour mon activité professionnelle.",
           tag: "NEW",
           href: "/portfolio/pannel",
-          color: "sec",
+          color: "bg",
      },
 ]
 
@@ -74,7 +74,7 @@ export default function Home() {
                          <MdKeyboardDoubleArrowDown size={100} className={"float-anim"} />
                     </div>
 
-                    <div className={"bg-white mt-20 border-t-6 pb-16 flex flex-col"}>
+                    <div className={"bg-white pt-10 border-t-6 pb-16 flex flex-col"}>
                          <h2
                               className={
                                    "ml-6 text-2xl font-bold py-3 underline decoration-5 underline-offset-9 decoration-main"

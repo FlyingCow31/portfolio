@@ -23,7 +23,7 @@ export function MainTitle({ text, title }: Props) {
                <div className="bg-black px-6 py-1 w-fit lg:self-end" style={{ transform: "rotate(-3deg)" }}>
                     <p className="text-white font-bold text-xl lg:text-4xl">{text}</p>
                </div>
-               <h2 className={"text-6xl font-black font-title lg:text-9xl"}>{title}</h2>
+               <h2 className={"text-5xl font-black font-title lg:text-9xl"}>{title}</h2>
           </div>
      )
 }

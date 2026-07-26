@@ -27,7 +27,7 @@ export function CaseStudy({ type, title, desc, tags, ctatitle, ctahref, image }:
           <div className="flex flex-col relative shadow-click-big lg:flex-row">
                <div className="bg-main text-white p-4 casestudyborder lg:w-[60%] lg:p-8 ">
                     <p className="font-bold opacity-50 text-2xl lg:text-4xl">{type}</p>
-                    <h2 className="font-black text-5xl lg:text-8xl">{title}</h2>
+                    <h2 className="font-black text-4xl lg:text-8xl">{title}</h2>
                     <p className="font-light opacity-70 text-xl my-3 lg:text-3xl lg:whitespace-break-spaces">{desc}</p>
                     <div className="flex flex-wrap gap-3">
                          {tags.map((tag, index) => {
@@ -78,7 +78,7 @@ export function ProjectDiv({
                </div>
                <div className="flex gap-3 lg:gap-6">
                     {iconhref && (
-                         <div className="p-3 border-2 shadow-small border-black bg-sec">
+                         <div className="p-3 border-2 shadow-small border-black bg-sec w-16 lg:w-32 h-16 lg:h-32 flex items-center justify-center shrink-0">
                               <Image
                                    src={iconhref}
                                    alt={iconalt}
@@ -90,7 +90,7 @@ export function ProjectDiv({
                     )}
                     <div>
                          <p className="text-2xl opacity-30 font-bold lg:text-4xl">{type}</p>
-                         <h2 className="text-4xl font-black lg:text-6xl">{title}</h2>
+                         <h2 className="text-3xl font-black lg:text-6xl">{title}</h2>
                     </div>
                </div>
                <p className="font-light text-xl my-3 lg:text-3xl lg:my-6">{desc}</p>
