@@ -22,7 +22,7 @@ export function IndexProjectDiv({ title, type, desc, tag, icon, color = "main", 
                     </div>
                     <p className="opacity-60 text-lg mb-6">{desc}</p>
                     <p className="ml-auto text-2xl font-bold opacity-60 ctahover">Découvrir →</p>
-                    <p className="absolute -top-5 right-10 border-2 bg-white shadow-small px-3 py-1 text-black">
+                    <p className="absolute -top-5 right-10 border-2 bg-white shadow-small px-3 py-1 text-black font-bold">
                          {tag}
                     </p>
                </div>

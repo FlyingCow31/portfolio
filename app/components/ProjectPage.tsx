@@ -77,7 +77,7 @@ export function TechnoDiv({ title, desc, tags }: TechnoProps) {
                     </div>
                     <div className="bg-white p-3 text-xl lg:text-2xl">{desc}</div>
                </motion.div>
-               <div className="flex gap-3">
+               <div className="flex gap-3 flex-wrap">
                     {tags.map((tag, index) => {
                          return (
                               <motion.div

@@ -59,7 +59,7 @@ export default function Portfolio() {
                     </div>
 
                     <SectionHR number="02" text="AUTRES PROJETS" />
-                    <div className=" my-12 w-[90%] self-center flex flex-col gap-6 lg:flex-row items-stretch lg:flex-wrap">
+                    <div className=" my-12 w-[90%] self-center flex flex-col gap-10 lg:gap-6 lg:flex-row items-stretch lg:flex-wrap">
                          {projects.map((proj, index) => {
                               return <ProjectDiv key={index} {...proj} />
                          })}
