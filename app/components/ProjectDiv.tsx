@@ -1,48 +1,31 @@
-import React from "react";
-import Link from "next/link";
+import Link from "next/link"
+import Image from "next/image"
+import { MdArrowOutward } from "react-icons/md"
 
-
-interface ProjectDivProps {
-    studyCase: boolean,
-    icone: React.ReactNode,
-    type: string,
-    title: string,
-    description: string,
-    tags: string[],
-    upTag: string,
-    cta: string,
-    href: string
+interface IndexProjetProps {
+     title: string
+     type: string
+     desc: string
+     tag: string
+     icon?: string
+     color?: string
+     href: string
 }
-
-
-
-export default function ProjectDiv({studyCase, icone, type, title, description, tags, upTag, cta, href}: ProjectDivProps) {
-    return (
-        <Link href={href} className={`${studyCase ? "col-span-2" : ""}`}>
-        <div className={`relative ${studyCase ? "bg-main" : "bg-bg"} border-3 shadow-small clicanim`}>
-            <p className={"font-bold opacity-50 text-white ml-3 mt-3 text-sm md:text-xl"}>{type}</p>
-            <hr className={"border-2 border-white w-60 mt-1 opacity-50 ml-3"}/>
-            <div className={"flex items-center"}>
-                {icone}
-                <p className={"ml-3 font-extrabold text-2xl text-white md:text-4xl font-title"}>{title}</p>
-            </div>
-
-            <p className={"ml-3 mt-3 text-white opacity-50 text-sm md:text-lg"}>{description}</p>
-
-            <div className={"flex flex-wrap ml-3 gap-3 pt-3"}>
-                {tags.map((tag) => {
-                    return (
-                        <div key={tag} className={"border-2 shadow-small bg-white w-fit py-[0.5] px-3"}>
-                            <p className={"font-title font-extrabold md:text-lg"}>{tag}</p>
-                        </div>
-                    )
-                })}
-            </div>
-
-            <div className={"font-extrabold absolute -top-4 right-5 bg-white border-3 shadow-small w-fit px-3 "}><p className={"md:text-lg font-title"}>{upTag}</p></div>
-            <p className={"text-white opacity-50 text-right mr-3 mt-6 pb-3 md:text-2xl ctahover font-title"}>{cta}</p>
-        </div>
-        </Link>
-    )
-
+export function IndexProjectDiv({ title, type, desc, tag, icon, color = "main", href }: IndexProjetProps) {
+     return (
+          <Link href={`${href}`} className="flex-1">
+               <div className={`relative bg-${color} shadow-click-small flex flex-col p-4 text-white h-full`}>
+                    <p className="text-white text-xl font-bold opacity-60">{type}</p>
+                    <div className="flex gap-3 items-center">
+                         {icon && <Image src={icon} alt={title} height={50} width={50} />}
+                         <h2 className="font-black text-4xl">{title}</h2>
+                    </div>
+                    <p className="opacity-60 text-lg mb-6">{desc}</p>
+                    <p className="ml-auto text-2xl font-bold opacity-60 ctahover">Découvrir →</p>
+                    <p className="absolute -top-5 right-10 border-2 bg-white shadow-small px-3 py-1 text-black">
+                         {tag}
+                    </p>
+               </div>
+          </Link>
+     )
 }

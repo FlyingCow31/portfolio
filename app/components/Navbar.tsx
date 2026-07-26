@@ -1,0 +1,148 @@
+"use client"
+import { usePathname } from "next/navigation"
+import { Mail, MoveUpRight } from "lucide-react"
+import Link from "next/link"
+
+import { LiaBriefcaseSolid } from "react-icons/lia"
+import { RiListCheck3 } from "react-icons/ri"
+import { GoHome } from "react-icons/go"
+import { PiPersonArmsSpreadLight, PiPersonLight } from "react-icons/pi"
+import { TfiEmail } from "react-icons/tfi"
+
+export function Navbar() {
+     const pathname = usePathname()
+     return (
+          <nav className="hidden md:flex h-screen border-red border-3 shadow-[11px_0px_0px_rgba(0,0,0,1)] flex-col justify-start items-center w-30 bg-white z-10">
+               <Link href={"/"}>
+                    <div
+                         className={`p-3 px-4 border-3 ${pathname === "/" ? "bg-main shadow-small border-black " : "border-transparent nav-hover"} flex flex-col items-center mt-3`}
+                    >
+                         <GoHome color={pathname === "/" ? "#ffffff" : "#000000"} size={40} />
+                         <p className={`${pathname === "/" ? "text-white" : "text-black"} font-bold`}>Accueil</p>
+                    </div>
+               </Link>
+
+               <Link href={"/solutions"}>
+                    <div
+                         className={`w-full flex flex-col items-center p-3 border-3 ${pathname === "/solutions" ? "bg-main shadow-small border-black " : "border-transparent nav-hover"} mt-3`}
+                    >
+                         <RiListCheck3 color={pathname === "/solutions" ? "#ffffff" : "#000000"} size={40} />
+                         <p className={`${pathname === "/solutions" ? "text-white" : "text-black"} font-bold`}>
+                              Services
+                         </p>
+                    </div>
+               </Link>
+
+               <Link href={"/about"}>
+                    <div
+                         className={`w-full flex flex-col items-center p-3 border-3 ${pathname === "/about" ? "bg-main shadow-small border-black " : "border-transparent nav-hover"} mt-3`}
+                    >
+                         {pathname === "/about" ? (
+                              <div className={"flex flex-col items-center"}>
+                                   <PiPersonArmsSpreadLight color={"#ffffff"} size={40} />
+                                   <p className={`${pathname === "/about" ? "text-white" : "text-black"} font-bold`}>
+                                        A Propos
+                                   </p>
+                              </div>
+                         ) : (
+                              <div className={"flex flex-col items-center"}>
+                                   <PiPersonLight color={"#000000"} size={40} />
+                                   <p className={`${pathname === "/about" ? "text-white" : "text-black"} font-bold`}>
+                                        A Propos
+                                   </p>
+                              </div>
+                         )}
+                    </div>
+               </Link>
+
+               <Link href={"/portfolio"}>
+                    <div
+                         className={`w-full flex flex-col items-center p-3 border-3 ${pathname.startsWith("/portfolio") ? "bg-main shadow-small border-black " : "border-transparent nav-hover"} mt-3`}
+                    >
+                         <LiaBriefcaseSolid
+                              color={pathname.startsWith("/portfolio") ? "#ffffff" : "#000000"}
+                              size={40}
+                         />
+                         <p className={`${pathname.startsWith("/portfolio") ? "text-white" : "text-black"} font-bold`}>
+                              Portfolio
+                         </p>
+                    </div>
+               </Link>
+
+               <Link href={"/contact"} className={"w-full flex flex-col items-center justify-center mt-auto mb-3"}>
+                    <div
+                         className={
+                              "bg-main w-[90%] p-6 flex flex-col justify-center items-center border-3 shadow-click-small"
+                         }
+                    >
+                         <p className={"text-white text-sm font-bold text-center mb-6"}>DISCUTONS DE VOTRE PROJET</p>
+                         <div className={"bg-white p-4 shadow-small border-3"}>
+                              <MoveUpRight height={40} width={40} />
+                         </div>
+                    </div>
+               </Link>
+          </nav>
+     )
+}
+
+// TODO: faire les animations de la navbar
+export function MobileNav() {
+     const pathname = usePathname()
+     return (
+          <nav
+               className="fixed bottom-0 w-full flex flex-row justify-around  bg-white p-4
+      shadow-[0px_-10px_0px_rgba(0,0,0,1)] z-100 md:hidden"
+          >
+               <Link href={"/"}>
+                    <div
+                         className={`p-3 px-4 border-3 ${pathname === "/" ? "bg-main shadow-small border-black " : "border-transparent nav-hover"} flex flex-col items-center mt-3`}
+                    >
+                         <GoHome color={pathname === "/" ? "#ffffff" : "#000000"} size={30} />
+                    </div>
+               </Link>
+
+               <Link href={"/solutions"}>
+                    <div
+                         className={`w-full flex flex-col items-center p-3 border-3 ${pathname === "/solutions" ? "bg-main shadow-small border-black " : "border-transparent nav-hover"} mt-3`}
+                    >
+                         <RiListCheck3 color={pathname === "/solutions" ? "#ffffff" : "#000000"} size={30} />
+                    </div>
+               </Link>
+
+               <Link href={"/about"}>
+                    <div
+                         className={`w-full flex flex-col items-center p-3 border-3 ${pathname === "/about" ? "bg-main shadow-small border-black " : "border-transparent nav-hover"} mt-3`}
+                    >
+                         {pathname === "/about" ? (
+                              <div className={"flex flex-col items-center"}>
+                                   <PiPersonArmsSpreadLight color={"#ffffff"} size={30} />
+                              </div>
+                         ) : (
+                              <div className={"flex flex-col items-center"}>
+                                   <PiPersonLight color={"#000000"} size={30} />
+                              </div>
+                         )}
+                    </div>
+               </Link>
+
+               <Link href={"/portfolio"}>
+                    <div
+                         className={`w-full flex flex-col items-center p-3 border-3 ${pathname.startsWith("/portfolio") ? "bg-main shadow-small border-black " : "border-transparent nav-hover"} mt-3`}
+                    >
+                         <LiaBriefcaseSolid
+                              color={pathname.startsWith("/portfolio") ? "#ffffff" : "#000000"}
+                              size={30}
+                         />
+                    </div>
+               </Link>
+
+               <Link href={"/contact"}>
+                    <div
+                         className={`w-full flex flex-col items-center p-3 border-3 ${pathname.startsWith("/contact") ? "bg-main shadow-small border-black " : "border-transparent nav-hover"} mt-3`}
+                    >
+                         <TfiEmail color={pathname.startsWith("/contact") ? "#ffffff" : "#000000"} size={30} />
+                    </div>
+               </Link>
+          </nav>
+     )
+}

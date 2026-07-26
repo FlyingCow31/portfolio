@@ -1,90 +1,87 @@
-"use client";
-import MobileNav from "@/app/components/MobileNav";
-import {useState} from "react";
-import ExpertiseModale from "@/app/components/ExpertiseModale";
-import Link from "next/link";
-import BackgroundModale from "@/app/components/BackgroundModale";
-import WorkflowsModale from "@/app/components/WorkflowsModale";
-import { useIsDesktop } from "@/app/hooks/useIsDesktop";
-import PcNav from "@/app/components/PcNav";
-import Footer from "@/app/components/Footer";
-import {motion} from "framer-motion"
-
-
+import { Navbar, MobileNav } from "@/app/components/Navbar"
+import Footer from "@/app/components/Footer"
+import { BoxStats, MainTitle, SectionHR } from "../components/textcomponents"
+import { ButtonCTA } from "../components/buttons"
+import Marquee from "../components/Marquee"
+import ExpertiseModale from "../components/ExpertiseModale"
+import BackgroundModale from "../components/BackgroundModale"
+import WorkflowsModale from "../components/WorkflowsModale"
 
 export default function About() {
-    const [activeTab, setActiveTab] = useState("expertise");
-    const isDesktop = useIsDesktop();
-    return (
+     const words = ["NEXT.JS", "NODE.JS", "TYPESCRIPT", "UI/UX", "SEO", "REACT"]
+     return (
+          <div className="flex">
+               <Navbar />
+               <MobileNav />
+               <main className="bg-bg h-screen overflow-y-auto flex flex-col pb-40 md:pb-0">
+                    <div className="ml-6">
+                         <MainTitle text="QUI SUIS-JE" title="À PROPOS." />
+                    </div>
 
-      <main className={"bg-bg min-h-screen "}>
-          <PcNav/>
-          <div className={"overflow-x-hidden h-full flex flex-col items-center md:ml-40 lg:ml-60 md:items-start"}
-          >
+                    <div className="flex flex-col gap-12 items-center my-12 lg:flex-row md:justify-center lg:gap-3">
+                         <div className="bg-white border-3 shadow-big p-3 w-[90%] lg:w-full lg:ml-20 lg:h-full self-center lg:p-6">
+                              <h1 className="font-semibold text-2xl lg:text-3xl">
+                                   Développeur web freelance, je transforme les idées en produits concrets. J'associe
+                                   une <span className="proposdiv font-bold">expertise technique fullstack</span> à une
+                                   vraie
+                                   <span className="proposdiv2 ml-1 text-white font-bold">vision produit</span> pour
+                                   livrer vite, sans vous demander le moindre effort.
+                              </h1>
+                              <div className="flex gap-3 mt-6 lg:text-2xl lg:font-black">
+                                   <ButtonCTA text="MES PROJETS" color="main" textcol="white" href="portfolio" />
+                                   <ButtonCTA text="ME CONTACTER" color="white" textcol="black" href="contact" />
+                              </div>
+                         </div>
 
-              <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={{ x: 7, y: 10, boxShadow: "1px 1px 0px rgba(0,0,0,1)", transition: { duration: 0.1, ease: "easeOut" } } }
-                  transition={{ duration: 0.6}}
-                  viewport={{ once: true }}
-                  className={"shadow-big bg-white border-3 border-black w-80 mt-10 mb-10 md:w-[90%] md:grid md:grid-cols-2"}>
-                  <p className={"border-3 border-black shadow-small bg-sec px-5 max-w-fit ml-3 mt-3 font-bold md:col-span-2 md:text-xl"}> A PROPOS </p>
-                  <h1 className={"font-extrabold ml-3 mt-3 text-4xl md:text-6xl font-title"}>
-                      WEB-APPS, <br/>
-                      SITES WEB, <br/>
-                      SUR-MESURE.
-                  </h1>
+                         <div className="flex flex-col gap-3 items-center w-full">
+                              <BoxStats
+                                   bigText="A→Z"
+                                   smallText="Projets menés de bout en bout"
+                                   color="main"
+                                   textCol="white"
+                              />
+                              <BoxStats bigText="IA +" smallText="Workflows augmentés" color="white" />
+                              <BoxStats bigText="24h" smallText="Proposition & devis" color="sec" />
+                         </div>
+                    </div>
+                    <div className="w-full mb-12">
+                         <Marquee words={words} />
+                    </div>
+                    <div className="w-[99%] ml-3">
+                         <SectionHR number="01" text="EXPERTISE" />
+                    </div>
 
-                  <p className={"ml-3 mt-3 mb-3 w-75 font-semibold md:text-xl md:w-60 lg:w-85"}>
-                      J&#39;apporte une expertise à vos projets grâce à mon experience dans le
-                  domaine du web. Mes workflows augmentés à l&#39;IA me permettent une rapidité tout en
-                  conservant une fiabilité dans le code produit.
-                  </p>
-                  <hr className={"w-50 border border-main ml-auto mr-4 md:hidden"}/>
-                  <button className={"text-main font-bold w-fit block ml-auto mr-4 pb-5 mt-2 cursor-pointer md:col-start-2 md:text-3xl md:mt-10 ctahover"}>Découvrir mes projets →</button>
-              </motion.div>
+                    <div className="flex flex-col items-center gap-6 my-12 lg:flex-row lg:w-[90%] lg:self-center">
+                         <ExpertiseModale />
+                    </div>
 
-              <div className={"md:flex md:flex-col lg:flex-row md:gap-10 md:w-[100%] lg:w-[90%] md:pb-30 "}>
+                    <div className="w-[99%] ml-3">
+                         <SectionHR number="02" text="BACKGROUND" />
+                    </div>
 
-                  <div className={"flex flex-row gap-2 md:flex-col md:*:text-4xl md:gap-6 md:max-w-[90%] "}>
-                      <button onClick={() => setActiveTab("expertise")}
-                              className={` font-title clicanim font-bold text-sm py-2 px-4 border border-black shadow-small ${activeTab === "expertise" ? "bg-main text-white" : "bg-white"} md:py-4 `}>
-                          EXPERTISE
-                      </button>
-                      <button onClick={() => setActiveTab("background")}
-                              className={`font-title clicanim font-bold py-2 px-3  text-sm border border-black shadow-small ${activeTab === "background" ? "bg-main text-white" : "bg-white"} md:py-4`}>
-                          BACKGROUND
-                      </button>
-                      <button onClick={() => setActiveTab("workflows")}
-                              className={`font-title clicanim font-bold py-2 px-3 text-sm border border-black shadow-small ${activeTab === "workflows" ? "bg-main text-white" : "bg-white"} md:py-4`}>
-                          WORKFLOWS
-                      </button>
-                      {isDesktop && <Link href={"/contact"} className={"md:mt-auto"}>
-                          <button className={"font-title bg-main border-3 border-black shadow-small mb-30 mt-10 text-white p-3 font-bold md:mt-auto md:mb-0 clicanim"}>
-                              Construisons ensemble!
-                          </button>
-                      </Link>}
-                  </div>
+                    <BackgroundModale />
 
-                  <div className={"mt-10 pt-3 bg-bg h-fit w-80 border-3 border-black shadow-small flex flex-col items-center md:w-[90%] lg:w-[100%] md:mt-0 mx-auto min-w-0"}>
-                      {activeTab === 'expertise' && <ExpertiseModale/>}
-                      {activeTab === 'background' && <BackgroundModale/>}
-                      {activeTab === 'workflows' && <WorkflowsModale/>}
-                  </div>
-              </div>
+                    <div className="w-[99%] ml-3">
+                         <SectionHR number="03" text="WORKFLOWS IA" />
+                    </div>
 
-              {!isDesktop && <Link href={"/contact"}>
-                  <button className={"font-title bg-main border-3 border-black shadow-small mb-30 mt-10 text-white p-3 font-bold clicanim"}>
-                      Construisons ensemble!
-                  </button>
-              </Link>}
+                    <WorkflowsModale />
 
+                    <div className="bg-sec w-[90%] self-center border-3 shadow-big p-6 mt-12 md:mb-12 lg:flex lg:justify-between lg:items-center">
+                         <h2 className="text-4xl font-black mb-3 lg:text-6xl">
+                              CONSTRUISONS <br /> ENSEMBLE.
+                         </h2>
+                         <ButtonCTA
+                              text="DÉMARRER UN PROJET"
+                              color="main"
+                              textcol="white"
+                              href="contact"
+                              classname="lg:text-3xl lg:px-9 lg:py-3"
+                         />
+                    </div>
 
+                    <Footer />
+               </main>
           </div>
-          <Footer/>
-
-          <MobileNav/>
-      </main>
-    );
-};
+     )
+}

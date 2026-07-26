@@ -1,82 +1,161 @@
-"use client"
-import PcNav from "@/app/components/PcNav";
-import MobileNav from "@/app/components/MobileNav";
-import {motion} from "framer-motion"
-import {useState} from "react";
-import {Book, Layers, ScanEye} from "lucide-react";
-import ProblemDiv from "@/app/components/ResumeDiv";
-import Link from "next/link";
-import GalerieDiv from "@/app/components/GalerieDiv";
-import StackDiv from "@/app/components/StackDiv";
-import BackButton from "@/app/components/BackButton";
-import {useIsDesktop} from "@/app/hooks/useIsDesktop";
+import BackButton, { ButtonCTA } from "@/app/components/buttons"
+import Footer from "@/app/components/Footer"
+import { MobileNav, Navbar } from "@/app/components/Navbar"
+import { ChallengeDiv, GalerieView, HeroProjet, SolutionDiv, StackCard, StatsDiv } from "@/app/components/CaseStudyPage"
+import { TitleDivProject } from "@/app/components/textcomponents"
+import Link from "next/link"
 
+const challenge = (
+     <>
+          Une association qui créer du contenu open-source sur Github qui a besoin que son site fasse la
+          <span className="errordiv">distinction entre services payants et créations Open-Source.</span> Ils voulaient
+          également l'utiliser comme socle pour leurs recrutements.{" "}
+          <span className="errordiv">Tout se faisait par google forms</span>, ce qui n'est pas correct pour un studio de
+          création. Ils avaient donc besoin d'un outil propriétaire.
+     </>
+)
+const solution = (
+     <>
+          Un site web au design épuré, avec seulement le strict nécessaire en pages pour garder un design professionnel
+          mais accueillant.
+          <br />
+          ✔️ <span className="soldiv">Design épuré</span> <br />
+          ✔️ <span className="soldiv">Formulaires gérés par SMTP</span> <br />
+          ✔️ <span className="soldiv">Page "service" bien spécifiée</span> <br />
+          ✔️ <span className="soldiv">Portfolio intégré par CTA</span> <br />
+     </>
+)
 
-const tags = ["FULLSTACK", "NEXT.JS", "DESIGN"];
-const colors = ["","sec", "white" , "main"];
+const galerie = [
+     {
+          image: "/epistudios/indexepi.png",
+          title: "Page d'accueil",
+          desc: "Design de l'index moderne et épuré avec des animations de feuilles tournantes autour de l'objet principal: la statue.",
+     },
+     {
+          image: "/epistudios/projectsepi.png",
+          title: "Projets",
+          desc: "Chaque projet possède un CTA dédié, avec un design lissé et accessible.",
+     },
+     {
+          image: "/epistudios/servicesepi.png",
+          title: "Services",
+          desc: "Les services sont optimisés pour que l'utilisateur comprenne directement ce qui est proposé et puisse avoir une experience d'achat linéaire.",
+     },
+]
 
-
+const stackCards = [
+     {
+          title: "Front-End",
+          items: [
+               {
+                    title: "Next.JS",
+                    desc: "Rapidité, facilité et lisibilité pour un projet Open-Source.",
+               },
+               {
+                    title: "React.JS",
+                    desc: "Simplicité de code grâce aux components et à sa syntaxe en TS.",
+               },
+               {
+                    title: "Tailwind.CSS",
+                    desc: "Moderne, Tailwind nous permet d'aller plus vite dans le code.",
+               },
+          ],
+          color: "#87CEEB",
+     },
+     {
+          title: "Back-End",
+          items: [
+               {
+                    title: "Node.JS",
+                    desc: "Rester dans l'environnement JS avec Node m'a permi d'être plus productif.",
+               },
+               {
+                    title: "SMTP/Nodemailer",
+                    desc: "Liaison par mail sécurisé avec les serveurs SMTP inclus avec le nom de domaine pour réduire les coûts.",
+               },
+          ],
+          color: "#90EE90",
+     },
+     {
+          title: "DevOps & Design",
+          items: [
+               {
+                    title: "Docker",
+                    desc: "Pour un déploiement facile et optimisé de la V1 sur le VPS de l'association.",
+               },
+               {
+                    title: "Figma",
+                    desc: "Un long travail de design, en collaboration avec les graphistes de l'association.",
+               },
+               {
+                    title: "Vercel & Google Search Console",
+                    desc: "Déploiement facile et aucun impact négatif sur le SEO. Gestion du SEO et du transfert depuis l'ancien nom de domaine.",
+               },
+          ],
+          color: "#F4D738",
+     },
+]
 export default function EpiPage() {
-            const [activeTab, setActiveTab] = useState("resume");
-            const isDesktop = useIsDesktop();
-    return (
-        <main className={"min-h-screen bg-bg flex flex-col items-center pb-15 md:pb-0 overflow-x-hidden"}>
-            <PcNav/>
-            <MobileNav/>
-            <BackButton href={"/portfolio"} pc={isDesktop}/>
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                    whileHover={{ x: 4, y: 6, boxShadow: "1px 1px 0px rgba(0,0,0,1)", transition: { duration: 0.1, ease: "easeOut" } } }
-                    className={`bg-white border-3 shadow-big w-[90%] my-10 ${isDesktop ? "md:w-[50%] md:self-start md:ml-60" : "mt-25"}`}
-                >
-                    <div className={"flex gap-3 m-2"}>
-                        {tags.map((tag, index) => {
-                            return (
-                                <div key={index} className={`bg-${colors[index + 1]} px-2 border-2 shadow-small font-title`}>
-                                    <p>{tag}</p>
-                                </div>
-                            )
-                        })}
+     return (
+          <div className="md:flex h-screen md:overflow-hidden">
+               <Navbar />
+               <MobileNav />
+               <main className="bg-bg overflow-y-auto h-screen flex flex-col">
+                    <BackButton />
+                    <div className="flex flex-col items-center">
+                         <HeroProjet
+                              type="Site Web"
+                              title="EPISTUDIO.FR"
+                              desc="Design professionnel, pages simples et développement fullstack: EPI Studio avait besoin
+                    qu'on représente sa marque et ses valeurs dans un site web."
+                              tags={["FULLSTACK", "NEXT.JS", "DESIGN"]}
+                         />
                     </div>
 
-                    <h1 className={"font-extrabold text-3xl ml-3 font-title"}>EPISTUDIOS.FR</h1>
-                    <p className={"ml-3 font-semibold my-3"}>
-                        Design professionnel, pages simples et développement fullstack: EPI Studio
-                        avait besoin qu&#39;on représente sa marque et ses valeurs dans un site web.
-                    </p>
-
-                    <div className={'bg-sec  border-t-3  *:border-2 *:shadow-small flex gap-3 items-center p-3 *:p-1'}>
-                        <button onClick={() => setActiveTab("resume")} className={`${activeTab === "resume" ? "bg-main" : "bg-white"}`}>
-                            <Book height={45} width={45}/>
-                        </button>
-                        <button onClick={() => setActiveTab("galery")} className={`${activeTab === "galery" ? "bg-main" : "bg-white"}`}>
-                            <ScanEye height={45} width={45}/>
-                        </button>
-
-                        <button onClick={() => setActiveTab("stack")} className={`${activeTab === "stack" ? "bg-main" : "bg-white"}`}>
-                            <Layers height={45} width={45} />
-                        </button>
+                    <div className="bg-white border-y-3 p-6 mt-12">
+                         <TitleDivProject text="LE PROJET" />
+                         <div className="flex flex-col gap-6 lg:flex-row">
+                              <ChallengeDiv challenge={challenge} />
+                              <SolutionDiv solution={solution} />
+                         </div>
+                         <div className="grid grid-cols-2 gap-3 my-6 lg:flex">
+                              <StatsDiv Main="Moderne" Sec="Design" />
+                              <StatsDiv Main="Next.JS" Sec="Stack principale" />
+                              <StatsDiv Main="CTA" Sec="Focus" />
+                              <StatsDiv Main="SMTP" Sec="Mailing" />
+                         </div>
                     </div>
-                </motion.div>
-            {activeTab === "resume" && <ProblemDiv/>}
-            {activeTab === "galery" && <GalerieDiv/>}
-            {activeTab === "stack" && <StackDiv/>}
 
+                    <div className="flex flex-col bg-sec border-b-3 p-6">
+                         <TitleDivProject text="GALERIE" />
+                         <div className="flex flex-col gap-6">
+                              {galerie.map((div, index) => {
+                                   return <GalerieView key={index} {...div} />
+                              })}
+                         </div>
+                    </div>
 
-            <div className={"bg-white border-t-3 p-6 w-full mt-6 md:ml-60"}>
-                <p className={" font-extrabold text-3xl"}>Ce projet vous intéresse?</p>
-                <Link href={"/contact"}>
-                    <motion.button
-                        whileHover={{ x: 4, y: 6, boxShadow: "1px 1px 0px rgba(0,0,0,1)", transition: { duration: 0.1, ease: "easeOut" } } }
-                        className={'bg-main border-black border-3 p-3 shadow-small mt-3 text-white mb-3'}>Parlons-en!</motion.button>
-                </Link>
-                <Link href={"https://www.epistudios.fr"} >
-                    <p className={"ctahover"}>Découvrez le site web →</p>
-                </Link>
-            </div>
-        </main>
-    )
+                    <div className="flex flex-col bg-white border-b-3 p-6">
+                         <TitleDivProject text="LA STACK" />
+                         <div className="flex flex-col gap-6 lg:flex-row">
+                              {stackCards.map((card, index) => {
+                                   return <StackCard key={index} {...card} />
+                              })}
+                         </div>
+                    </div>
+
+                    <div className="flex flex-col gap-3 p-3 bg-main pb-40 md:p-6 md:gap-6">
+                         <h2 className="text-white text-5xl font-black lg:text-6xl">Ce projet vous intéresse?</h2>
+
+                         <ButtonCTA text="Parlons-en" color="white" href="contact" textcol="black" />
+                         <Link href={"https://epistudio.fr"} target="_blank" rel="noopener noreferrer">
+                              <p className="text-white text-2xl font-bold ctahover">Découvrez le site web →</p>
+                         </Link>
+                    </div>
+
+                    <Footer />
+               </main>
+          </div>
+     )
 }

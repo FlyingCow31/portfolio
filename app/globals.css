@@ -1,96 +1,220 @@
 @import "tailwindcss";
 
 :root {
-    --bg-color: #C4A1FF;
-    --color-colerr: #FF6B6B;
-    --color-colsol: #7FBC8C;
-    --small-dropshadow: 4px 6px 0px rgba(0, 0, 0, 1);
-    --big-dropshadow: 7px 10px 0px rgba(0, 0, 0, 1);
-    --big-dropshadoww: 7px 10px 0px rgb(151, 35, 201);
-    --shadow-anim: 1px 1px 0px rgba(0, 0, 0, 1);
-    --color-main: #9723C9;
-    --color-hover-main: #bb4aee;
-    --color-sec: #E2A1FF;
-    --border: 50px solid #000000;
+     --bg-color: #c4a1ff;
+     --color-colerr: #ff6b6b;
+     --color-colsol: #7fbc8c;
+     --small-dropshadow: 4px 6px 0px rgba(0, 0, 0, 1);
+     --big-dropshadow: 7px 10px 0px rgba(0, 0, 0, 1);
+     --big-dropshadoww: 7px 10px 0px rgb(151, 35, 201);
+     --shadow-anim: 1px 1px 0px rgba(0, 0, 0, 1);
+     --color-main: #9723c9;
+     --color-hover-main: #bb4aee;
+     --color-sec: #e2a1ff;
+     --border: 50px solid #000000;
+     --color-testblack: #0a090c;
+     --color-testwhite: #f7f4f9;
 }
 
 @theme inline {
-    --color-bg: var(--bg-color);
-    --color-colerr: var(--color-colerr);
-    --color-colsol: var(--color-colsol);
-    --shadow-small: var(--small-dropshadow);
-    --shadow-big: var(--big-dropshadow);
-    --shadow-secbig: var(--big-dropshadoww);
-    --shadow-anim: var(--shadow-anim);
-    --color-main: var(--color-main);
-    --color-sec: var(--color-sec);
+     --color-bg: var(--bg-color);
+     --color-colerr: var(--color-colerr);
+     --color-colsol: var(--color-colsol);
+     --shadow-small: var(--small-dropshadow);
+     --shadow-big: var(--big-dropshadow);
+     --shadow-secbig: var(--big-dropshadoww);
+     --shadow-anim: var(--shadow-anim);
+     --color-main: var(--color-main);
+     --color-sec: var(--color-sec);
 
-    --font-title: var(--font-public-sans);
-    --font-body: var(--font-open-sans);
+     --font-title: var(--font-public-sans);
+     --font-body: var(--font-open-sans);
 }
 
 .no-scrollbar::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Edge */
+     display: none; /* Chrome, Safari, Edge */
 }
 
 .no-scrollbar {
-    scrollbar-width: none; /* Firefox */
+     scrollbar-width: none; /* Firefox */
 }
 
+@keyframes float {
+     0%,
+     100% {
+          transform: translateY(0px);
+     }
+     50% {
+          transform: translateY(-10px);
+     }
+}
+
+@keyframes marq {
+     0% {
+          transform: translateX(0);
+     }
+     100% {
+          transform: translateX(-50%);
+     }
+}
 
 @layer utilities {
-    .hover-btn-dark {
-        transition: all 150ms ease;
-    }
-    .hover-btn-dark:hover {
-        background-color: var(--color-hover-main);
-        transform: translate(4px, 6px);
-        box-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
-    }
+     .float-anim {
+          animation: float 3s ease-in-out infinite;
+     }
 
-    .nav-hover {
-        transition: all 150ms ease;
-        box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
-    }
-    .nav-hover:hover {
-        background-color: var(--bg-color);
-        border: black 3px solid;
-        box-shadow: 4px 6px 0px rgba(0, 0, 0, 1);
-    }
-    .clicanim {
-        transition: all 150ms ease;
-    }
-    .clicanim:hover {
-        transform: translate(4px, 6px);
-        box-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
-    }
+     .hover-btn-dark {
+          transition: all 150ms ease;
+     }
+     .hover-btn-dark:hover {
+          background-color: var(--color-hover-main);
+          transform: translate(4px, 6px);
+          box-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+     }
 
-    .ctahover {
-        transition: all 200ms ease;
-    }
-    .ctahover:hover {
-        transform: translateX(6px);
-        opacity: 1;
-    }
+     .nav-hover {
+          transition: all 150ms ease;
+          box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
+     }
+     .nav-hover:hover {
+          background-color: var(--bg-color);
+          border: black 3px solid;
+          box-shadow: 4px 6px 0px rgba(0, 0, 0, 1);
+     }
+     .clicanim {
+          transition: all 150ms ease;
+     }
+     .clicanim:hover {
+          transform: translate(4px, 6px);
+          box-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+     }
 
-    .errordiv {
-        background-color: var(--color-colerr);
-        border-bottom: 3px black solid;
-        padding: 2px;
-    }
+     .ctahover {
+          transition: all 200ms ease;
+          cursor: pointer;
+     }
+     .ctahover:hover {
+          transform: translateX(6px);
+          opacity: 1;
+     }
 
-    .soldiv {
-        background-color: var(--color-colsol);
-        border-bottom: 3px black solid;
-        padding: 2px;
-    }
-    .titlecardproj {
-        margin-left: 1rem;
-        font-size: large;
-        font-weight: bold;
-    }
-    .desccardproj {
-        margin-left: 1.5rem;
-        opacity: 50;
-    }
+     .errordiv {
+          background-color: var(--color-colerr);
+          border-bottom: 3px black solid;
+          padding: 2px;
+     }
+
+     .soldiv {
+          background-color: var(--color-colsol);
+          border-bottom: 3px black solid;
+          padding: 2px;
+     }
+     .proposdiv {
+          background-color: var(--color-sec);
+          border-bottom: 3px black solid;
+          padding: 2px;
+     }
+     .proposdiv2 {
+          background-color: var(--color-main);
+          border-bottom: 3px black solid;
+          padding: 2px;
+     }
+     .titlecardproj {
+          margin-left: 1rem;
+          font-size: large;
+          font-weight: bold;
+     }
+     .desccardproj {
+          margin-left: 1.5rem;
+          opacity: 50;
+     }
+
+     /* Slider anim */
+     .marquee {
+          overflow: hidden;
+          border: 3px solid #000000;
+          background-color: #000000;
+          padding: 10px 0px;
+          width: 100%;
+     }
+     .marquee-track {
+          display: flex;
+          width: max-content;
+          animation: marq 18s linear infinite;
+     }
+
+     .marquee-track p {
+          margin: 0;
+          white-space: nowrap;
+          font-family: var(--font-public-sans), sans-serif;
+          font-weight: 900;
+          font-size: 26px;
+          color: #ffffff;
+          letter-spacing: 1px;
+     }
+     .marquee:hover .marquee-track {
+          animation-play-state: paused;
+     }
+
+     .casestudyborder {
+          border-right: #000000 2px solid;
+     }
+
+     @media (max-width: 768px) {
+          .casestudyborder {
+               border-right: none;
+               border-bottom: #000000 2px solid;
+          }
+     }
+
+     .contactDiv {
+          border: 3px solid black;
+          box-shadow: 6px 8px 0 black;
+          background-color: white;
+          transition: all 150ms ease;
+     }
+     .contactDiv:hover {
+          transform: translate(6px, 8px);
+          box-shadow: 1px 1px 0 black;
+          background-color: var(--color-sec);
+     }
+
+     .boxCTAContact {
+          padding-left: 4px;
+          padding-right: 4px;
+          padding-top: 1px;
+          padding-bottom: 1px;
+          border: 2px solid black;
+          color: #000000;
+          background-color: white;
+     }
+
+     /* Shadow animation */
+     .shadow-click-big {
+          border: 3px solid black;
+          box-shadow: 6px 8px 0px black;
+          transition: all 150ms ease;
+     }
+     .shadow-click-big-main {
+          border: 3px solid black;
+          box-shadow: 6px 8px 0px var(--color-main);
+          transition: all 150ms ease;
+     }
+     .shadow-click-big:hover {
+          transform: translate(6px, 8px);
+          box-shadow: 1px 1px 0 black;
+     }
+     .shadow-click-big-main:hover {
+          transform: translate(6px, 8px);
+          box-shadow: 1px 1px 0 var(--color-hover-main);
+     }
+     .shadow-click-small {
+          border: 3px solid black;
+          box-shadow: 4px 6px 0px black;
+          transition: all 150ms ease;
+     }
+     .shadow-click-small:hover {
+          transform: translate(4px, 6px);
+          box-shadow: 1px 1px 0 black;
+     }
 }
