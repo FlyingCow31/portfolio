@@ -2,26 +2,30 @@ import Link from "next/link"
 import Image from "next/image"
 import { MdArrowOutward } from "react-icons/md"
 
-export function IndexProjectDiv() {
+interface IndexProjetProps {
+     title: string
+     type: string
+     desc: string
+     tag: string
+     icon?: string
+     color?: string
+     href: string
+}
+export function IndexProjectDiv({ title, type, desc, tag, icon, color = "main", href }: IndexProjetProps) {
      return (
-          <div className={"bg-white border-3 w-[80%] mx-auto relative mt-3 shadow-small"}>
-               <p className={"bg-sec absolute -top-3 -left-3 z-20 px-3 py-1 border-3 shadow-small"}>SITE WEB</p>
-               <div className={"relative mt-6 border-b-3 pb-3"}>
-                    <Image
-                         src={"/epistudios/indexepi.png"}
-                         alt={"Alt"}
-                         width={270}
-                         height={270}
-                         className={"mx-auto"}
-                    />
+          <Link href={`${href}`} className="flex-1">
+               <div className={`relative bg-${color} shadow-click-small flex flex-col p-4 text-white h-full`}>
+                    <p className="text-white text-xl font-bold opacity-60">{type}</p>
+                    <div className="flex gap-3 items-center">
+                         {icon && <Image src={icon} alt={title} height={50} width={50} />}
+                         <h2 className="font-black text-4xl">{title}</h2>
+                    </div>
+                    <p className="opacity-60 text-lg mb-6">{desc}</p>
+                    <p className="ml-auto text-2xl font-bold opacity-60 ctahover">Découvrir →</p>
+                    <p className="absolute -top-5 right-10 border-2 bg-white shadow-small px-3 py-1 text-black">
+                         {tag}
+                    </p>
                </div>
-               <div className={"p-6"}>
-                    <h2 className={"titlecardproj ml-0!"}>EPISTUDIOS.FR</h2>
-                    <p className={"mt-3 italic"}>Epistudio est un site pour un studio de jeux vidéos. </p>
-                    <Link href={"/portfolio"}>
-                         <MdArrowOutward size={50} className={"ml-auto"} />
-                    </Link>
-               </div>
-          </div>
+          </Link>
      )
 }

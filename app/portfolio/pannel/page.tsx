@@ -53,12 +53,16 @@ export default function EpiPage() {
                          />
                     </div>
 
-                    <div className="flex flex-col gap-3 bg-main pb-40 md:p-6 md:gap-6">
+                    <div className="flex flex-col gap-3 bg-main pb-40 md:p-6 md:gap-6 p-4">
                          <h2 className="text-white text-5xl font-black lg:text-6xl">Envie de tester le projet?</h2>
 
                          <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-12">
                               <ButtonCTA text="Parlons-en" color="white" href="contact" textcol="black" />
-                              <Link href={"https://github.com/FlyingCow31/portfolioclient"}>
+                              <Link
+                                   href={"https://github.com/FlyingCow31/portfolioclient"}
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                              >
                                    <p className="text-white text-2xl font-bold ctahover">Découvrez le Projet →</p>
                               </Link>
                          </div>

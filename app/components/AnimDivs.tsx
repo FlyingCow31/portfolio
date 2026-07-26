@@ -14,19 +14,7 @@ interface CTAFinPageProps {
 export function CTAProjets() {
      return (
           <Link href={"/portfolio"} className="block w-[90%]">
-               <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    whileHover={{
-                         x: 4,
-                         y: 6,
-                         boxShadow: "1px 1px 0px rgba(0,0,0,1)",
-                         transition: { duration: 0.1, ease: "easeOut" },
-                    }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className={"bg-white border-3 shadow-big p-3"}
-               >
+               <div className={"bg-white shadow-click-big p-3"}>
                     <div className="bg-sec shadow-small w-fit p-1 border-2 m-3">
                          <LiaBriefcaseSolid color="#000000" size={40} />
                     </div>
@@ -40,27 +28,15 @@ export function CTAProjets() {
                          </p>
                          <p className="ctahover text-main font-bold">Voir mon portfolio →</p>
                     </div>
-               </motion.div>
+               </div>
           </Link>
      )
 }
 export function CTAContact() {
      return (
           <Link href={"/portfolio"} className="block w-[90%]">
-               <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    whileHover={{
-                         x: 4,
-                         y: 6,
-                         boxShadow: "1px 1px 0px rgba(0,0,0,1)",
-                         transition: { duration: 0.1, ease: "easeOut" },
-                    }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className={"bg-black border-3 shadow-secbig p-3"}
-               >
-                    <div className="bg-main shadow-small w-fit p-1 border-2 m-3">
+               <div className={"bg-black border-3 shadow-click-big-main p-3"}>
+                    <div className="bg-main shadow-click-big w-fit p-1 m-3">
                          <PiChat color="#ffffff" size={40} />
                     </div>
                     <div className="ml-3">
@@ -73,7 +49,7 @@ export function CTAContact() {
                          </p>
                          <p className="ctahover text-main font-bold">Discutons-en →</p>
                     </div>
-               </motion.div>
+               </div>
           </Link>
      )
 }
@@ -83,17 +59,9 @@ export function CTAFinPage({ text, ctatext }: CTAFinPageProps) {
           <div className="bg-sec p-3 border-3 shadow-big flex flex-col gap-6 w-[90%]">
                <h2 className="text-3xl font-black lg:text-6xl lg:m-6 lg:mb-0">{text}</h2>
                <Link href={"/contact"}>
-                    <motion.div
-                         whileHover={{
-                              x: 4,
-                              y: 6,
-                              boxShadow: "1px 1px 0px rgba(0,0,0,1)",
-                              transition: { duration: 0.1, ease: "easeOut" },
-                         }}
-                         className="shadow-small border-2 bg-main p-3 lg:w-fit lg:m-6 lg:mt-0"
-                    >
+                    <div className="shadow-click-small bg-main p-3 lg:w-fit lg:m-6 lg:mt-0">
                          <p className="text-white font-black text-l lg:text-3xl ">{ctatext} →</p>
-                    </motion.div>
+                    </div>
                </Link>
           </div>
      )
@@ -102,15 +70,7 @@ export function CTAFinPage({ text, ctatext }: CTAFinPageProps) {
 export function CTAVotreProjet() {
      return (
           <Link href={"/contact"} className="flex-1 lg:h-fit">
-               <motion.div
-                    whileHover={{
-                         x: 4,
-                         y: 6,
-                         boxShadow: "1px 1px 0px rgb(151, 35, 201)",
-                         transition: { duration: 0.2, ease: "easeOut" },
-                    }}
-                    className="shadow-secbig bg-black text-white p-6 lg:h-full"
-               >
+               <div className="shadow-click-big-main bg-black text-white p-6 lg:h-full">
                     <Plus color="#ffffff" size={70} />
                     <h2 className="text-4xl font-black my-3 lg:text-6xl">
                          VOTRE <br />
@@ -121,7 +81,7 @@ export function CTAVotreProjet() {
                     </p>
 
                     <p className="text-sec text-2xl font-bold ctahover lg:text-5xl">Parlons-en →</p>
-               </motion.div>
+               </div>
           </Link>
      )
 }

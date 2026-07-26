@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 import React from "react"
 import { Public_Sans, Open_Sans } from "next/font/google"
+import JsonLd from "./components/JsonLd"
 
 const publicSans = Public_Sans({
      subsets: ["latin"],
@@ -16,7 +17,7 @@ const openSans = Open_Sans({
 export const metadata: Metadata = {
      title: "Gaël Tournier — Développeur Web Freelance",
      description:
-          "Développeur web fullstack spécialisé en Next.JS, react et Tailwind CSS. Création de software et sites-web " +
+          "Développeur web fullstack spécialisé en Next.JS, react et node.JS . Création de software et sites-web " +
           "sur mesure.",
      openGraph: {
           title: "Gaël Tournier — Développeur Web Freelance",
@@ -40,7 +41,10 @@ export default function RootLayout({
 }>) {
      return (
           <html lang="en" className={`${publicSans.variable} ${openSans.variable} h-full antialiased`}>
-               <body className="min-h-full flex flex-col font-body ">{children}</body>
+               <body className="min-h-full flex flex-col font-body ">
+                    <JsonLd />
+                    {children}
+               </body>
           </html>
      )
 }

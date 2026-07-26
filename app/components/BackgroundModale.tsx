@@ -11,7 +11,7 @@ const text =
 
 export default function BackgroundModale() {
      return (
-          <div className={"flex flex-col items-center gap-6 my-12 lg:flex-row lg:w-[90%] lg:self-center"}>
+          <div className={"flex flex-col items-center gap-6 my-12 lg:flex-row lg:w-[90%] lg:self-center lg:h-full"}>
                <div className={"border-3 shadow-small bg-main w-[90%] p-6"}>
                     <div className={"flex flex-row items-center mb-3 gap-3"}>
                          <div className={"bg-white p-2 border-2 shadow-small"}>

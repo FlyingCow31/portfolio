@@ -69,11 +69,10 @@ export function Navbar() {
                     </div>
                </Link>
 
-               {/*todo: add a click animation here*/}
-               <Link href={"/contact"} className={"w-full flex justify-center mt-auto mb-3"}>
+               <Link href={"/contact"} className={"w-full flex flex-col items-center justify-center mt-auto mb-3"}>
                     <div
                          className={
-                              "bg-main w-[90%] p-6 flex flex-col justify-center items-center border-3 shadow-small"
+                              "bg-main w-[90%] p-6 flex flex-col justify-center items-center border-3 shadow-click-small"
                          }
                     >
                          <p className={"text-white text-sm font-bold text-center mb-6"}>DISCUTONS DE VOTRE PROJET</p>

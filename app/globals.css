@@ -91,6 +91,7 @@
 
      .ctahover {
           transition: all 200ms ease;
+          cursor: pointer;
      }
      .ctahover:hover {
           transform: translateX(6px);
@@ -105,6 +106,16 @@
 
      .soldiv {
           background-color: var(--color-colsol);
+          border-bottom: 3px black solid;
+          padding: 2px;
+     }
+     .proposdiv {
+          background-color: var(--color-sec);
+          border-bottom: 3px black solid;
+          padding: 2px;
+     }
+     .proposdiv2 {
+          background-color: var(--color-main);
           border-bottom: 3px black solid;
           padding: 2px;
      }
@@ -154,5 +165,56 @@
                border-right: none;
                border-bottom: #000000 2px solid;
           }
+     }
+
+     .contactDiv {
+          border: 3px solid black;
+          box-shadow: 6px 8px 0 black;
+          background-color: white;
+          transition: all 150ms ease;
+     }
+     .contactDiv:hover {
+          transform: translate(6px, 8px);
+          box-shadow: 1px 1px 0 black;
+          background-color: var(--color-sec);
+     }
+
+     .boxCTAContact {
+          padding-left: 4px;
+          padding-right: 4px;
+          padding-top: 1px;
+          padding-bottom: 1px;
+          border: 2px solid black;
+          color: #000000;
+          background-color: white;
+     }
+
+     /* Shadow animation */
+     .shadow-click-big {
+          border: 3px solid black;
+          box-shadow: 6px 8px 0px black;
+          transition: all 150ms ease;
+     }
+     .shadow-click-big-main {
+          border: 3px solid black;
+          box-shadow: 6px 8px 0px var(--color-main);
+          transition: all 150ms ease;
+     }
+     .shadow-click-big:hover {
+          transform: translate(6px, 8px);
+          box-shadow: 1px 1px 0 black;
+     }
+     .shadow-click-big-main:hover {
+          transform: translate(6px, 8px);
+          box-shadow: 1px 1px 0 var(--color-hover-main);
+     }
+     .shadow-click-small {
+          border: 3px solid black;
+          box-shadow: 4px 6px 0px black;
+          transition: all 150ms ease;
+     }
+     .shadow-click-small:hover {
+          transform: translate(4px, 6px);
+          box-shadow: 1px 1px 0 black;
      }
 }

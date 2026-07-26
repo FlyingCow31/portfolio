@@ -1,50 +1,67 @@
 import Contactbtn from "@/app/components/Contactbtn"
 import { Navbar, MobileNav } from "@/app/components/Navbar"
+import Footer from "../components/Footer"
+import { MainTitle } from "../components/textcomponents"
+import Marquee from "../components/Marquee"
+import { CTAFinPage } from "../components/AnimDivs"
 
+const Contacts = [
+     {
+          icon: "mail.svg",
+          href: "mailto:contact@gaeltournier.dev",
+          type: "EMAIL",
+          text: "contact@gaeltournier.dev",
+     },
+     {
+          icon: "githubicon.svg",
+          href: "https://github.com/FlyingCow31",
+          type: "GITHUB",
+          text: "Gaël Tournier",
+     },
+     {
+          icon: "linkedinicon.svg",
+          href: "https://www.linkedin.com/in/gael-tournier32",
+          type: "LINKEDIN",
+          text: "Gaël Tournier",
+     },
+]
+const words = ["SITE WEB", "DESIGN", "PARLONS DE VOTRE PROJET", "SOFTWARE", "CHEF DE PROJET"]
 export default function contact() {
      return (
-          <main className="bg-bg min-h-screen">
+          <div className="md:flex h-screen md:overflow-hidden">
                <Navbar />
                <MobileNav />
-               <div className={"flex flex-col ml-6 gap-2 md:ml-35 lg:ml-60"}>
-                    <div className={"shadow-small border-3 bg-sec w-fit py-2 px-4 mt-6 md:text-2xl"}>
-                         <p className={"text-center  font-bold font-title"}>CONTACT</p>
+               <main className="bg-bg overflow-y-auto h-screen flex flex-col pb-0">
+                    <div className="md:ml-6">
+                         <MainTitle text="DISPONIBLE ✦ FREELANCE" title="CONTACT." />
                     </div>
-                    <p className={"text-5xl font-extrabold mt-3 md:text-6xl font-title"}>
-                         AVANCONS <br />
-                         ENSEMBLE.
-                    </p>
-                    <hr className={"w-70 mt-3 border-main border-2 md:w-100"} />
 
-                    <p className={"text-2xl font-semibold md:text-4xl"}>
-                         Software, Design, Site Web, Gestion de projets et d&#39;équipes, ou tout autre projets qui vous
-                         anime,{" "}
-                         <span className={"bg-main text-white p-1 border-black border leading-loose"}>
-                              Contactez-moi
-                         </span>{" "}
-                         !
-                    </p>
-                    <div className={"flex flex-col gap-4 mt-5 "}>
-                         <Contactbtn
-                              delay={0.1}
-                              icon={"/mail.svg"}
-                              href={"mailto:contact@gaeltournier.dev"}
-                              text={"contact@gaeltournier.dev"}
-                         />
-                         <Contactbtn
-                              delay={0.2}
-                              icon={"/githubicon.svg"}
-                              href={"https://github.com/FlyingCow31"}
-                              text={"Gaël Tournier"}
-                         />
-                         <Contactbtn
-                              delay={0.3}
-                              icon={"/linkedinincon.svg"}
-                              href={"https://www.linkedin.com/in/gael-tournier32/?locale=fr"}
-                              text={"Gaël Tournier"}
-                         />
+                    <div className="flex flex-col gap-6 lg:flex-row lg:w-[90%] lg:self-center lg:my-12">
+                         <div className="flex flex-col gap-3 p-6 bg-main border-3 shadow-big w-[90%] self-center lg:h-full">
+                              <h1 className="text-5xl text-white font-black lg:text-8xl">AVANÇONS ENSEMBLE.</h1>
+                              <p className="text-white text-xl font-semibold lg:text-3xl lg:leading-relaxed">
+                                   Software, design, site web, gestion de projets et d'équipes, ou tout autre projet qui
+                                   vous anime - <span className="boxCTAContact">contactez-moi</span> !
+                              </p>
+                              <div className="flex gap-3 lg:text-2xl">
+                                   <p className="px-3 py-1 bg-white border-2 shadow-small font-bold">
+                                        {"RÉPONSE < 24H"}
+                                   </p>
+                                   <p className="px-3 py-1 bg-sec border-2 shadow-small font-bold">SANS ENGAGEMENT</p>
+                              </div>
+                         </div>
+                         <div className="w-[90%] self-center flex flex-col gap-3 lg:justify-between lg:h-125 lg:gap-0">
+                              {Contacts.map((Card, index) => {
+                                   return <Contactbtn key={index} {...Card} />
+                              })}
+                         </div>
                     </div>
-               </div>
-          </main>
+                    <div className="my-12 pb-80">
+                         <Marquee words={words} />
+                    </div>
+
+                    <Footer />
+               </main>
+          </div>
      )
 }

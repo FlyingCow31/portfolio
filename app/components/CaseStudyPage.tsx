@@ -1,3 +1,5 @@
+"use client"
+import { motion } from "framer-motion"
 import { Lightbulb, Zap } from "lucide-react"
 import Image from "next/image"
 
@@ -32,7 +34,13 @@ interface stackItem {
 
 export function HeroProjet({ type, title, desc, tags }: ProjectProps) {
      return (
-          <div className="border-3 shadow-big bg-main text-white w-[90%] p-6 border-black lg:w-[50%] lg:mr-auto lg:ml-24">
+          <motion.div
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.6 }}
+               viewport={{ once: true }}
+               className="border-3 shadow-big bg-main text-white w-[90%] p-6 border-black lg:w-[50%] lg:mr-auto lg:ml-24"
+          >
                <p className="text-2xl opacity-30">Case Study - {type}</p>
                <hr className="opacity-30 w-70 mb-6 mt-2 border-2" />
                <h2 className="font-black text-4xl mb-3 lg:text-6xl">{title}</h2>
@@ -49,13 +57,19 @@ export function HeroProjet({ type, title, desc, tags }: ProjectProps) {
                          )
                     })}
                </div>
-          </div>
+          </motion.div>
      )
 }
 
 export function ChallengeDiv({ challenge }: Pick<ProblemedivProps, "challenge">) {
      return (
-          <div className="border-2 shadow-big flex flex-col gap-0 text-black lg:flex-1">
+          <motion.div
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.6 }}
+               viewport={{ once: true }}
+               className="border-2 shadow-big flex flex-col gap-0 text-black lg:flex-1"
+          >
                <div className="bg-colerr  text-3xl font-bold border-b-2 p-3 flex gap-3 items-center">
                     <Zap size={40} color="#000000" />
                     <h2>Le Challenge</h2>
@@ -63,12 +77,18 @@ export function ChallengeDiv({ challenge }: Pick<ProblemedivProps, "challenge">)
                <div className="bg-white p-3 text-xl ">
                     <p>{challenge}</p>
                </div>
-          </div>
+          </motion.div>
      )
 }
 export function SolutionDiv({ solution }: Pick<ProblemedivProps, "solution">) {
      return (
-          <div className="border-2 shadow-big flex flex-col gap-0 text-black lg:flex-1">
+          <motion.div
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.6, delay: 0.2 }}
+               viewport={{ once: true }}
+               className="border-2 shadow-big flex flex-col gap-0 text-black lg:flex-1"
+          >
                <div className="bg-colsol text-3xl font-bold border-b-2 p-3 flex gap-3 items-center">
                     <Lightbulb size={40} color="#000000" />
                     <h2>La Solution</h2>
@@ -76,22 +96,34 @@ export function SolutionDiv({ solution }: Pick<ProblemedivProps, "solution">) {
                <div className="bg-white p-3 text-xl ">
                     <p>{solution}</p>
                </div>
-          </div>
+          </motion.div>
      )
 }
 
 export function StatsDiv({ Main, Sec }: StatsProps) {
      return (
-          <div className="w-full bg-black flex flex-col items-center text-white py-2">
+          <motion.div
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.6, delay: 0.1 }}
+               viewport={{ once: true }}
+               className="w-full bg-black flex flex-col items-center text-white py-2"
+          >
                <h2 className="italic text-2xl">{Main}</h2>
                <p className="opacity-50">{Sec}</p>
-          </div>
+          </motion.div>
      )
 }
 
 export function GalerieView({ image, title, desc }: GalerieProps) {
      return (
-          <div className="flex flex-col gap-0 border-4 shadow-big lg:flex-row">
+          <motion.div
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.6 }}
+               viewport={{ once: true }}
+               className="flex flex-col gap-0 border-4 shadow-big lg:flex-row"
+          >
                <div className="casestudyborder bg-bg p-3 flex flex-col items-center lg:flex-1">
                     <div className="border-2 shadow-small">
                          <Image height={1000} width={1000} alt={title} src={image} />
@@ -102,20 +134,29 @@ export function GalerieView({ image, title, desc }: GalerieProps) {
                     <hr className="border-2 border-main w-40 my-3" />
                     <p className="text-xl lg:text-2xl lg:font-semibold">{desc}</p>
                </div>
-          </div>
+          </motion.div>
      )
 }
 
 export function StackCard({ title, items, color }: StackCardProps) {
      return (
-          <div className="border-2 shadow-small flex-1">
-               <div className={`bg-[${color}] p-4 border-b-2 text-3xl font-bold lg:text-4xl`}>{title}</div>
+          <motion.div
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.6 }}
+               viewport={{ once: true }}
+               className="border-2 shadow-small flex-1"
+          >
+               <div className="p-4 border-b-2 text-3xl font-bold lg:text-4xl" style={{ backgroundColor: color }}>
+                    {title}
+               </div>
                <div className="p-4 bg-white">
                     {items.map((item, index) => {
                          return (
                               <div key={index} className="text-black">
                                    <h2
-                                        className={`font-semibold underline decoration-[${color}] decoration-3 text-2xl lg:text-3xl`}
+                                        className="font-semibold underline decoration-3 text-2xl lg:text-3xl"
+                                        style={{ textDecorationColor: color }}
                                    >
                                         {item.title}
                                    </h2>
@@ -124,6 +165,6 @@ export function StackCard({ title, items, color }: StackCardProps) {
                          )
                     })}
                </div>
-          </div>
+          </motion.div>
      )
 }

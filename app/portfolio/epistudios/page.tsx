@@ -149,7 +149,7 @@ export default function EpiPage() {
                          <h2 className="text-white text-5xl font-black lg:text-6xl">Ce projet vous intéresse?</h2>
 
                          <ButtonCTA text="Parlons-en" color="white" href="contact" textcol="black" />
-                         <Link href={"https://epistudio.fr"}>
+                         <Link href={"https://epistudio.fr"} target="_blank" rel="noopener noreferrer">
                               <p className="text-white text-2xl font-bold ctahover">Découvrez le site web →</p>
                          </Link>
                     </div>

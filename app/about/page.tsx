@@ -22,8 +22,10 @@ export default function About() {
                          <div className="bg-white border-3 shadow-big p-3 w-[90%] lg:w-full lg:ml-20 lg:h-full self-center lg:p-6">
                               <h1 className="font-semibold text-2xl lg:text-3xl">
                                    Développeur web freelance, je transforme les idées en produits concrets. J'associe
-                                   une expertise technique fullstack à une vraie vision produit pour livrer vite, sans
-                                   vous demander le moindre effort.
+                                   une <span className="proposdiv font-bold">expertise technique fullstack</span> à une
+                                   vraie
+                                   <span className="proposdiv2 ml-1 text-white font-bold">vision produit</span> pour
+                                   livrer vite, sans vous demander le moindre effort.
                               </h1>
                               <div className="flex gap-3 mt-6 lg:text-2xl lg:font-black">
                                    <ButtonCTA text="MES PROJETS" color="main" textcol="white" href="portfolio" />

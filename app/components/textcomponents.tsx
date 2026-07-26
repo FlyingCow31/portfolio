@@ -1,3 +1,5 @@
+"use client"
+import { motion } from "framer-motion"
 interface Props {
      text: string
      title: string
@@ -37,10 +39,16 @@ export function SectionHR({ number, text }: HRProps) {
 
 export function BoxStats({ bigText, smallText, color, textCol = "black" }: BoxProps) {
      return (
-          <div className={`bg-${color} text-${textCol} p-3 border-2 shadow-small border-black w-[80%] md:w-[90%]`}>
+          <motion.div
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.6 }}
+               viewport={{ once: true }}
+               className={`bg-${color} text-${textCol} p-3 border-2 shadow-small border-black w-[80%] md:w-[90%]`}
+          >
                <h2 className="text-4xl font-black">{bigText}</h2>
                <p>{smallText}</p>
-          </div>
+          </motion.div>
      )
 }
 

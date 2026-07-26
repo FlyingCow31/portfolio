@@ -1,3 +1,5 @@
+"use client"
+import { motion } from "framer-motion"
 import Image from "next/image"
 
 interface HeroProps {
@@ -20,7 +22,13 @@ interface TechnoProps {
 
 export function HeroProject({ type, scale, title, desc, icon }: HeroProps) {
      return (
-          <div className="flex flex-col w-[90%] self-center p-4 border-3 text-black shadow-big bg-white lg:w-[50%] lg:mr-auto lg:ml-24 lg:flex-row lg:items-center lg:gap-4">
+          <motion.div
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.6 }}
+               viewport={{ once: true }}
+               className="flex flex-col w-[90%] self-center p-4 border-3 text-black shadow-big bg-white lg:w-[50%] lg:mr-auto lg:ml-24 lg:flex-row lg:items-center lg:gap-4"
+          >
                {icon && (
                     <div className="w-fit h-fit bg-sec border-2 shadow-small p-3 mb-3">
                          <Image src={`/${icon}`} height={80} width={80} alt={title} />
@@ -30,39 +38,58 @@ export function HeroProject({ type, scale, title, desc, icon }: HeroProps) {
                     <p className="opacity-70 text-xl lg:text-2xl">
                          {type} - {scale}
                     </p>
-                    <h1 className="text-4xl font-bold lg:text-4xl">{title}</h1>
+                    <h1 className="text-4xl font-bold lg:text-4xl break-all">{title}</h1>
                     <p className="text-2xl lg:text-3xl">{desc}</p>
                </div>
-          </div>
+          </motion.div>
      )
 }
 
 export function FeatureDiv({ title, desc }: FeaturesProps) {
      return (
-          <div className="border-3 shadow-big lg:w-[60%]">
+          <motion.div
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.6 }}
+               viewport={{ once: true }}
+               className="border-3 shadow-big lg:w-[60%]"
+          >
                <div className="bg-bg border-b-3 p-3">
                     <p className="text-2xl font-bold lg:text-4xl">{title}</p>
                </div>
                <div className="bg-white p-3 text-xl lg:text-2xl">{desc}</div>
-          </div>
+          </motion.div>
      )
 }
 
 export function TechnoDiv({ title, desc, tags }: TechnoProps) {
      return (
           <>
-               <div className="border-3 shadow-big mb-6 lg:w-[60%]">
+               <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="border-3 shadow-big mb-6 lg:w-[60%]"
+               >
                     <div className="bg-bg border-b-3 p-3">
                          <p className="text-2xl font-bold lg:text-4xl">{title}</p>
                     </div>
                     <div className="bg-white p-3 text-xl lg:text-2xl">{desc}</div>
-               </div>
+               </motion.div>
                <div className="flex gap-3">
                     {tags.map((tag, index) => {
                          return (
-                              <div key={index} className="border-2 shadow-small px-4 py-1 lg:text-2xl font-bold">
+                              <motion.div
+                                   initial={{ opacity: 0, y: 20 }}
+                                   whileInView={{ opacity: 1, y: 0 }}
+                                   transition={{ duration: 0.6, delay: index * 0.1 }}
+                                   viewport={{ once: true }}
+                                   key={index}
+                                   className="border-2 shadow-small px-4 py-1 lg:text-2xl font-bold"
+                              >
                                    <p>{tag}</p>
-                              </div>
+                              </motion.div>
                          )
                     })}
                </div>

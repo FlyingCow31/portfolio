@@ -24,7 +24,7 @@ interface ProjectProps {
 
 export function CaseStudy({ type, title, desc, tags, ctatitle, ctahref, image }: CaseStudiesProps) {
      return (
-          <div className="flex flex-col relative border-2 shadow-big lg:flex-row clicanim">
+          <div className="flex flex-col relative shadow-click-big lg:flex-row">
                <div className="bg-main text-white p-4 casestudyborder lg:w-[60%] lg:p-8 ">
                     <p className="font-bold opacity-50 text-2xl lg:text-4xl">{type}</p>
                     <h2 className="font-black text-5xl lg:text-8xl">{title}</h2>
@@ -45,7 +45,7 @@ export function CaseStudy({ type, title, desc, tags, ctatitle, ctahref, image }:
                          <p className="text-2xl ctahover font-bold my-6 lg:text-4xl w-fit">{ctatitle} →</p>
                     </Link>
                </div>
-               <div className="flex flex-col items-center w-full p-6 lg:flex-1">
+               <div className="flex flex-col items-center justify-center w-full p-6 lg:flex-1">
                     <Image
                          src={image}
                          alt={title}
@@ -72,7 +72,7 @@ export function ProjectDiv({
      iconalt = `Icone du projet ${title}`,
 }: ProjectProps) {
      return (
-          <div className="bg-white p-5 relative border-2 border-black text-main shadow-small lg:p-8 clicanim flex-1 lg:basis-[calc(50%-12px)]">
+          <div className="bg-white p-5 relative text-main shadow-click-big lg:p-8 flex-1 lg:basis-[calc(50%-12px)]">
                <div className="absolute -top-5 right-5 bg-main shadow-small px-3 py-1 w-fit border-2 border-black text-white lg:text-4xl">
                     <p className="font-bold">NEW</p>
                </div>

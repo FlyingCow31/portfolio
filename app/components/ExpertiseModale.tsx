@@ -1,3 +1,5 @@
+"use client"
+import { motion } from "framer-motion"
 import { Telescope, Wrench } from "lucide-react"
 
 const texts = [
@@ -9,7 +11,7 @@ const texts = [
           "Workflows augmentés par l'IA.",
      "Grâce à mon experience de chef de projet, je comprends vos besoins et\n" +
           "votre environnement sans même coder. Je priorise ce dont vous avez besoin,\n" +
-          "pas ce qui vous sera inutile.",
+          "pas ce qui vous sera inutile. La direction du projet est adaptée à votre projet et la vision que vous voulez lui donner.",
 ]
 
 const expertise = [
@@ -32,11 +34,15 @@ const expertise = [
 export default function ExpertiseModale() {
      return (
           <>
-               {expertise.map((item) => {
+               {expertise.map((item, index) => {
                     return (
-                         <div
+                         <motion.div
+                              initial={{ opacity: 0, y: 20 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: index * 0.1 }}
+                              viewport={{ once: true }}
                               key={item.name}
-                              className={"relative bg-white border-3 border-black shadow-small w-[90%] mb-3"}
+                              className={"relative bg-white border-3 border-black shadow-small w-[90%] mb-3 lg:h-full"}
                          >
                               <div className={"bg-main w-fit p-3 border shadow-small mt-3 ml-3"}>{item.image}</div>
 
@@ -56,7 +62,7 @@ export default function ExpertiseModale() {
                                         </div>
                                    ))}
                               </div>
-                         </div>
+                         </motion.div>
                     )
                })}
           </>

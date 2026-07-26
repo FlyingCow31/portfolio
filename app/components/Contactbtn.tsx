@@ -1,32 +1,35 @@
-"use client"
-import Link from "next/link";
-import Image from "next/image";
-import {MousePointerClick} from "lucide-react";
-import {motion} from "framer-motion"
+import Link from "next/link"
+import Image from "next/image"
+import { MdArrowOutward } from "react-icons/md"
 
 interface ContactCardProps {
-    icon: string,
-    href: string,
-    text: string,
-    delay: number
+     icon: string
+     href: string
+     type: string
+     text: string
 }
 
-export default function Contactbtn({ icon, href, text, delay }: ContactCardProps){
-    return(
-        <>
-            <Link href={href} target={"_blank"}>
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    whileHover={{ x: 7, y: 10, boxShadow: "1px 1px 0px rgba(0,0,0,1)", transition: { duration: 0.1, ease: "easeOut" } } }
-                    transition={{ duration: 0.6, delay}}
-                    viewport={{ once: true }}
-                    className={"w-80 border-2 shadow-small bg-white flex flex-row gap-1 p-3 items-center md:w-[90%] lg:w-[50%]"}>
-                    <Image src={icon} alt="icon" width={40} height={40} className="w-10 h-10 md:w-18 md:h-18"/>
-                    <p className={"font-title flex-1 text-main text-left ml-1 font-bold text-l w-auto h-auto md:text-3xl"}>{text}</p>
-                    <MousePointerClick color="#000000" height={32} width={32} className="opacity-25 w-10 h-10 md:w-14 md:h-14"/>
-                </motion.div>
-            </Link>
-        </>
-    );
+export default function Contactbtn({ icon, href, type, text }: ContactCardProps) {
+     return (
+          <>
+               <Link href={href} target={"_blank"} rel={"noopener noreferrer"}>
+                    <div className="flex gap-4 p-4 lg:p-8 contactDiv items-center">
+                         <div className="border-2 shadow-small p-2">
+                              <Image
+                                   src={`/icons/${icon}`}
+                                   alt={text}
+                                   height={30}
+                                   width={30}
+                                   className="w-7.5 h-7.5 lg:w-12.5 lg:h-12.5"
+                              />
+                         </div>
+                         <div className="flex flex-col gap-0 flex-1 min-w-0">
+                              <p className="text-main opacity-50 font-semibold lg:text-2xl">{type}</p>
+                              <p className="text-main font-bold text-lg truncate lg:text-4xl">{text}</p>
+                         </div>
+                         <MdArrowOutward size={30} className="opacity-50 w-7.5 h-7.5 lg:w-12.5 lg:h-12.5" />
+                    </div>
+               </Link>
+          </>
+     )
 }
