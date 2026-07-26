@@ -3,6 +3,8 @@ import "./globals.css"
 import React from "react"
 import { Public_Sans, Open_Sans } from "next/font/google"
 import JsonLd from "./components/JsonLd"
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const publicSans = Public_Sans({
      subsets: ["latin"],
@@ -43,6 +45,8 @@ export default function RootLayout({
           <html lang="en" className={`${publicSans.variable} ${openSans.variable} h-full antialiased`}>
                <body className="min-h-full flex flex-col font-body ">
                     <JsonLd />
+                    <Analytics />
+                    <SpeedInsights />
                     {children}
                </body>
           </html>
