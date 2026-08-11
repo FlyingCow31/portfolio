@@ -5,7 +5,27 @@ import { FeatureDiv, HeroProject, TechnoDiv } from "@/app/components/ProjectPage
 import { TitleDivProject } from "@/app/components/textcomponents"
 import Link from "next/link"
 import Image from "next/image"
+import { Metadata } from "next"
 
+export const metadata: Metadata = {
+     title: "FlyingTodo — Gaël Tournier",
+     description:
+          "Découvrez FlyingTodo, un logiciel Electron de gestion de projet avec Todo List intégrée. Focus sur la simplicité et l'efficacité.",
+     openGraph: {
+          title: "FlyingTodo — Gaël Tournier",
+          description:
+               "Découvrez FlyingTodo, un logiciel Electron de gestion de projet avec Todo List intégrée. Focus sur la simplicité et l'efficacité.",
+          url: "https://gaeltournier.dev",
+          siteName: "Gaël Tournier",
+          images: [
+               {
+                    url: "https://gaeltournier.dev/LogoGaelPortfolio.png",
+                    width: 1200,
+                    height: 630,
+               },
+          ],
+     },
+}
 export default function EpiPage() {
      return (
           <div className="md:flex h-screen md:overflow-hidden">
@@ -18,7 +38,7 @@ export default function EpiPage() {
                               type="Software"
                               scale="Projet Personnel"
                               title="FLYINGTODO"
-                              desc="Logiciel de gestion de projet avec Todo List intégrée, avec un focus sur la simplicité."
+                              desc="Logiciel de gestion de projet avec Todo List intégrée, avec un focus sur la simplicité. Projet réalisé par Gaël Tournier."
                               icon="iconflyingtodovraie.ico"
                          />
                     </div>

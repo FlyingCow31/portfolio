@@ -10,7 +10,28 @@ import { SlSocialGoogle } from "react-icons/sl"
 
 import SkillDiv from "@/app/components/skillsDiv"
 import Footer from "@/app/components/Footer"
-
+import { Metadata } from "next"
+export const metadata: Metadata = {
+     title: "Gaël Tournier — Développeur Web Freelance",
+     description:
+          "Développeur web fullstack spécialisé en Next.JS, react et node.JS . Création de software et sites-web " +
+          "sur mesure.",
+     alternates: { canonical: "/" },
+     robots: { index: true, follow: true },
+     openGraph: {
+          title: "Gaël Tournier — Développeur Web Freelance",
+          description: "Développeur Full Stack spécialisé en Next.js, React et Tailwind.",
+          url: "https://gaeltournier.dev",
+          siteName: "Gaël Tournier",
+          images: [
+               {
+                    url: "https://gaeltournier.dev/LogoGaelPortfolio.png",
+                    width: 1200,
+                    height: 630,
+               },
+          ],
+     },
+}
 const projets = [
      {
           title: "EPISTUDIO.FR",
@@ -98,7 +119,7 @@ export default function Home() {
                                    return <IndexProjectDiv key={index} {...div} />
                               })}
                               <div className="border-dashed border-2 bg-transparent flex-1 flex flex-col items-center justify-center opacity-30 h-full py-10 lg:py-0">
-                                   <h1 className="text-4xl font-bold">VOTRE PROJET ICI?</h1>
+                                   <h2 className="text-4xl font-bold">VOTRE PROJET ICI?</h2>
                                    <Link href={"/contact"}>
                                         <p className="ctahover text-2xl text-main font-bold">Parlons-en →</p>
                                    </Link>

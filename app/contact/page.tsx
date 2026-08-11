@@ -3,8 +3,27 @@ import { Navbar, MobileNav } from "@/app/components/Navbar"
 import Footer from "../components/Footer"
 import { MainTitle } from "../components/textcomponents"
 import Marquee from "../components/Marquee"
-import { CTAFinPage } from "../components/AnimDivs"
+import { Metadata } from "next"
 
+
+export const metadata: Metadata = {
+     title: "Contact — Gaël Tournier",
+     description:
+          "Vous avez un projet ou une idée ? Contactez-moi pour en discuter et avancer ensemble.",
+     openGraph: {
+          title: "Contact — Gaël Tournier",
+          description: "Vous avez un projet ou une idée ? Contactez-moi pour en discuter et avancer ensemble.",
+          url: "https://gaeltournier.dev",
+          siteName: "Gaël Tournier",
+          images: [
+               {
+                    url: "https://gaeltournier.dev/LogoGaelPortfolio.png",
+                    width: 1200,
+                    height: 630,
+               },
+          ],
+     },
+}
 const Contacts = [
      {
           icon: "mail.svg",

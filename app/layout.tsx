@@ -17,11 +17,16 @@ const openSans = Open_Sans({
 })
 
 export const metadata: Metadata = {
+     metadataBase: new URL("https://gaeltournier.dev"),
+     alternates: {
+          canonical: "/",
+     },
      title: "Gaël Tournier — Développeur Web Freelance",
      description:
           "Développeur web fullstack spécialisé en Next.JS, react et node.JS . Création de software et sites-web " +
           "sur mesure.",
      openGraph: {
+          locale: "fr_FR",
           title: "Gaël Tournier — Développeur Web Freelance",
           description: "Développeur Full Stack spécialisé en Next.js, React et Tailwind.",
           url: "https://gaeltournier.dev",
@@ -42,7 +47,7 @@ export default function RootLayout({
      children: React.ReactNode
 }>) {
      return (
-          <html lang="en" className={`${publicSans.variable} ${openSans.variable} h-full antialiased`}>
+          <html lang="fr" className={`${publicSans.variable} ${openSans.variable} h-full antialiased`}>
                <body className="min-h-full flex flex-col font-body ">
                     <JsonLd />
                     <Analytics />

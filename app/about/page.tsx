@@ -6,7 +6,27 @@ import Marquee from "../components/Marquee"
 import ExpertiseModale from "../components/ExpertiseModale"
 import BackgroundModale from "../components/BackgroundModale"
 import WorkflowsModale from "../components/WorkflowsModale"
+import { Metadata } from "next"
 
+export const metadata: Metadata = {
+     title: "A propos — Gaël Tournier — Développeur Web Freelance",
+     description:
+          "Découvrez le parcours et l'expertise de Gaël Tournier, développeur web freelance spécialisé en Next.JS, React et Node.JS.",
+     openGraph: {
+          title: "Gaël Tournier — Développeur Web Freelance",
+          description:
+               "Parcours et expertise de Gaël Tournier, développeur web freelance spécialisé en Next.JS, React et Node.JS.",
+          url: "https://gaeltournier.dev",
+          siteName: "Gaël Tournier",
+          images: [
+               {
+                    url: "https://gaeltournier.dev/LogoGaelPortfolio.png",
+                    width: 1200,
+                    height: 630,
+               },
+          ],
+     },
+}
 export default function About() {
      const words = ["NEXT.JS", "NODE.JS", "TYPESCRIPT", "UI/UX", "SEO", "REACT"]
      return (
@@ -19,10 +39,11 @@ export default function About() {
                     </div>
 
                     <div className="flex flex-col gap-12 items-center my-12 lg:flex-row md:justify-center lg:gap-3">
-                         <div className="bg-white border-3 shadow-big p-3 w-[90%] lg:w-full lg:ml-20 lg:h-full self-center lg:p-6">
+                         <article className="bg-white border-3 shadow-big p-3 w-[90%] lg:w-full lg:ml-20 lg:h-full self-center lg:p-6">
                               <h1 className="font-semibold text-2xl lg:text-3xl">
-                                   Développeur web freelance, je transforme les idées en produits concrets. J'associe
-                                   une <span className="proposdiv font-bold">expertise technique fullstack</span> à une
+                                   Je suis Gaël Tournier, développeur web freelance à Toulouse, je transforme les idées
+                                   en produits concrets. J'associe une
+                                   <span className="proposdiv font-bold">expertise technique fullstack</span> à une
                                    vraie
                                    <span className="proposdiv2 ml-1 text-white font-bold">vision produit</span> pour
                                    livrer vite, sans vous demander le moindre effort.
@@ -31,7 +52,7 @@ export default function About() {
                                    <ButtonCTA text="MES PROJETS" color="main" textcol="white" href="portfolio" />
                                    <ButtonCTA text="ME CONTACTER" color="white" textcol="black" href="contact" />
                               </div>
-                         </div>
+                         </article>
 
                          <div className="flex flex-col gap-3 items-center w-full">
                               <BoxStats

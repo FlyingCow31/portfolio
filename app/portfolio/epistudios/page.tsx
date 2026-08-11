@@ -4,12 +4,32 @@ import { MobileNav, Navbar } from "@/app/components/Navbar"
 import { ChallengeDiv, GalerieView, HeroProjet, SolutionDiv, StackCard, StatsDiv } from "@/app/components/CaseStudyPage"
 import { TitleDivProject } from "@/app/components/textcomponents"
 import Link from "next/link"
+import { Metadata } from "next"
 
+export const metadata: Metadata = {
+     title: "ÉpiStudios — Gaël Tournier",
+     description:
+          "Découvrez EpiStudio, le site web que j'ai développé pour l'association de création de contenu open-source. Design, développement fullstack en Next.JS et déploiement.",
+     openGraph: {
+          title: "ÉpiStudios — Gaël Tournier",
+          description:
+               "Découvrez EpiStudio, le site web que j'ai développé pour l'association de création de contenu open-source.",
+          url: "https://gaeltournier.dev",
+          siteName: "Gaël Tournier",
+          images: [
+               {
+                    url: "https://gaeltournier.dev/LogoGaelPortfolio.png",
+                    width: 1200,
+                    height: 630,
+               },
+          ],
+     },
+}
 const challenge = (
      <>
           Une association qui créer du contenu open-source sur Github qui a besoin que son site fasse la
           <span className="errordiv">distinction entre services payants et créations Open-Source.</span> Ils voulaient
-          également l'utiliser comme socle pour leurs recrutements.{" "}
+          également l'utiliser comme socle pour leurs recrutements.
           <span className="errordiv">Tout se faisait par google forms</span>, ce qui n'est pas correct pour un studio de
           création. Ils avaient donc besoin d'un outil propriétaire.
      </>
@@ -108,7 +128,7 @@ export default function EpiPage() {
                               type="Site Web"
                               title="EPISTUDIO.FR"
                               desc="Design professionnel, pages simples et développement fullstack: EPI Studio avait besoin
-                    qu'on représente sa marque et ses valeurs dans un site web."
+                    qu'on représente sa marque et ses valeurs dans un site web. Projet réalisé par Gaël Tournier."
                               tags={["FULLSTACK", "NEXT.JS", "DESIGN"]}
                          />
                     </div>

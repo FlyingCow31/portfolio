@@ -12,18 +12,18 @@ const text =
 export default function BackgroundModale() {
      return (
           <div className={"flex flex-col items-center gap-6 my-12 lg:flex-row lg:w-[90%] lg:self-center lg:h-full"}>
-               <div className={"border-3 shadow-small bg-main w-[90%] p-6"}>
+               <article className={"border-3 shadow-small bg-main w-[90%] p-6"}>
                     <div className={"flex flex-row items-center mb-3 gap-3"}>
                          <div className={"bg-white p-2 border-2 shadow-small"}>
                               <UserCog color="#000000" width={40} height={40} className={"md:w-20 md:h-20"} />
                          </div>
 
-                         <h1 className={" text-white font-extrabold text-4xl md:text-6xl font-title"}>
+                         <h2 className={" text-white font-extrabold text-4xl md:text-6xl font-title"}>
                               TECHNICAL LEADER
-                         </h1>
+                         </h2>
                     </div>
                     <p className={"font-semibold text-white text-xl lg:text-2xl"}>{text}</p>
-               </div>
+               </article>
 
                <div className="border-3 shadow-small bg-white w-[90%] p-6 lg:h-full">
                     <Quote size={70} />

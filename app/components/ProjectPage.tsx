@@ -38,7 +38,7 @@ export function HeroProject({ type, scale, title, desc, icon }: HeroProps) {
                     <p className="opacity-70 text-xl lg:text-2xl">
                          {type} - {scale}
                     </p>
-                    <h1 className="text-4xl font-bold lg:text-4xl break-all">{title}</h1>
+                    <h2 className="text-4xl font-bold lg:text-4xl break-all">{title}</h2>
                     <p className="text-2xl lg:text-3xl">{desc}</p>
                </div>
           </motion.div>

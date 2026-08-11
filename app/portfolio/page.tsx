@@ -3,8 +3,26 @@ import Footer from "@/app/components/Footer"
 import { MainTitle, SectionHR } from "../components/textcomponents"
 import { CTAFinPage, CTAVotreProjet } from "../components/AnimDivs"
 import { CaseStudy, ProjectDiv } from "../components/PortfolioItems"
-import { desc } from "framer-motion/client"
-import { Tags } from "lucide-react"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+     title: "Portfolio — Gaël Tournier — Développeur Web Freelance",
+     description:
+          "Découvrez le portfolio de Gaël Tournier, projets web et software réalisés sur mesure avec des technologies modernes.",
+     openGraph: {
+          title: "Portfolio — Gaël Tournier — Développeur Web Freelance",
+          description: "Portfolio de projets web et software réalisés sur mesure avec des technologies modernes.",
+          url: "https://gaeltournier.dev",
+          siteName: "Gaël Tournier",
+          images: [
+               {
+                    url: "https://gaeltournier.dev/LogoGaelPortfolio.png",
+                    width: 1200,
+                    height: 630,
+               },
+          ],
+     },
+}
 
 const caseStudies = [
      {

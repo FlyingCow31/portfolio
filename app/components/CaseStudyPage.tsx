@@ -43,8 +43,8 @@ export function HeroProjet({ type, title, desc, tags }: ProjectProps) {
           >
                <p className="text-2xl opacity-30">Case Study - {type}</p>
                <hr className="opacity-30 w-70 mb-6 mt-2 border-2" />
-               <h2 className="font-black text-4xl mb-3 lg:text-6xl">{title}</h2>
-               <h1 className="text-xl mb-6 lg:text-2xl lg:font-semibold">{desc}</h1>
+               <h3 className="font-black text-4xl mb-3 lg:text-6xl">{title}</h3>
+               <h2 className="text-xl mb-6 lg:text-2xl lg:font-semibold">{desc}</h2>
                <div className="flex gap-3 flex-wrap">
                     {tags.map((tag, index) => {
                          return (

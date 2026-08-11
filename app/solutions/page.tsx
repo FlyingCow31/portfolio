@@ -6,6 +6,25 @@ import { Navbar, MobileNav } from "@/app/components/Navbar"
 import Footer from "@/app/components/Footer"
 import { MainTitle, SectionHR } from "../components/textcomponents"
 import { CTAContact, CTAFinPage, CTAProjets } from "../components/AnimDivs"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+     title: "Solutions — Gaël Tournier — Développeur Web Freelance",
+     description: "Découvrez les solutions que je propose pour transformer votre idée en projet concret, sur mesure. ",
+     openGraph: {
+          title: "Solutions — Gaël Tournier — Développeur Web Freelance",
+          description: "Solutions sur mesures pour vos projets web et software.",
+          url: "https://gaeltournier.dev",
+          siteName: "Gaël Tournier",
+          images: [
+               {
+                    url: "https://gaeltournier.dev/LogoGaelPortfolio.png",
+                    width: 1200,
+                    height: 630,
+               },
+          ],
+     },
+}
 
 const solutions = [
      {
@@ -86,15 +105,15 @@ export default function Solutions() {
 
                     <SectionHR number="01" text="MES OFFRES" />
 
-                    <div className={"flex flex-col gap-6 items-center my-12 lg:flex-row lg:w-[90%] lg:self-center"}>
+                    <article className={"flex flex-col gap-6 items-center my-12 lg:flex-row lg:w-[90%] lg:self-center"}>
                          {solutions.map((solutions, index) => {
                               return <SolutionDiv delay={index * 0.1} key={index} {...solutions} />
                          })}
-                    </div>
+                    </article>
 
                     <SectionHR number="02" text="ET APRÈS ?" />
 
-                    <div
+                    <article
                          className={
                               "flex flex-col gap-10 my-12 items-center lg:grid lg:grid-cols-2 lg:w-[90%] lg:self-center"
                          }
@@ -102,7 +121,7 @@ export default function Solutions() {
                          {processes.map((proc, index) => {
                               return <ProcessDiv delay={index * 0.1} key={index} {...proc} />
                          })}
-                    </div>
+                    </article>
 
                     <SectionHR number="03" text="DÉCOUVRIR" />
 

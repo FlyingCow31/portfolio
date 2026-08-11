@@ -5,7 +5,27 @@ import { FeatureDiv, HeroProject, TechnoDiv } from "@/app/components/ProjectPage
 import { TitleDivProject } from "@/app/components/textcomponents"
 import Link from "next/link"
 import Image from "next/image"
+import { Metadata } from "next"
 
+export const metadata: Metadata = {
+     title: "PANNEL GAELTOURNIER.DEV — Gaël Tournier",
+     description:
+          "Pannel de gestion de commande pour que mes clients puissent suivre l'avancée de leur commande plus facilement.",
+     openGraph: {
+          title: "PANNEL GAELTOURNIER.DEV — Gaël Tournier",
+          description:
+               "Pannel de gestion de commande pour que mes clients puissent suivre l'avancée de leur commande plus facilement.",
+          url: "https://gaeltournier.dev",
+          siteName: "Gaël Tournier",
+          images: [
+               {
+                    url: "https://gaeltournier.dev/LogoGaelPortfolio.png",
+                    width: 1200,
+                    height: 630,
+               },
+          ],
+     },
+}
 export default function EpiPage() {
      return (
           <div className="md:flex h-screen md:overflow-hidden">
@@ -18,7 +38,7 @@ export default function EpiPage() {
                               type="Site Web"
                               scale="Projet Professionnel"
                               title="PANNEL GAELTOURNIER.DEV"
-                              desc="Pannel de gestion de commande pour que mes clients puissent suivre l'avancée de leur commande plus facilement."
+                              desc="Pannel de gestion de commande pour que mes clients puissent suivre l'avancée de leur commande plus facilement. Projet réalisé par Gaël Tournier."
                          />
                     </div>
 
