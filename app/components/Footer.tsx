@@ -21,6 +21,12 @@ export default function Footer({ classname }: ClassProps) {
                >
                     <p className={"ctahover opacity-50"}>Linkedin</p>
                </Link>
+               <Link href={"/mentions"}>
+                    <p className={"ctahover opacity-50"}>Mentions Légales</p>
+               </Link>
+               <Link href={"/cgv"}>
+                    <p className={"ctahover opacity-50"}>CGV</p>
+               </Link>
 
                <p className={"opacity-50 ml-auto mr-10"}>© 2026 Gaël Tournier</p>
           </div>

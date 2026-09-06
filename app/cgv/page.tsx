@@ -13,7 +13,7 @@ export default function Page() {
           <div className="bg-white h-screen md:flex">
                <Navbar />
                <MobileNav />
-               <main className="flex flex-col md:flex-1 overflow-y-auto ml-4 pb-40 lg:pb-0">
+               <main className="flex flex-col md:flex-1 overflow-y-auto ml-4 lg:ml-12 pb-40 lg:pb-0">
                     <h1 className="bigtitle text-center mb-2">Conditions Générales de Vente</h1>
                     <p className="text-center opacity-60 mb-10">Version du 11 août 2026</p>
 
@@ -46,13 +46,16 @@ export default function Page() {
                               Les présentes CGV régissent l&#39;ensemble des prestations fournies par le Prestataire,
                               notamment&nbsp;: la conception et le développement de sites web sur-mesure, le
                               développement d&#39;applications et de logiciels, les prestations de maintenance et
-                              d&#39;assistance technique, ainsi que les missions de conseil et de direction de projet.
+                              d&#39;assistance technique, l'hébergement, ainsi que les missions de conseil et de
+                              direction de projet.
                          </p>
                          <p className="mt-3">
                               Toute commande implique l&#39;acceptation sans réserve des présentes CGV, qui prévalent
                               sur tout autre document du Client, en particulier ses conditions générales d&#39;achat. Le
                               devis signé et ses annexes (cahier des charges, spécifications) priment sur les présentes
-                              CGV en cas de contradiction.
+                              CGV en cas de contradiction. Sont contractuels les documents suivants, par ordre de
+                              priorité: Le devis signé, le cahier des charges annexé, les présentes CGV, le document
+                              d'accueil ("Onboarding") à valeur purement informative.
                          </p>
                          <p className="mt-3">
                               Certaines dispositions distinguent le Client <strong>consommateur</strong> (personne
@@ -61,14 +64,25 @@ export default function Page() {
                               expressément.
                          </p>
                     </section>
+                    <section className="mb-8">
+                         <h2>3. Informations précontractuelles (consommateur uniquement)</h2>
+                         <p>
+                              Conformément à l'article L111-1 du Code de la consommation, le Client reçoit, avant toute
+                              commande et sur support durable : les caractéristiques essentielles de la prestation, son
+                              prix total, la date ou le délai d'exécution, l'identité et les coordonnées du Prestataire,
+                              les modalités de paiement, l'existence et les modalités du droit de rétractation, les
+                              garanties légales et le recours à la médiation. <br /> Le devis et le cahier des charges
+                              sont réalisés gratuitement.
+                         </p>
+                    </section>
 
                     <section className="mb-8">
-                         <h2 className="text-2xl font-bold mb-3">3. Devis et formation du contrat</h2>
+                         <h2 className="text-2xl font-bold mb-3">4. Devis et formation du contrat</h2>
                          <p>
                               Chaque prestation fait l&#39;objet d&#39;un devis détaillé, gratuit et valable trente (30)
                               jours à compter de son émission. Le contrat est formé à la date de réception par le
                               Prestataire du devis daté, signé et accompagné, le cas échéant, de l&#39;acompte prévu à
-                              l&#39;article 5.
+                              l&#39;article 6.
                          </p>
                          <p className="mt-3">
                               Toute demande d&#39;évolution ou d&#39;ajout de fonctionnalité non prévue au devis initial
@@ -78,7 +92,7 @@ export default function Page() {
                     </section>
 
                     <section className="mb-8">
-                         <h2 className="text-2xl font-bold mb-3">4. Droit de rétractation (Client consommateur)</h2>
+                         <h2 className="text-2xl font-bold mb-3">5. Droit de rétractation (Client consommateur)</h2>
                          <p>
                               Conformément aux articles L221-18 et suivants du Code de la consommation, le Client
                               consommateur ayant conclu le contrat à distance ou hors établissement dispose d&#39;un
@@ -96,29 +110,41 @@ export default function Page() {
                               <strong>Exécution anticipée.</strong> Si le Client souhaite que la prestation débute avant
                               l&#39;expiration de ce délai, il doit en formuler la demande expresse et reconnaître
                               expressément qu&#39;il perdra son droit de rétractation une fois la prestation pleinement
-                              exécutée. Cette double mention fait l&#39;objet, sur le devis, d&#39;une case à cocher
-                              distincte et non pré-cochée. En cas de rétractation intervenant alors que la prestation a
-                              commencé sans être achevée, le Client verse un montant proportionné à ce qui a été fourni
-                              jusqu&#39;à la communication de sa décision, conformément à l&#39;article L221-25 du Code
-                              de la consommation.
+                              exécutée. Cette double mention fait l&#39;objet d'une phrase sur le devis ainsi qu'une
+                              confirmation écrite en amont de la signature du devis. En cas de rétractation intervenant
+                              alors que la prestation a commencé sans être achevée, le Client verse un montant
+                              proportionné à ce qui a été fourni jusqu&#39;à la communication de sa décision,
+                              conformément à l&#39;article L221-25 du Code de la consommation.
                          </p>
                     </section>
 
                     <section className="mb-8">
-                         <h2 className="text-2xl font-bold mb-3">5. Prix, facturation et paiement</h2>
-                         <p>
-                              Sauf mention contraire au devis, le règlement s&#39;effectue selon l&#39;échéancier
-                              suivant&nbsp;: un acompte de trente pour cent (30&nbsp;%) ou d'un nombre de jours écrit
-                              sur le devis en cas d'utilisation du TJM à la commande, le solde à la livraison. Pour les
-                              projets d&#39;une durée supérieure à deux mois, un échéancier intermédiaire peut être
-                              défini au devis.
+                         <h2 className="text-2xl font-bold mb-3">6. Prix, facturation et paiement</h2>
+                         <p className="mt-3">
+                              Les prix sont exprimés en euros, toutes taxes comprises. TVA Non applicable, article 193 B
+                              du CGI: le prix hors taxes est égal au prix toutes taxes comprises.
+                              <br />
+                              Le prix figurant au devis est ferme est définitif, il comprend l'ensemble des prestations
+                              décrites. Les frais de services restant à la charge du Client (nom de domaine et
+                              hébergement hors maintenance, licences éventuelles) sont chiffrés séparément au devis.
                          </p>
                          <p className="mt-3">
-                              Les factures sont payables par virement bancaire à trente (30) jours date de facture, sauf
+                              Sauf mention contraire au devis, le règlement s&#39;effectue selon l&#39;échéancier
+                              suivant&nbsp;: un acompte de trente pour cent (30&nbsp;%) ou d'un nombre de jours écrit
+                              sur le devis en cas d'utilisation du TJM à la commande, le solde à la livraison, payable
+                              sous 15 jours. Pour les projets d&#39;une durée supérieure à deux mois, un échéancier
+                              intermédiaire peut être défini au devis.
+                         </p>
+                         <p className="mt-3">
+                              Les factures sont payables par virement bancaire à quinze (15) jours date de facture, sauf
                               stipulation différente au devis. Les éventuels frais bancaires liés au mode de paiement
                               choisi par le Client restent à sa charge. en cas de paiement en chèque, le délai de
-                              travail ne commence qu&#39;après encaissement du chèqu et la somme devra être réglée
-                              entièrement avant le début de la prestation.
+                              travail ne commence qu&#39;après encaissement du chèque et la somme devra être réglée
+                              entièrement avant le début de la prestation. Paiement par carte bancaire possible via
+                              Revolut Pay.
+                              <br />
+                              <br />
+                              Aucun escompte n'est accordé en cas de paiement anticipé.
                          </p>
                          <p className="mt-3">
                               <strong>Retard de paiement.</strong> Toute somme non réglée à l&#39;échéance donne lieu,
@@ -137,13 +163,29 @@ export default function Page() {
                     </section>
 
                     <section className="mb-8">
-                         <h2 className="text-2xl font-bold mb-3">6. Obligations et collaboration du Client</h2>
+                         <h2 className="text-2xl font-bold mb-3">7. Obligations et collaboration du Client</h2>
                          <p>
                               La bonne exécution des prestations suppose une collaboration active du Client. Celui-ci
-                              s&#39;engage à fournir, dans les délais convenus, l&#39;ensemble des éléments nécessaires
-                              (contenus, textes, images, accès techniques, identifiants, chartes graphiques) et à
-                              désigner un interlocuteur unique habilité à valider les livrables.
+                              s&#39;engage à fournir, dans les délais convenus sur le fichier "onboarding",
+                              l&#39;ensemble des éléments nécessaires (contenus, textes, images, accès techniques,
+                              identifiants, chartes graphiques) et à désigner un interlocuteur unique habilité à valider
+                              les livrables.
                          </p>
+                         <p className="mt-3">
+                              Validations: Trois jalons ponctuent le projet : <br />
+                              1ère validation du style graphique, un changement complet du style est possible à ce
+                              stade. Toute demande ultérieure de changement de style fait l'objet d'un devis
+                              complémentaire soumis à l'accord écrit du Client. <br />
+                              2ème validation: validation des textes et photographies. <br />
+                              Validation finale: approbation du site, déclenchant l'appel du solde.
+                         </p>
+                         <p className="mt-3">
+                              Chaque demande de validation est adressée au Client par écrit. A défaut de réponse dans un
+                              délai de sept (7) jours, le Prestataire adresse une relance. A défaut de réponse à cette
+                              relance dans un nouveau délai de sept (7) jours, la validation est réputée acquise et le
+                              projet se poursuit.
+                         </p>
+
                          <p className="mt-3">
                               Le Client garantit détenir les droits d&#39;exploitation des éléments qu&#39;il transmet
                               et garantit le Prestataire contre tout recours de tiers à ce titre. Tout retard imputable
@@ -151,17 +193,23 @@ export default function Page() {
                               d&#39;autant le calendrier de livraison.
                          </p>
                          <p className="mt-3">
-                              À défaut de retour du Client dans un délai de trente (30) jours suivant une demande de
-                              validation, les livrables concernés sont réputés acceptés.
+                              En cas de non-transmission, le planning est décalé d'autant. Passé un délai de [30] jours
+                              après relance écrite, le Prestataire peut suspendre le projet ; passé [90] jours, résoudre
+                              le contrat, les travaux réalisés étant dus au prorata et le surplus éventuellement versé
+                              étant remboursé.
                          </p>
                     </section>
 
                     <section className="mb-8">
-                         <h2 className="text-2xl font-bold mb-3">7. Délais et livraison</h2>
-                         <p>
-                              Les délais figurant au devis sont communiqués à titre indicatif et courent à compter de la
-                              réception de l&#39;acompte et de l&#39;intégralité des éléments mentionnés à l&#39;article
-                              6.
+                         <h2 className="text-2xl font-bold mb-3">8. Délais et livraison</h2>
+                         <p className="mt-3">
+                              Délai d'éxecution: Le délai d'execution est fixé au moment du devis et notifié dessus. Il
+                              court à partir du paiement de l'acompte et du démarrage effectif des travaux. Ce délai est
+                              suspendu pendant l'attente des éléments dus par le Client.
+                              <br />
+                              Consommateur uniquement: Conformément à l'article L216-6 du Code de la consommation, en
+                              cas de dépassement du délai convenu, le Client peut mettre en demeure le Prestataire
+                              d'exécuter dans un délai supplémentaire raisonnable puis, à défaut, résoudre le contrat.
                          </p>
                          <p className="mt-3">
                               <strong>Client consommateur.</strong> Conformément aux articles L216-1 et suivants du Code
@@ -176,13 +224,22 @@ export default function Page() {
                               Prestataire.
                          </p>
                          <p className="mt-3">
+                              Client professionnel: Retard du Client. À défaut de fourniture des éléments dans les
+                              délais convenus, le planning est décalé d'autant. Passé un délai de 15 jours, le
+                              Prestataire peut suspendre le projet ; passé 30 jours, il peut le résilier de plein droit,
+                              l'acompte restant acquis et les travaux réalisés étant facturés au prorata.
+                         </p>
+                         <p className="mt-3">
                               La livraison s&#39;entend de la mise à disposition du livrable au Client, par mise en
-                              ligne sur l&#39;environnement convenu ou remise des fichiers et du code source.
+                              ligne sur l&#39;environnement convenu ou remise des fichiers et du code source. En cas de
+                              souscription à l'offre de maintenance, le Prestataire mets en ligne le site sur ses
+                              systèmes. Le Prestataire ne possède aucune infrastructure en son nom. Le nom de domaine
+                              est enregistré au nom du Client qui en demeure propriétaire.
                          </p>
                     </section>
 
                     <section className="mb-8">
-                         <h2 className="text-2xl font-bold mb-3">8. Recette et réception</h2>
+                         <h2 className="text-2xl font-bold mb-3">9. Recette et réception</h2>
                          <p>
                               À la livraison, le Client dispose d&#39;un délai de quinze (15) jours pour procéder à la
                               recette et signaler par écrit les non-conformités constatées par rapport au devis et au
@@ -196,18 +253,20 @@ export default function Page() {
                     </section>
 
                     <section className="mb-8">
-                         <h2 className="text-2xl font-bold mb-3">9. Propriété intellectuelle</h2>
+                         <h2 className="text-2xl font-bold mb-3">10. Propriété intellectuelle</h2>
                          <p>
                               Le Prestataire demeure titulaire de l&#39;intégralité des droits de propriété
                               intellectuelle sur les développements réalisés jusqu&#39;au paiement complet du prix. Le
                               potentiel transfert des droits n&#39;intervient qu&#39;à compter de l&#39;encaissement
-                              intégral des sommes dues, si le devis le prévoit.
+                              intégral des sommes dues, si le devis ne prévoit pas le contraire. En cas de refus de
+                              cession de droits, la mention est ajoutée en en tête du devis, avant la liste des
+                              prestations.
                          </p>
                          <p className="mt-3">
-                              Après paiement intégral et si le devis le prévoit, le Prestataire cède au Client, à titre
-                              exclusif et pour la durée légale de protection, les droits de reproduction, de
-                              représentation, d&#39;adaptation et d&#39;exploitation des développements spécifiques
-                              réalisés pour lui, pour le monde entier.
+                              Après paiement intégral et si le devis ne prévoit pas le contraire, le Prestataire cède au
+                              Client, à titre exclusif et pour la durée légale de protection, les droits de
+                              reproduction, de représentation, d&#39;adaptation et d&#39;exploitation des développements
+                              spécifiques réalisés pour lui, pour le monde entier.
                          </p>
                          <p className="mt-3">
                               Sont expressément exclus de cette cession&nbsp;: les éléments tiers soumis à licence
@@ -222,10 +281,19 @@ export default function Page() {
                               présenter des visuels à titre de référence, sur son portfolio et dans ses supports de
                               présentation.
                          </p>
+                         <p className="mt-3">
+                              Droit moral. Le droit moral étant incessible (art. L121-1 CPI), le Prestataire conserve
+                              son droit à la paternité, matérialisé par une mention le créditant dans les mentions
+                              légales du site.
+                              <br />
+                              <br />
+                              Avant paiement intégral, aucun droit n'est transféré et toute exploitation du site est
+                              interdite.
+                         </p>
                     </section>
 
                     <section className="mb-8">
-                         <h2 className="text-2xl font-bold mb-3">10. Hébergement et noms de domaine</h2>
+                         <h2 className="text-2xl font-bold mb-3">11. Hébergement et noms de domaine</h2>
                          <p>
                               L&#39;hébergement et l&#39;enregistrement du nom de domaine ne sont pas compris dans les
                               prestations, sauf mention expresse au devis.
@@ -245,7 +313,7 @@ export default function Page() {
                     </section>
 
                     <section className="mb-8">
-                         <h2 className="text-2xl font-bold mb-3">11. Maintenance et assistance</h2>
+                         <h2 className="text-2xl font-bold mb-3">12. Maintenance et assistance</h2>
                          <p>
                               La maintenance n&#39;est pas incluse dans les prestations de développement, sauf mention
                               contraire au devis, et fait l&#39;objet d&#39;un contrat distinct précisant son périmètre,
@@ -254,7 +322,7 @@ export default function Page() {
                          <p className="mt-3">
                               Une assistance à la prise en main et à la correction des anomalies imputables au
                               Prestataire est toutefois comprise pendant un (1) mois à compter de la réception, sans
-                              préjudice des garanties légales visées à l&#39;article 12.
+                              préjudice des garanties légales visées à l&#39;article 13.
                          </p>
                          <p className="mt-3">
                               Toute intervention d&#39;un tiers ou du Client lui-même sur le code livré met fin de plein
@@ -264,7 +332,7 @@ export default function Page() {
                     </section>
 
                     <section className="mb-8">
-                         <h2 className="text-2xl font-bold mb-3">12. Garantie légale de conformité</h2>
+                         <h2 className="text-2xl font-bold mb-3">13. Garantie légale de conformité</h2>
                          <p>
                               <strong>Client consommateur.</strong> Conformément aux articles L224-25-12 et suivants du
                               Code de la consommation, le Prestataire est tenu de la garantie légale de conformité des
@@ -283,6 +351,18 @@ export default function Page() {
                               consentie et ne sauraient être limitées par les présentes CGV.
                          </p>
                          <p className="mt-3">
+                              Périmètre de conformité convenu. Le site est livré fonctionnel sur les deux dernières
+                              versions stables de Chrome, Safari et Firefox, en affichage mobile et ordinateur, avec un
+                              score Lighthouse compris entre 80 et 100 mesuré sur la page d'accueil au jour de la
+                              livraison, et des mentions légales conformes.
+                         </p>
+                         <p className="mt-3">
+                              Modifications par le Client. Si le Client ou un tiers modifie lui-même le code du site,
+                              les interventions rendues nécessaires par ces modifications sont facturées au tarif en
+                              vigueur. Cette facturation ne fait pas obstacle aux garanties légales pour le client
+                              consommateur pour les défauts qui ne résultent pas de ces modifications.
+                         </p>
+                         <p className="mt-3">
                               <strong>Exclusions.</strong> Ne constituent pas un défaut de conformité imputable au
                               Prestataire&nbsp;: les dysfonctionnements résultant d&#39;une utilisation non conforme,
                               d&#39;une modification opérée par le Client ou un tiers, d&#39;une évolution
@@ -290,9 +370,64 @@ export default function Page() {
                               d&#39;un défaut de mise à jour lorsque celle-ci incombe au Client.
                          </p>
                     </section>
+                    <section>
+                         <h2 className="text-2xl font-bold mb-3">14. Services tiers</h2>
+                         <p>
+                              Le prestataire s'appuie sur des services tiers (hébergement, DNS, outils d'analyse,
+                              messagerie, divers outils de développement). Le prestatire informe le Client que les
+                              interruptions, évolutions tarifaires ou suppressions de fonctionnalités imputables à ces
+                              prestataires échappent à sa maitrise, sans que cela ne le décharge de ses obligations
+                              légales de conformité.
+                              <br />
+                              Le Prestataire ne fournit aucune garantie de disponibilité (SLA) sur ces services.
+                         </p>
+                    </section>
+                    <section>
+                         <h2 className="text-2xl font-bold mb-3">
+                              15. Absence de garantie de résultat en matière de référencement
+                         </h2>
+                         <p>
+                              Le Prestataire est tenu d'une obligation de moyens en matière d'optimisation pour les
+                              moteurs de recherche.
+                              <br />
+                              Le Client reconnaît expressément que le positionnement dans les résultats de recherche
+                              dépend d'algorithmes tiers sur lesquels le Prestataire n'a aucune maîtrise, que
+                              l'indexation et le positionnement peuvent nécessiter environ trois mois, et qu'aucun rang,
+                              trafic ou volume de conversion ne peut être garanti.
+                         </p>
+                    </section>
+                    <section>
+                         <h2 className="text-2xl font-bold mb-3">16. Maintenance (option)</h2>
+                         <p>
+                              La maintenance est facultative et fait l'objet d'une souscription expresse. Les offres,
+                              leur contenu et leurs tarifs figurent dans la grille tarifaire en vigueur, communiquée
+                              avant souscription ou sur demande.
+                         </p>
+                         <p className="mt-3">
+                              Les modifications gratuites incluses couvrent les changements de texte, d'image, de
+                              couleur ou de données; elles ne sont pas reportables d'un mois sur l'autre. Le délai de
+                              priorité est un délai maximal de réponse, non de résolution.
+                         </p>
+                         <p className="mt-3">
+                              Durée et résiliation. L'abonnement est mensuel, sans engagement, résiliable à tout moment
+                              par le Client par écrit, avec effet à la fin du mois en cours. Le Prestataire peut y
+                              mettre fin moyennant un préavis de 30 jours. <br />
+                              Révision tarifaire. Toute modification tarifaire est notifiée au moins 30 jours à
+                              l'avance; le Client peut résilier sans frais dans ce délai. Si l'augmentation de tarif est
+                              le seul motif de résiliation, le Prestataire s'engage à déployer le site sur la nouvelle
+                              solution du client.
+                         </p>
+                         <p className="mt-3">
+                              Fin de la maintenance. Lors de la fin de la maintenance, le Prestataire transmet les
+                              fichiers du site, ainsi que tous les documents nécessaire au bon fonctionnement du site.
+                              Le Prestataire n'accompagne pas le transfert du site vers un nouvel hebergeur. Le maintien
+                              en ligne cesse quize (15) jours après l'arrêt de l'abonnement, après information écrite du
+                              Client.
+                         </p>
+                    </section>
 
                     <section className="mb-8">
-                         <h2 className="text-2xl font-bold mb-3">13. Responsabilité</h2>
+                         <h2 className="text-2xl font-bold mb-3">17. Responsabilité</h2>
                          <p>
                               Le Prestataire est tenu d&#39;une obligation de moyens dans l&#39;exécution des
                               prestations. Il met en œuvre les diligences et le savoir-faire conformes aux usages de la
@@ -320,9 +455,16 @@ export default function Page() {
                               fois le livrable réceptionné.
                          </p>
                     </section>
-
                     <section className="mb-8">
-                         <h2 className="text-2xl font-bold mb-3">14. Confidentialité</h2>
+                         <h2 className="text-2xl font-bold mb-3">18. Espace de suivi</h2>
+                         <p>
+                              Le client dispose d'un accès personnel à https://panel.gaeltournier.dev . Les identifiants
+                              sont personnels et confidentiels. Les données hébergées dans cet espace sont supprimées 30
+                              jours après la fin de la commande, sauf maintenance en cours.
+                         </p>
+                    </section>
+                    <section className="mb-8">
+                         <h2 className="text-2xl font-bold mb-3">19. Confidentialité</h2>
                          <p>
                               Chaque partie s&#39;engage à préserver la confidentialité des informations et documents
                               auxquels elle accède dans le cadre du contrat, et à ne pas les divulguer à des tiers, sauf
@@ -331,7 +473,7 @@ export default function Page() {
                     </section>
 
                     <section className="mb-8">
-                         <h2 className="text-2xl font-bold mb-3">15. Données personnelles</h2>
+                         <h2 className="text-2xl font-bold mb-3">20. Données personnelles</h2>
                          <p>
                               Les données personnelles du Client sont traitées par le Prestataire, responsable de
                               traitement, aux fins d&#39;exécution du contrat, de facturation et de suivi de la relation
@@ -355,11 +497,32 @@ export default function Page() {
                     </section>
 
                     <section className="mb-8">
-                         <h2 className="text-2xl font-bold mb-3">16. Résiliation</h2>
+                         <h2 className="text-2xl font-bold mb-3">21. Résiliation</h2>
                          <p>
                               En cas de manquement grave de l&#39;une des parties à ses obligations, non réparé dans un
                               délai de trente (30) jours suivant une mise en demeure adressée par écrit, l&#39;autre
                               partie peut résilier le contrat de plein droit.
+                         </p>
+                         <p className="mt-3">
+                              Par le Client consommateur. Outre le droit de rétractation (art. 5), le Client peut mettre
+                              fin au contrat en cours d'exécution par écrit. Les travaux réalisés à cette date lui sont
+                              facturés au prorata ; le surplus versé lui est remboursé. Aucun droit d'exploitation n'est
+                              transféré sur les travaux non intégralement payés.
+                              <br />
+                              <br />
+                              Par le Prestataire. Le Prestataire peut résoudre le contrat, après mise en demeure restée
+                              sans effet pendant [15] jours, en cas de défaut de paiement, d'absence prolongée de
+                              fourniture des éléments dus, ou de transmission de contenus illicites.
+                              <br />
+                              <br />
+                              Comportement abusif. En cas d'injures, de menaces ou de comportement abusif, le
+                              Prestataire peut mettre fin immédiatement à la collaboration ; les sommes versées sont
+                              restituées au prorata des travaux non réalisés.
+                              <br />
+                              <br />
+                              Force majeure. Aucune partie n'est responsable d'un manquement résultant d'un cas de force
+                              majeure au sens de l'article 1218 du Code civil. Au-delà de [60] jours, chaque partie peut
+                              résoudre le contrat sans indemnité.
                          </p>
                          <p className="mt-3">
                               En cas de résiliation, les prestations effectivement réalisées à la date d&#39;effet
@@ -369,7 +532,7 @@ export default function Page() {
                     </section>
 
                     <section className="mb-8">
-                         <h2 className="text-2xl font-bold mb-3">17. Modification des CGV</h2>
+                         <h2 className="text-2xl font-bold mb-3">22. Modification des CGV</h2>
                          <p>
                               Le Prestataire se réserve le droit de modifier les présentes CGV à tout moment. Les CGV
                               applicables sont celles en vigueur à la date de signature du devis, dont un exemplaire est
@@ -378,10 +541,10 @@ export default function Page() {
                     </section>
 
                     <section className="mb-8">
-                         <h2 className="text-2xl font-bold mb-3">18. Droit applicable et règlement des litiges</h2>
+                         <h2 className="text-2xl font-bold mb-3">23. Droit applicable et règlement des litiges</h2>
                          <p>
                               Les présentes CGV sont soumises au droit français. Les parties s&#39;efforceront de
-                              résoudre à l&#39;amiable tout différend né de leur exécution ou de leur interprétation.
+                              résoudre à l&#39;amiable tout différent né de leur exécution ou de leur interprétation.
                          </p>
                          <p className="mt-3">
                               <strong>Client consommateur.</strong> Conformément aux articles L611-1 et suivants du Code
@@ -394,6 +557,28 @@ export default function Page() {
                          <p className="mt-3">
                               <strong>Client professionnel.</strong> À défaut d&#39;accord amiable, tout litige relève
                               de la compétence exclusive des tribunaux du ressort du siège du Prestataire.
+                         </p>
+                    </section>
+                    <section>
+                         <h2>Annexe — Formulaire type de rétractation</h2>
+                         <p>
+                              (À compléter et renvoyer uniquement si vous souhaitez vous rétracter du contrat.)
+                              <br />
+                              <br />
+                              À l'attention de Gaël Tournier, 22 Allée du Loiret, 31770 Colomiers,
+                              contact@gaeltournier.dev :
+                              <br /> Je/nous (*) vous notifie/notifions (*) par la présente ma/notre (*) rétractation du
+                              contrat portant sur la prestation de services ci-dessous :
+                              <br /> Commandé le (*) / reçu le (*) : ..............................................
+                              <br />
+                              Nom du (des) consommateur(s) : .............................................. <br />
+                              Adresse du (des) consommateur(s) : ..............................................
+                              <br />
+                              Signature du (des) consommateur(s) (uniquement en cas de notification sur papier) :
+                              .............................................. <br />
+                              Date : .............................................. <br />
+                              <br />
+                              () Rayez la mention inutile.*
                          </p>
                     </section>
                     <Footer />
