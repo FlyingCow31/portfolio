@@ -2,7 +2,7 @@ import Footer from "../components/Footer"
 import { MobileNav, Navbar } from "../components/Navbar"
 
 export const metadata = {
-     title: "Mentions Légales — Gaël Tournier, Développeur Web Freelance",
+     title: "Mentions Légales | Gaël Tournier, Développeur Web Freelance à Toulouse",
      description:
           "Mentions légales du site gaeltournier.dev : éditeur, hébergeur, propriété intellectuelle et données personnelles.",
      alternates: { canonical: "/mentions" },
@@ -16,7 +16,6 @@ export default function Page() {
                <MobileNav />
                <main className="flex flex-col md:flex-1 overflow-y-auto ml-4 pb-40 lg:pb-0">
                     <h1 className="bigtitle text-4xl text-center mb-10">Mentions Légales</h1>
-
                     <section className="mb-8">
                          <h2 className="text-2xl font-bold mb-3">1. Éditeur du site</h2>
                          <p>
@@ -40,12 +39,10 @@ export default function Page() {
                               TVA non applicable, article 293 B du Code général des impôts
                          </p>
                     </section>
-
                     <section className="mb-8">
                          <h2 className="text-2xl font-bold mb-3">2. Directeur de la publication</h2>
                          <p>Gaël Tournier, en qualité d&#39;éditeur du site.</p>
                     </section>
-
                     <section className="mb-8">
                          <h2 className="text-2xl font-bold mb-3">3. Hébergement</h2>
                          <p>
@@ -65,7 +62,6 @@ export default function Page() {
                               </a>
                          </p>
                     </section>
-
                     <section className="mb-8">
                          <h2 className="text-2xl font-bold mb-3">4. Propriété intellectuelle</h2>
                          <p>
@@ -81,7 +77,6 @@ export default function Page() {
                               leurs détenteurs.
                          </p>
                     </section>
-
                     <section className="mb-8">
                          <h2 className="text-2xl font-bold mb-3">5. Données personnelles</h2>
                          <p>
@@ -114,7 +109,6 @@ export default function Page() {
                               )
                          </p>
                     </section>
-
                     <section className="mb-8">
                          <h2 className="text-2xl font-bold mb-3">6. Cookies et mesure d&#39;audience</h2>
                          <p>
@@ -126,7 +120,6 @@ export default function Page() {
                               Aucun cookie publicitaire ou de suivi tiers n&#39;est utilisé sur ce site.
                          </p>
                     </section>
-
                     <section className="mb-8">
                          <h2 className="text-2xl font-bold mb-3">7. Liens hypertextes</h2>
                          <p>
@@ -135,7 +128,6 @@ export default function Page() {
                               l&#39;usage qui pourrait en être fait.
                          </p>
                     </section>
-
                     <section className="mb-8">
                          <h2 className="text-2xl font-bold mb-3">8. Responsabilité</h2>
                          <p>
@@ -145,12 +137,25 @@ export default function Page() {
                               indisponibilité du service.
                          </p>
                     </section>
-
                     <section className="mb-8">
                          <h2 className="text-2xl font-bold mb-3">9. Droit applicable</h2>
                          <p>
                               Les présentes mentions légales sont soumises au droit français. En cas de litige, et à
                               défaut de résolution amiable, les tribunaux français seront seuls compétents.
+                         </p>
+                    </section>
+                    <section className="mb-8">
+                         <h2 className="text-2xl font-bold mb-3">10. Médiation</h2>
+                         <p>
+                              Conformément aux dispositions du Code de la consommation concernant « le processus de
+                              médiation des litiges de la consommation », après nous avoir sollicités et à défaut de
+                              réponse vous satisfaisant, vous avez la possibilité de recourir gratuitement à une
+                              procédure de médiation de la consommation auprès de :<br />
+                              CM2C <br /> 49 rue de Ponthieu 75 008 PARIS
+                              <br />
+                              Tel : 01 89 47 00 14 <br />
+                              Site internet : https://www.cm2c.net/declarer-un-litige.php <br />
+                              Mail : litiges@cm2c.net
                          </p>
                     </section>
                     <Footer />

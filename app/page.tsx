@@ -12,10 +12,10 @@ import SkillDiv from "@/app/components/skillsDiv"
 import Footer from "@/app/components/Footer"
 import { Metadata } from "next"
 export const metadata: Metadata = {
-     title: "Gaël Tournier — Développeur Web Freelance",
+     title: "Gaël Tournier | Développeur Web Freelance | Toulouse",
      description:
           "Développeur web fullstack spécialisé en Next.JS, react et node.JS . Création de software et sites-web " +
-          "sur mesure.",
+          "sur mesure à Toulouse.",
      alternates: { canonical: "/" },
      robots: { index: true, follow: true },
      openGraph: {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
           siteName: "Gaël Tournier",
           images: [
                {
-                    url: "https://gaeltournier.dev/LogoGaelPortfolio.png",
+                    url: "https://gaeltournier.dev/og-image.png",
                     width: 1200,
                     height: 630,
                },
@@ -58,18 +58,20 @@ export default function Home() {
                <main className="flex flex-col md:flex-1 overflow-y-auto">
                     {/* Hero */}
 
-                    <div className="bg-white border-3 border-black p-6 w-85 md:w-[70%] lg:w-[50%] md:h-[60%] shadow-big pb-10 md:mt-10 mt-30 mx-auto md:ml-17 mb-25">
-                         <p className="opacity-30 font-bold text-xl font-title">Développeur Web Freelance</p>
-                         <hr className="border border-black w-70 opacity-30 mt-2" />
-                         <h1 className="font-extrabold text-5xl text-black mt-3 md:text-7xl font-title">
-                              GAEL <br /> TOURNIER
+                    <div className="bg-white border-3 border-black p-6 w-85 md:w-[70%] lg:w-[50%] shadow-big pb-10 md:mt-10 mt-30 mx-auto md:ml-17 mb-12">
+                         <h1 className="opacity-30 font-bold text-xl font-title">
+                              Développeur Web Freelance à Toulouse
                          </h1>
+                         <hr className="border border-black w-70 opacity-30 mt-2" />
+                         <h2 className="font-extrabold text-5xl text-black mt-3 md:text-7xl font-title">
+                              GAEL <br /> TOURNIER
+                         </h2>
                          <p className={"mt-3 md:text-2xl font-semibold md:max-w-145"}>
-                              Passez de l&#39;idée au concret grâce à mon expertise dans le web! Livraison rapide, sans
-                              aucune démarche de votre part.
+                              Développez votre image sur internet grâce à un site personnalisé. Que ça soit un site
+                              vitrine ou une webapp complexe, j'ai une solution pour vous.
                          </p>
 
-                         <div className="flex items-center gap-4 mt-5 md:mt-10">
+                         <div className="flex items-center gap-4 mt-5">
                               <ButtonMain label={"Discutez de votre projet →"} href={"/contact"} />
                               <div className={"flex ml-10 gap-2 md:gap-6 md:mr-3"}>
                                    <Link
@@ -141,7 +143,7 @@ export default function Home() {
                                    title={"UI/UX DESIGN"}
                                    description={
                                         "Je designe votre site web en m'adaptant à vos clients et votre business. Interface graphique, qui " +
-                                        "traduit visuellement votre marque à vos clients."
+                                        "traduit visuellement votre marque et votre passion à vos clients."
                                    }
                               />
                               <SkillDiv
@@ -161,18 +163,6 @@ export default function Home() {
                               />
                          </div>
                     </div>
-
-                    {/* Avis*/}
-
-                    {/*<div className="relative bg-white border-3 border-black *:ml-3 w-70 shadow-big pt-3 pb-10 mt-10">*/}
-
-                    {/*    <span className={"absolute -top-4 bg-sec p-1 pl-2 pr-2 border shadow-small"} >AVIS</span>*/}
-                    {/*    <p className={"mt-5 text-main text-4xl"}>★★★★★</p>*/}
-
-                    {/*    <p className={"mb-10"}>Très bon travail de la part de Gaël!</p>*/}
-
-                    {/*    <ButtonMain label={"+5 Avis vérifiés"} href={"/contact"}/>*/}
-                    {/*</div>*/}
                     <Footer />
                </main>
 

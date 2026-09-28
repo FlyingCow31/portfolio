@@ -18,9 +18,6 @@ const openSans = Open_Sans({
 
 export const metadata: Metadata = {
      metadataBase: new URL("https://gaeltournier.dev"),
-     alternates: {
-          canonical: "/",
-     },
      title: "Gaël Tournier — Développeur Web Freelance",
      description:
           "Développeur web fullstack spécialisé en Next.JS, react et node.JS . Création de software et sites-web " +
@@ -33,7 +30,7 @@ export const metadata: Metadata = {
           siteName: "Gaël Tournier",
           images: [
                {
-                    url: "https://gaeltournier.dev/LogoGaelPortfolio.png",
+                    url: "https://gaeltournier.dev/og-image.png",
                     width: 1200,
                     height: 630,
                },

@@ -11,15 +11,16 @@ export const metadata: Metadata = {
      title: "PANNEL GAELTOURNIER.DEV — Gaël Tournier",
      description:
           "Pannel de gestion de commande pour que mes clients puissent suivre l'avancée de leur commande plus facilement.",
+     alternates: { canonical: "/portfolio/pannel" },
      openGraph: {
           title: "PANNEL GAELTOURNIER.DEV — Gaël Tournier",
           description:
                "Pannel de gestion de commande pour que mes clients puissent suivre l'avancée de leur commande plus facilement.",
-          url: "https://gaeltournier.dev",
+          url: "https://gaeltournier.dev/portfolio/pannel",
           siteName: "Gaël Tournier",
           images: [
                {
-                    url: "https://gaeltournier.dev/LogoGaelPortfolio.png",
+                    url: "https://gaeltournier.dev/og-image.png",
                     width: 1200,
                     height: 630,
                },

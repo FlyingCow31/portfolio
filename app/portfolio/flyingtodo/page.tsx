@@ -8,18 +8,19 @@ import Image from "next/image"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-     title: "FlyingTodo — Gaël Tournier",
+     title: "Application web todolist desktop | Gaël Tournier, développeur freelance à Toulouse",
      description:
           "Découvrez FlyingTodo, un logiciel Electron de gestion de projet avec Todo List intégrée. Focus sur la simplicité et l'efficacité.",
+     alternates: { canonical: "/portfolio/flyingtodo" },
      openGraph: {
-          title: "FlyingTodo — Gaël Tournier",
+          title: "FlyingTodo | Gaël Tournier",
           description:
                "Découvrez FlyingTodo, un logiciel Electron de gestion de projet avec Todo List intégrée. Focus sur la simplicité et l'efficacité.",
-          url: "https://gaeltournier.dev",
+          url: "https://gaeltournier.dev/portfolio/flyingtodo",
           siteName: "Gaël Tournier",
           images: [
                {
-                    url: "https://gaeltournier.dev/LogoGaelPortfolio.png",
+                    url: "https://gaeltournier.dev/og-image.png",
                     width: 1200,
                     height: 630,
                },

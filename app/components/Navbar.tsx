@@ -17,7 +17,7 @@ export function Navbar() {
                     <div
                          className={`p-3 px-4 border-3 ${pathname === "/" ? "bg-main shadow-small border-black " : "border-transparent nav-hover"} flex flex-col items-center mt-3`}
                     >
-                         <GoHome color={pathname === "/" ? "#ffffff" : "#000000"} size={40} />
+                         <GoHome color={pathname === "/" ? "#ffffff" : "#000000"} size={30} />
                          <p className={`${pathname === "/" ? "text-white" : "text-black"} font-bold`}>Accueil</p>
                     </div>
                </Link>
@@ -72,12 +72,12 @@ export function Navbar() {
                <Link href={"/contact"} className={"w-full flex flex-col items-center justify-center mt-auto mb-3"}>
                     <div
                          className={
-                              "bg-main w-[90%] p-6 flex flex-col justify-center items-center border-3 shadow-click-small"
+                              "bg-main w-[90%] p-2 flex flex-col justify-center items-center border-3 shadow-click-small"
                          }
                     >
                          <p className={"text-white text-sm font-bold text-center mb-6"}>DISCUTONS DE VOTRE PROJET</p>
                          <div className={"bg-white p-4 shadow-small border-3"}>
-                              <MoveUpRight height={40} width={40} />
+                              <MoveUpRight height={30} width={30} />
                          </div>
                     </div>
                </Link>

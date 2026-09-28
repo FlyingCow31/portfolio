@@ -9,16 +9,17 @@ import { CTAContact, CTAFinPage, CTAProjets } from "../components/AnimDivs"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-     title: "Solutions — Gaël Tournier — Développeur Web Freelance",
+     title: "Solutions — Gaël Tournier | Développeur Web Freelance | Toulouse",
      description: "Découvrez les solutions que je propose pour transformer votre idée en projet concret, sur mesure. ",
+     alternates: { canonical: "/solutions" },
      openGraph: {
           title: "Solutions — Gaël Tournier — Développeur Web Freelance",
           description: "Solutions sur mesures pour vos projets web et software.",
-          url: "https://gaeltournier.dev",
+          url: "https://gaeltournier.dev/solutions",
           siteName: "Gaël Tournier",
           images: [
                {
-                    url: "https://gaeltournier.dev/LogoGaelPortfolio.png",
+                    url: "https://gaeltournier.dev/og-image.png",
                     width: 1200,
                     height: 630,
                },
@@ -98,10 +99,10 @@ export default function Solutions() {
 
                <main className="bg-bg flex flex-col md:flex-1 overflow-y-auto md:pl-6">
                     <MainTitle text="CE QUE JE PROPOSE" title="SOLUTIONS." />
-                    <h1 className="text-justify text-xl font-semibold pb-10 m-3 lg:text-3xl lg:max-w-[80%]">
+                    <h2 className="text-justify text-xl font-semibold pb-10 m-3 lg:text-3xl lg:max-w-[80%]">
                          Trois offres, un objectif: passer de l'idée au concret. Site web, software ou direction de
                          projet, je prends tout en charge de A à Z.
-                    </h1>
+                    </h2>
 
                     <SectionHR number="01" text="MES OFFRES" />
 

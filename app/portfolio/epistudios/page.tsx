@@ -7,18 +7,19 @@ import Link from "next/link"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-     title: "ÉpiStudios — Gaël Tournier",
+     title: "Site internet pour une association | Gaël Tournier, développeur freelance à Toulouse",
      description:
           "Découvrez EpiStudio, le site web que j'ai développé pour l'association de création de contenu open-source. Design, développement fullstack en Next.JS et déploiement.",
+     alternates: { canonical: "/portfolio/epistudios" },
      openGraph: {
           title: "ÉpiStudios — Gaël Tournier",
           description:
                "Découvrez EpiStudio, le site web que j'ai développé pour l'association de création de contenu open-source.",
-          url: "https://gaeltournier.dev",
+          url: "https://gaeltournier.dev/portfolio/epistudios",
           siteName: "Gaël Tournier",
           images: [
                {
-                    url: "https://gaeltournier.dev/LogoGaelPortfolio.png",
+                    url: "https://gaeltournier.dev/og-image.png",
                     width: 1200,
                     height: 630,
                },

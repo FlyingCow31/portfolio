@@ -6,17 +6,18 @@ import { CaseStudy, ProjectDiv } from "../components/PortfolioItems"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-     title: "Portfolio — Gaël Tournier — Développeur Web Freelance",
+     title: "Portfolio | Gaël Tournier | Développeur Web Freelance à Toulouse",
      description:
           "Découvrez le portfolio de Gaël Tournier, projets web et software réalisés sur mesure avec des technologies modernes.",
+     alternates: { canonical: "/portfolio" },
      openGraph: {
-          title: "Portfolio — Gaël Tournier — Développeur Web Freelance",
+          title: "Portfolio | Gaël Tournier | Développeur Web Freelance",
           description: "Portfolio de projets web et software réalisés sur mesure avec des technologies modernes.",
-          url: "https://gaeltournier.dev",
+          url: "https://gaeltournier.dev/portfolio",
           siteName: "Gaël Tournier",
           images: [
                {
-                    url: "https://gaeltournier.dev/LogoGaelPortfolio.png",
+                    url: "https://gaeltournier.dev/og-image.png",
                     width: 1200,
                     height: 630,
                },

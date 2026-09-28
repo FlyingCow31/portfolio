@@ -9,18 +9,19 @@ import WorkflowsModale from "../components/WorkflowsModale"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-     title: "A propos — Gaël Tournier — Développeur Web Freelance",
+     title: "A propos | Gaël Tournier | Développeur Web Freelance à Toulouse",
      description:
           "Découvrez le parcours et l'expertise de Gaël Tournier, développeur web freelance spécialisé en Next.JS, React et Node.JS.",
+     alternates: { canonical: "/about" },
      openGraph: {
           title: "Gaël Tournier — Développeur Web Freelance",
           description:
                "Parcours et expertise de Gaël Tournier, développeur web freelance spécialisé en Next.JS, React et Node.JS.",
-          url: "https://gaeltournier.dev",
+          url: "https://gaeltournier.dev/about",
           siteName: "Gaël Tournier",
           images: [
                {
-                    url: "https://gaeltournier.dev/LogoGaelPortfolio.png",
+                    url: "https://gaeltournier.dev/og-image.png",
                     width: 1200,
                     height: 630,
                },
@@ -40,14 +41,14 @@ export default function About() {
 
                     <div className="flex flex-col gap-12 items-center my-12 lg:flex-row md:justify-center lg:gap-3">
                          <article className="bg-white border-3 shadow-big p-3 w-[90%] lg:w-full lg:ml-20 lg:h-full self-center lg:p-6">
-                              <h1 className="font-semibold text-2xl lg:text-3xl">
+                              <h2 className="font-semibold text-2xl lg:text-3xl">
                                    Je suis Gaël Tournier, développeur web freelance à Toulouse, je transforme les idées
                                    en produits concrets. J'associe une
                                    <span className="proposdiv font-bold">expertise technique fullstack</span> à une
                                    vraie
                                    <span className="proposdiv2 ml-1 text-white font-bold">vision produit</span> pour
                                    livrer vite, sans vous demander le moindre effort.
-                              </h1>
+                              </h2>
                               <div className="flex gap-3 mt-6 lg:text-2xl lg:font-black">
                                    <ButtonCTA text="MES PROJETS" color="main" textcol="white" href="portfolio" />
                                    <ButtonCTA text="ME CONTACTER" color="white" textcol="black" href="contact" />

@@ -5,19 +5,18 @@ import { MainTitle } from "../components/textcomponents"
 import Marquee from "../components/Marquee"
 import { Metadata } from "next"
 
-
 export const metadata: Metadata = {
-     title: "Contact — Gaël Tournier",
-     description:
-          "Vous avez un projet ou une idée ? Contactez-moi pour en discuter et avancer ensemble.",
+     title: "Contact | Gaël Tournier, développeur freelance Next.JS à Toulouse",
+     description: "Vous avez un projet ou une idée ? Contactez-moi pour en discuter et avancer ensemble.",
+     alternates: { canonical: "/contact" },
      openGraph: {
           title: "Contact — Gaël Tournier",
           description: "Vous avez un projet ou une idée ? Contactez-moi pour en discuter et avancer ensemble.",
-          url: "https://gaeltournier.dev",
+          url: "https://gaeltournier.dev/contact",
           siteName: "Gaël Tournier",
           images: [
                {
-                    url: "https://gaeltournier.dev/LogoGaelPortfolio.png",
+                    url: "https://gaeltournier.dev/og-image.png",
                     width: 1200,
                     height: 630,
                },
