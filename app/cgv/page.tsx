@@ -2,7 +2,7 @@ import Footer from "../components/Footer"
 import { MobileNav, Navbar } from "../components/Navbar"
 
 export const metadata = {
-     title: "Conditions Générales de Vente | Gaël Tournier, Développeur Web Freelance à Toulouse",
+     title: "Conditions Générales de Vente | Gaël Tournier",
      description:
           "Conditions générales de vente applicables aux prestations de développement web, applications, maintenance et conseil de Gaël Tournier.",
      alternates: { canonical: "/cgv" },

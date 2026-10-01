@@ -1,7 +1,9 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+     async redirects() {
+          return [{ source: "/portfolio/pannel", destination: "/portfolio/panelgestionentreprise", permanent: true }]
+     },
+}
 
-export default nextConfig;
+export default nextConfig

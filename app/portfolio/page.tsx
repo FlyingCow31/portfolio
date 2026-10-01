@@ -6,23 +6,10 @@ import { CaseStudy, ProjectDiv } from "../components/PortfolioItems"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-     title: "Portfolio | Gaël Tournier | Développeur Web Freelance à Toulouse",
+     title: "Portfolio | Projets et réalisations | Gaël Tournier",
      description:
-          "Découvrez le portfolio de Gaël Tournier, projets web et software réalisés sur mesure avec des technologies modernes.",
+          "Découvrez le portfolio de Gaël Tournier, projets web et software réalisés sur mesure avec des technologies modernes. Certains de ces projets ont été développés pour des clients.",
      alternates: { canonical: "/portfolio" },
-     openGraph: {
-          title: "Portfolio | Gaël Tournier | Développeur Web Freelance",
-          description: "Portfolio de projets web et software réalisés sur mesure avec des technologies modernes.",
-          url: "https://gaeltournier.dev/portfolio",
-          siteName: "Gaël Tournier",
-          images: [
-               {
-                    url: "https://gaeltournier.dev/og-image.png",
-                    width: 1200,
-                    height: 630,
-               },
-          ],
-     },
 }
 
 const caseStudies = [
@@ -50,11 +37,11 @@ const projects = [
      },
      {
           type: "Site Web",
-          title: "ESPACE MEMBRE",
-          desc: "Pannel de gestion de commande pour mon activité de freelance. Le client peut suivre l'avancée de sa commande et retrouver ses documents (devis, facture, etc.) en deux clics.",
+          title: "PANEL DE GESTION D'ENTREPRISE",
+          desc: "Panel de gestion d'entreprise pour mon activité de freelance. Le client peut suivre l'avancée de sa commande et retrouver ses documents (devis, facture, etc.) en deux clics.",
           tags: ["FULLSTACK", "NEXT.JS", "AUTH", "PERMISSIONS"],
           ctatitle: "Découvrir le site",
-          ctahref: "/portfolio/pannel",
+          ctahref: "/portfolio/panelgestionentreprise",
      },
 ]
 

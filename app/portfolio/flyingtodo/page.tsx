@@ -6,30 +6,26 @@ import { TitleDivProject } from "@/app/components/textcomponents"
 import Link from "next/link"
 import Image from "next/image"
 import { Metadata } from "next"
+import ProjectJsonLd from "@/app/components/ProjectJsonLd"
 
 export const metadata: Metadata = {
      title: "Application web todolist desktop | Gaël Tournier, développeur freelance à Toulouse",
      description:
           "Découvrez FlyingTodo, un logiciel Electron de gestion de projet avec Todo List intégrée. Focus sur la simplicité et l'efficacité.",
      alternates: { canonical: "/portfolio/flyingtodo" },
-     openGraph: {
-          title: "FlyingTodo | Gaël Tournier",
-          description:
-               "Découvrez FlyingTodo, un logiciel Electron de gestion de projet avec Todo List intégrée. Focus sur la simplicité et l'efficacité.",
-          url: "https://gaeltournier.dev/portfolio/flyingtodo",
-          siteName: "Gaël Tournier",
-          images: [
-               {
-                    url: "https://gaeltournier.dev/og-image.png",
-                    width: 1200,
-                    height: 630,
-               },
-          ],
-     },
 }
-export default function EpiPage() {
+export default function FlyingPage() {
      return (
           <div className="md:flex h-screen md:overflow-hidden">
+               <ProjectJsonLd
+                    type="SoftwareApplication"
+                    name="FlyingTodo"
+                    description="logiciel Electron de gestion de projet avec Todo List intégrée. Focus sur la simplicité et l'efficacité."
+                    path="/portfolio/flyingtodo"
+                    image="/flyingtodoscreen.png"
+                    keywords={["Electron", "Javascript", "CSS", "Node.js", "Application"]}
+                    liveUrl="https://epistudio.fr"
+               />
                <Navbar />
                <MobileNav />
                <main className="bg-bg overflow-y-auto h-screen flex flex-col">

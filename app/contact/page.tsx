@@ -6,22 +6,9 @@ import Marquee from "../components/Marquee"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-     title: "Contact | Gaël Tournier, développeur freelance Next.JS à Toulouse",
+     title: "Contact | Gaël Tournier",
      description: "Vous avez un projet ou une idée ? Contactez-moi pour en discuter et avancer ensemble.",
      alternates: { canonical: "/contact" },
-     openGraph: {
-          title: "Contact — Gaël Tournier",
-          description: "Vous avez un projet ou une idée ? Contactez-moi pour en discuter et avancer ensemble.",
-          url: "https://gaeltournier.dev/contact",
-          siteName: "Gaël Tournier",
-          images: [
-               {
-                    url: "https://gaeltournier.dev/og-image.png",
-                    width: 1200,
-                    height: 630,
-               },
-          ],
-     },
 }
 const Contacts = [
      {
@@ -56,7 +43,7 @@ export default function contact() {
 
                     <div className="flex flex-col gap-6 lg:flex-row lg:w-[90%] lg:self-center lg:my-12">
                          <div className="flex flex-col gap-3 p-6 bg-main border-3 shadow-big w-[90%] self-center lg:h-full">
-                              <h1 className="text-5xl text-white font-black lg:text-8xl">AVANÇONS ENSEMBLE.</h1>
+                              <h2 className="text-5xl text-white font-black lg:text-8xl">AVANÇONS ENSEMBLE.</h2>
                               <p className="text-white text-xl font-semibold lg:text-3xl lg:leading-relaxed">
                                    Software, design, site web, gestion de projets et d'équipes, ou tout autre projet qui
                                    vous anime - <span className="boxCTAContact">contactez-moi</span> !

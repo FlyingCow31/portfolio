@@ -9,22 +9,10 @@ import { CTAContact, CTAFinPage, CTAProjets } from "../components/AnimDivs"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-     title: "Solutions — Gaël Tournier | Développeur Web Freelance | Toulouse",
-     description: "Découvrez les solutions que je propose pour transformer votre idée en projet concret, sur mesure. ",
+     title: "Solutions de développement de software sur mesure | Gaël Tournier",
+     description:
+          "Développement web, software sur mesure, découvrez les solutions que je propose pour transformer votre idée en projet concret, sur mesure. ",
      alternates: { canonical: "/solutions" },
-     openGraph: {
-          title: "Solutions — Gaël Tournier — Développeur Web Freelance",
-          description: "Solutions sur mesures pour vos projets web et software.",
-          url: "https://gaeltournier.dev/solutions",
-          siteName: "Gaël Tournier",
-          images: [
-               {
-                    url: "https://gaeltournier.dev/og-image.png",
-                    width: 1200,
-                    height: 630,
-               },
-          ],
-     },
 }
 
 const solutions = [
@@ -49,12 +37,11 @@ const solutions = [
      },
      {
           icone: <Glasses color="#ffffff" height={35} width={35} />,
-          title: "CHEF DE PROJET",
+          title: "Optimisation SEO",
           description:
-               "Accompagnement dans la gestion de vos équipes, la direction\n" +
-               "de vos projets et la création. Comptes, légal et recrutements\n" +
-               "inclus!",
-          upTag: [{ title: "GESTION" }],
+               "Permettez à votre business d'être visible grâce à une optimisation du référencement. \n" +
+               "Google Maps, SEO dans le code, conseils, je m'occupe de tout!",
+          upTag: [{ title: "REFERENCEMENT" }],
           cta: "Discuter de votre projet",
      },
 ]
@@ -64,15 +51,14 @@ const processes = [
           number: "01",
           title: "Besoins",
           description:
-               "Un appel rapide pour déterminer vos besoins. \n" +
-               "Pas de Cahier des charges ni d'étude de cas \n" +
-               "interminable: 30 minutes et je fais tout le travail ! ",
+               "En 30 minutes, je comprends vos besoins, votre business et votre clientèle. \n" +
+               "Création du cahiers des charges rapide et efficace! \n",
      },
      {
           number: "02",
           title: "Proposition",
           description:
-               "Proposition et devis clair avec toutes les spécificités techniques, prix et délai.\n" +
+               "Proposition, cahier des charges et devis clair avec toutes les spécificités techniques, prix et délai.\n" +
                "Aucune surprise, tout est  clair. Proposition en moins de 24h. ",
      },
      {
@@ -81,14 +67,14 @@ const processes = [
           description:
                "Phase de création du projet. Bilan et demos \n" +
                "régulières, vous suivez et validez la construction\n" +
-               "de votre projet. ",
+               "de votre projet sur un panel de gestion. ",
      },
      {
           number: "04",
           title: "Livraison",
           description:
                "Déploiement inclus, votre projet est livré autonome avec une documentation claire pour que votre projet fasse sens et vous appartienne\n" +
-               "complétement.",
+               "complétement. Pour les clients qui souhaitent héberger leur site, 1 mois leur est offert! ",
      },
 ]
 

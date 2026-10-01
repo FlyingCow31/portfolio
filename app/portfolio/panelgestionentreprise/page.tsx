@@ -6,30 +6,25 @@ import { TitleDivProject } from "@/app/components/textcomponents"
 import Link from "next/link"
 import Image from "next/image"
 import { Metadata } from "next"
+import ProjectJsonLd from "@/app/components/ProjectJsonLd"
 
 export const metadata: Metadata = {
-     title: "PANNEL GAELTOURNIER.DEV — Gaël Tournier",
+     title: "WebApp de gestion d'entreprise — Gaël Tournier",
      description:
-          "Pannel de gestion de commande pour que mes clients puissent suivre l'avancée de leur commande plus facilement.",
-     alternates: { canonical: "/portfolio/pannel" },
-     openGraph: {
-          title: "PANNEL GAELTOURNIER.DEV — Gaël Tournier",
-          description:
-               "Pannel de gestion de commande pour que mes clients puissent suivre l'avancée de leur commande plus facilement.",
-          url: "https://gaeltournier.dev/portfolio/pannel",
-          siteName: "Gaël Tournier",
-          images: [
-               {
-                    url: "https://gaeltournier.dev/og-image.png",
-                    width: 1200,
-                    height: 630,
-               },
-          ],
-     },
+          "Pannel de gestion d'entreprise pour que mes clients puissent suivre l'avancée de leur commande plus facilement.",
+     alternates: { canonical: "/portfolio/panelgestionentreprise" },
 }
-export default function EpiPage() {
+export default function PanelPage() {
      return (
           <div className="md:flex h-screen md:overflow-hidden">
+               <ProjectJsonLd
+                    type="WebSite"
+                    name="WebApp de Gestion d'entreprise"
+                    description="Pannel de gestion d'entreprise pour que mes clients puissent suivre l'avancée de leur commande plus facilement."
+                    path="/portfolio/panelgestionentreprise"
+                    image="/pannelscreen.png"
+                    keywords={["Next.js", "React", "Tailwind CSS", "Node.js", "backend", "PostgreSQL"]}
+               />
                <Navbar />
                <MobileNav />
                <main className="bg-bg overflow-y-auto h-screen flex flex-col">

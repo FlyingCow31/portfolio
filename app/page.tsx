@@ -14,15 +14,17 @@ import { Metadata } from "next"
 export const metadata: Metadata = {
      title: "Gaël Tournier | Développeur Web Freelance | Toulouse",
      description:
-          "Développeur web fullstack spécialisé en Next.JS, react et node.JS . Création de software et sites-web " +
-          "sur mesure à Toulouse.",
+          "Développeur web fullstack spécialisé en Next.Js, React et Node.Js . Création de software et sites-web " +
+          "sur mesure à Toulouse. Création de vos solutions pour votre entreprise ou votre projet.",
      alternates: { canonical: "/" },
      robots: { index: true, follow: true },
      openGraph: {
-          title: "Gaël Tournier — Développeur Web Freelance",
+          type: "website",
+          locale: "fr_FR",
+          siteName: "Gaël Tournier",
+          title: "Gaël Tournier | Développeur Web Freelance",
           description: "Développeur Full Stack spécialisé en Next.js, React et Tailwind.",
           url: "https://gaeltournier.dev",
-          siteName: "Gaël Tournier",
           images: [
                {
                     url: "https://gaeltournier.dev/og-image.png",
@@ -45,7 +47,7 @@ const projets = [
           type: "WebApp",
           desc: "Panel de gestion et de suivi de commandes pour mon activité professionnelle.",
           tag: "NEW",
-          href: "/portfolio/pannel",
+          href: "/portfolio/panelgestionentreprise",
           color: "bg",
      },
 ]
@@ -157,7 +159,7 @@ export default function Home() {
                                    icon={<SlSocialGoogle size={70} className="my-auto" />}
                                    title={"Visibilité"}
                                    description={
-                                        "Optimisation SEO et accompagnement dans l'optimisation Google Maps, pour une experience utilisateur" +
+                                        "Optimisation SEO et accompagnement dans l'optimisation Google Maps, pour une experience utilisateur " +
                                         "optimale."
                                    }
                               />

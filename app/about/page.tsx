@@ -13,20 +13,6 @@ export const metadata: Metadata = {
      description:
           "Découvrez le parcours et l'expertise de Gaël Tournier, développeur web freelance spécialisé en Next.JS, React et Node.JS.",
      alternates: { canonical: "/about" },
-     openGraph: {
-          title: "Gaël Tournier — Développeur Web Freelance",
-          description:
-               "Parcours et expertise de Gaël Tournier, développeur web freelance spécialisé en Next.JS, React et Node.JS.",
-          url: "https://gaeltournier.dev/about",
-          siteName: "Gaël Tournier",
-          images: [
-               {
-                    url: "https://gaeltournier.dev/og-image.png",
-                    width: 1200,
-                    height: 630,
-               },
-          ],
-     },
 }
 export default function About() {
      const words = ["NEXT.JS", "NODE.JS", "TYPESCRIPT", "UI/UX", "SEO", "REACT"]

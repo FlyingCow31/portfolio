@@ -5,26 +5,13 @@ import { ChallengeDiv, GalerieView, HeroProjet, SolutionDiv, StackCard, StatsDiv
 import { TitleDivProject } from "@/app/components/textcomponents"
 import Link from "next/link"
 import { Metadata } from "next"
+import ProjectJsonLd from "@/app/components/ProjectJsonLd"
 
 export const metadata: Metadata = {
-     title: "Site internet pour une association | Gaël Tournier, développeur freelance à Toulouse",
+     title: "Site internet pour une association | Gaël Tournier",
      description:
           "Découvrez EpiStudio, le site web que j'ai développé pour l'association de création de contenu open-source. Design, développement fullstack en Next.JS et déploiement.",
      alternates: { canonical: "/portfolio/epistudios" },
-     openGraph: {
-          title: "ÉpiStudios — Gaël Tournier",
-          description:
-               "Découvrez EpiStudio, le site web que j'ai développé pour l'association de création de contenu open-source.",
-          url: "https://gaeltournier.dev/portfolio/epistudios",
-          siteName: "Gaël Tournier",
-          images: [
-               {
-                    url: "https://gaeltournier.dev/og-image.png",
-                    width: 1200,
-                    height: 630,
-               },
-          ],
-     },
 }
 const challenge = (
      <>
@@ -120,6 +107,15 @@ const stackCards = [
 export default function EpiPage() {
      return (
           <div className="md:flex h-screen md:overflow-hidden">
+               <ProjectJsonLd
+                    type="WebSite"
+                    name="EpiStudio.fr"
+                    description="Site vitrine pour l'association EPI STUDIO : design, développement fullstack en Next.js et déploiement."
+                    path="/portfolio/epistudios"
+                    image="/epistudios/indexepi.png"
+                    keywords={["Next.js", "React", "Tailwind CSS", "Node.js", "site vitrine"]}
+                    liveUrl="https://epistudio.fr"
+               />
                <Navbar />
                <MobileNav />
                <main className="bg-bg overflow-y-auto h-screen flex flex-col">
