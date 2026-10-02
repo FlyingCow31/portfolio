@@ -6,7 +6,7 @@ interface ClassProps {
 export default function Footer({ classname }: ClassProps) {
      return (
           <div
-               className={`hidden md:flex bg-white border-t-3 ${classname} gap-10 h-20 text-xl items-center justify-start p-6`}
+               className={`flex flex-col md:flex-row pb-90 px-6 gap-3 pt-3 bg-white border-t-3 ${classname} md:gap-10 h-20 text-xl items-center justify-start md:pb-6 md:p-6 md:pt-6`}
           >
                <Link href={"/contact"} className="ml-3">
                     <p className={"ctahover opacity-50"}>Contact</p>

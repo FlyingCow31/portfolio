@@ -8,10 +8,21 @@ import { Metadata } from "next"
 import ProjectJsonLd from "@/app/components/ProjectJsonLd"
 
 export const metadata: Metadata = {
+     metadataBase: new URL("https://gaeltournier.dev/portfolio/epistudios"),
      title: "Site internet pour une association | Gaël Tournier",
      description:
           "Découvrez EpiStudio, le site web que j'ai développé pour l'association de création de contenu open-source. Design, développement fullstack en Next.JS et déploiement.",
      alternates: { canonical: "/portfolio/epistudios" },
+     openGraph: {
+          title: "Site internet pour une association | Gaël Tournier.",
+          description:
+               "Découvrez EpiStudio, un site web pour une association de développeurs. Désign, développement fullstack Next.Js et déploiement.",
+          type: "website",
+          locale: "fr_FR",
+          siteName: "Gaël Tournier",
+          images: [{ url: "/epistudios/indexepi.png", width: 1200, height: 630 }],
+     },
+     twitter: { card: "summary_large_image" },
 }
 const challenge = (
      <>

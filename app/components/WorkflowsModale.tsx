@@ -24,7 +24,7 @@ export default function WorkflowsModale() {
                               <div key={index} className="bg-white w-full p-5 border-3 shadow-big lg:h-full">
                                    <div className="flex gap-3 items-center">
                                         <div className="bg-main w-fit p-3 border-2 shadow-small">{icons[index]}</div>
-                                        <h2 className="text-4xl font-black">{titles[index]}</h2>
+                                        <p className="text-4xl font-black">{titles[index]}</p>
                                    </div>
 
                                    <p className="mt-3 text-xl opacity-60">{text}</p>

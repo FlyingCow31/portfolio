@@ -12,6 +12,7 @@ import SkillDiv from "@/app/components/skillsDiv"
 import Footer from "@/app/components/Footer"
 import { Metadata } from "next"
 export const metadata: Metadata = {
+     metadataBase: new URL("https://gaeltournier.dev/"),
      title: "Gaël Tournier | Développeur Web Freelance | Toulouse",
      description:
           "Développeur web fullstack spécialisé en Next.Js, React et Node.Js . Création de software et sites-web " +

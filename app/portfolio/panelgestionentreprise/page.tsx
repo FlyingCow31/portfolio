@@ -9,10 +9,21 @@ import { Metadata } from "next"
 import ProjectJsonLd from "@/app/components/ProjectJsonLd"
 
 export const metadata: Metadata = {
-     title: "WebApp de gestion d'entreprise — Gaël Tournier",
+     metadataBase: new URL("https://gaeltournier.dev/portfolio/panelgestionentreprise"),
+     title: "WebApp de gestion d'entreprise | Gaël Tournier",
      description:
-          "Pannel de gestion d'entreprise pour que mes clients puissent suivre l'avancée de leur commande plus facilement.",
+          "Panel de gestion d'entreprise pour que mes clients puissent suivre l'avancée de leur commande plus facilement.",
      alternates: { canonical: "/portfolio/panelgestionentreprise" },
+     openGraph: {
+          title: "WebApp de gestion d'entreprise | Gaël Tournier.",
+          description:
+               "Panel de gestion d'entreprise pour que mes clients puissent suivre l'avancée de leur commande plus facilement.",
+          type: "website",
+          locale: "fr_FR",
+          siteName: "Gaël Tournier",
+          images: [{ url: "/pannelscreen.png", width: 1200, height: 630 }],
+     },
+     twitter: { card: "summary_large_image" },
 }
 export default function PanelPage() {
      return (
@@ -20,7 +31,7 @@ export default function PanelPage() {
                <ProjectJsonLd
                     type="WebSite"
                     name="WebApp de Gestion d'entreprise"
-                    description="Pannel de gestion d'entreprise pour que mes clients puissent suivre l'avancée de leur commande plus facilement."
+                    description="Panel de gestion d'entreprise pour que mes clients puissent suivre l'avancée de leur commande plus facilement."
                     path="/portfolio/panelgestionentreprise"
                     image="/pannelscreen.png"
                     keywords={["Next.js", "React", "Tailwind CSS", "Node.js", "backend", "PostgreSQL"]}
@@ -33,8 +44,8 @@ export default function PanelPage() {
                          <HeroProject
                               type="Site Web"
                               scale="Projet Professionnel"
-                              title="PANNEL GAELTOURNIER.DEV"
-                              desc="Pannel de gestion de commande pour que mes clients puissent suivre l'avancée de leur commande plus facilement. Projet réalisé par Gaël Tournier."
+                              title="PANEL DE GESTION D'ENTREPRISE"
+                              desc="Panel de gestion d'entreprise pour que mes clients puissent suivre l'avancée de leur commande plus facilement. Projet réalisé par Gaël Tournier."
                          />
                     </div>
 

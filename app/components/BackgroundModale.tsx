@@ -27,9 +27,9 @@ export default function BackgroundModale() {
 
                <div className="border-3 shadow-small bg-white w-[90%] p-6 lg:h-full">
                     <Quote size={70} />
-                    <h2 className="font-black text-4xl leading-snug mt-3 lg:text-5xl">
+                    <h3 className="font-black text-4xl leading-snug mt-3 lg:text-5xl">
                          Même avec le meilleur produit, le client partira si le site web n'est pas unique.
-                    </h2>
+                    </h3>
                     <hr className="w-30 border-2 border-main mt-3 lg:w-40" />
                </div>
           </div>

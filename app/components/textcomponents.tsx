@@ -31,7 +31,7 @@ export function SectionHR({ number, text }: HRProps) {
      return (
           <div className="flex items-center gap-3 ml-3">
                <p className="text-white font-black bg-black p-1 px-2 text-xl lg:text-4xl">{number}</p>
-               <h2 className="w-fit font-black text-xl md:text-4xl lg:text-6xl whitespace-nowrap">{text}</h2>
+               <h3 className="w-fit font-black text-xl md:text-4xl lg:text-6xl whitespace-nowrap">{text}</h3>
                <hr className="border-2 border-black w-50 md:w-70 lg:w-[70%] lg:ml-3 max-w-[60%]" />
           </div>
      )
@@ -40,13 +40,13 @@ export function SectionHR({ number, text }: HRProps) {
 export function BoxStats({ bigText, smallText, color, textCol = "black" }: BoxProps) {
      return (
           <motion.div
-               initial={{ opacity: 0, y: 20 }}
+               initial={{ opacity: 1, y: 20 }}
                whileInView={{ opacity: 1, y: 0 }}
                transition={{ duration: 0.6 }}
                viewport={{ once: true }}
                className={`bg-${color} text-${textCol} p-3 border-2 shadow-small border-black w-[80%] md:w-[90%]`}
           >
-               <h2 className="text-4xl font-black">{bigText}</h2>
+               <p className="text-4xl font-black">{bigText}</p>
                <p>{smallText}</p>
           </motion.div>
      )

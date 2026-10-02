@@ -1,11 +1,24 @@
+import { Metadata } from "next"
 import Footer from "../components/Footer"
 import { MobileNav, Navbar } from "../components/Navbar"
 
-export const metadata = {
+export const metadata: Metadata = {
+     metadataBase: new URL("https://gaeltournier.dev/cgv"),
      title: "Conditions Générales de Vente | Gaël Tournier",
      description:
           "Conditions générales de vente applicables aux prestations de développement web, applications, maintenance et conseil de Gaël Tournier.",
      alternates: { canonical: "/cgv" },
+     robots: { index: true, follow: true },
+     openGraph: {
+          title: "Conditions Générales de Vente | Gaël Tournier",
+          description:
+               "Conditions générales de vente applicables aux prestations de développement web, applications, maintenance et conseil de Gaël Tournier.",
+          type: "website",
+          locale: "fr_FR",
+          siteName: "Gaël Tournier",
+          images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+     },
+     twitter: { card: "summary_large_image" },
 }
 
 export default function Page() {

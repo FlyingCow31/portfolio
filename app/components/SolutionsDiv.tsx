@@ -15,7 +15,7 @@ interface SolutionDivProps {
 export default function SolutionDiv({ icone, title, description, upTag, cta, delay }: SolutionDivProps) {
      return (
           <motion.div
-               initial={{ opacity: 0, y: 20 }}
+               initial={{ opacity: 1, y: 20 }}
                whileInView={{ opacity: 1, y: 0 }}
                whileHover={{
                     x: 4,

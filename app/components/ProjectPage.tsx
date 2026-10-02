@@ -23,7 +23,7 @@ interface TechnoProps {
 export function HeroProject({ type, scale, title, desc, icon }: HeroProps) {
      return (
           <motion.div
-               initial={{ opacity: 0, y: 20 }}
+               initial={{ opacity: 1, y: 20 }}
                whileInView={{ opacity: 1, y: 0 }}
                transition={{ duration: 0.6 }}
                viewport={{ once: true }}
@@ -48,7 +48,7 @@ export function HeroProject({ type, scale, title, desc, icon }: HeroProps) {
 export function FeatureDiv({ title, desc }: FeaturesProps) {
      return (
           <motion.div
-               initial={{ opacity: 0, y: 20 }}
+               initial={{ opacity: 1, y: 20 }}
                whileInView={{ opacity: 1, y: 0 }}
                transition={{ duration: 0.6 }}
                viewport={{ once: true }}
@@ -66,7 +66,7 @@ export function TechnoDiv({ title, desc, tags }: TechnoProps) {
      return (
           <>
                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 1, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
@@ -81,7 +81,7 @@ export function TechnoDiv({ title, desc, tags }: TechnoProps) {
                     {tags.map((tag, index) => {
                          return (
                               <motion.div
-                                   initial={{ opacity: 0, y: 20 }}
+                                   initial={{ opacity: 1, y: 20 }}
                                    whileInView={{ opacity: 1, y: 0 }}
                                    transition={{ duration: 0.6, delay: index * 0.1 }}
                                    viewport={{ once: true }}

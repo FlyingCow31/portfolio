@@ -6,9 +6,20 @@ import Marquee from "../components/Marquee"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
+     metadataBase: new URL("https://gaeltournier.dev/contact"),
      title: "Contact | Gaël Tournier",
      description: "Vous avez un projet ou une idée ? Contactez-moi pour en discuter et avancer ensemble.",
      alternates: { canonical: "/contact" },
+     robots: { index: true, follow: true },
+     openGraph: {
+          title: "Contact | Gaël Tournier",
+          description: "Vous avez un projet ou une idée ? Contactez-moi pour en discuter et avancer ensemble.",
+          type: "website",
+          locale: "fr_FR",
+          siteName: "Gaël Tournier",
+          images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+     },
+     twitter: { card: "summary_large_image" },
 }
 const Contacts = [
      {

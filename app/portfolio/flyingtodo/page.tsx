@@ -9,10 +9,20 @@ import { Metadata } from "next"
 import ProjectJsonLd from "@/app/components/ProjectJsonLd"
 
 export const metadata: Metadata = {
+     metadataBase: new URL("https://gaeltournier.dev/portfolio/flyingtodo"),
      title: "Application web todolist desktop | Gaël Tournier, développeur freelance à Toulouse",
      description:
           "Découvrez FlyingTodo, un logiciel Electron de gestion de projet avec Todo List intégrée. Focus sur la simplicité et l'efficacité.",
      alternates: { canonical: "/portfolio/flyingtodo" },
+     openGraph: {
+          title: "WebApp Todolist desktop | Gaël Tournier.",
+          description: "Découvrez FlyingTodo, un logiciel Electron de gestion de projet avec Todo List intégrée!",
+          type: "website",
+          locale: "fr_FR",
+          siteName: "Gaël Tournier",
+          images: [{ url: "/flyingtodoscreen.png", width: 1200, height: 630 }],
+     },
+     twitter: { card: "summary_large_image" },
 }
 export default function FlyingPage() {
      return (
@@ -24,7 +34,7 @@ export default function FlyingPage() {
                     path="/portfolio/flyingtodo"
                     image="/flyingtodoscreen.png"
                     keywords={["Electron", "Javascript", "CSS", "Node.js", "Application"]}
-                    liveUrl="https://epistudio.fr"
+                    liveUrl="https://github.com/FlyingCow31/FlyingToDo"
                />
                <Navbar />
                <MobileNav />

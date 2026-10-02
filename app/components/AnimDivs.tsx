@@ -34,7 +34,7 @@ export function CTAProjets() {
 }
 export function CTAContact() {
      return (
-          <Link href={"/portfolio"} className="block w-[90%]">
+          <Link href={"/contact"} className="block w-[90%]">
                <div className={"bg-black border-3 shadow-click-big-main p-3"}>
                     <div className="bg-main shadow-click-big w-fit p-1 m-3">
                          <PiChat color="#ffffff" size={40} />

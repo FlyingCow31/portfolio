@@ -9,10 +9,21 @@ import { CTAContact, CTAFinPage, CTAProjets } from "../components/AnimDivs"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
+     metadataBase: new URL("https://gaeltournier.dev/solutions"),
      title: "Solutions de développement de software sur mesure | Gaël Tournier",
      description:
           "Développement web, software sur mesure, découvrez les solutions que je propose pour transformer votre idée en projet concret, sur mesure. ",
      alternates: { canonical: "/solutions" },
+     openGraph: {
+          title: "Solutions de développement de software sur mesure | Gaël Tournier",
+          description:
+               "Développement web, software sur mesure, découvrez les solutions que je propose pour transformer votre idée en projet concret, sur mesure. ",
+          type: "website",
+          locale: "fr_FR",
+          siteName: "Gaël Tournier",
+          images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+     },
+     twitter: { card: "summary_large_image" },
 }
 
 const solutions = [

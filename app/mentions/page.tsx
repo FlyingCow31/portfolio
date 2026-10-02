@@ -1,12 +1,24 @@
+import { Metadata } from "next"
 import Footer from "../components/Footer"
 import { MobileNav, Navbar } from "../components/Navbar"
 
-export const metadata = {
+export const metadata: Metadata = {
+     metadataBase: new URL("https://gaeltournier.dev/mentions"),
      title: "Mentions Légales | Gaël Tournier, Développeur Web Freelance à Toulouse",
      description:
           "Mentions légales du site gaeltournier.dev : éditeur, hébergeur, propriété intellectuelle et données personnelles.",
      alternates: { canonical: "/mentions" },
      robots: { index: true, follow: true },
+     openGraph: {
+          title: "Mentions Légales | Gaël Tournier, Développeur Web Freelance à Toulouse",
+          description:
+               "Mentions légales du site gaeltournier.dev : éditeur, hébergeur, propriété intellectuelle et données personnelles.",
+          type: "website",
+          locale: "fr_FR",
+          siteName: "Gaël Tournier",
+          images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+     },
+     twitter: { card: "summary_large_image" },
 }
 
 export default function Page() {

@@ -85,7 +85,6 @@ export function Navbar() {
      )
 }
 
-// TODO: faire les animations de la navbar
 export function MobileNav() {
      const pathname = usePathname()
      return (
@@ -97,7 +96,7 @@ export function MobileNav() {
                     <div
                          className={`p-3 px-4 border-3 ${pathname === "/" ? "bg-main shadow-small border-black " : "border-transparent nav-hover"} flex flex-col items-center mt-3`}
                     >
-                         <GoHome color={pathname === "/" ? "#ffffff" : "#000000"} size={30} />
+                         <GoHome color={pathname === "/" ? "#ffffff" : "#000000"} size={30} aria-label="Accueil" />
                     </div>
                </Link>
 
@@ -105,7 +104,11 @@ export function MobileNav() {
                     <div
                          className={`w-full flex flex-col items-center p-3 border-3 ${pathname === "/solutions" ? "bg-main shadow-small border-black " : "border-transparent nav-hover"} mt-3`}
                     >
-                         <RiListCheck3 color={pathname === "/solutions" ? "#ffffff" : "#000000"} size={30} />
+                         <RiListCheck3
+                              color={pathname === "/solutions" ? "#ffffff" : "#000000"}
+                              size={30}
+                              aria-label="Solutions"
+                         />
                     </div>
                </Link>
 
@@ -115,11 +118,11 @@ export function MobileNav() {
                     >
                          {pathname === "/about" ? (
                               <div className={"flex flex-col items-center"}>
-                                   <PiPersonArmsSpreadLight color={"#ffffff"} size={30} />
+                                   <PiPersonArmsSpreadLight color={"#ffffff"} size={30} aria-label="A propos" />
                               </div>
                          ) : (
                               <div className={"flex flex-col items-center"}>
-                                   <PiPersonLight color={"#000000"} size={30} />
+                                   <PiPersonLight color={"#000000"} size={30} aria-label="A propos" />
                               </div>
                          )}
                     </div>
@@ -132,6 +135,7 @@ export function MobileNav() {
                          <LiaBriefcaseSolid
                               color={pathname.startsWith("/portfolio") ? "#ffffff" : "#000000"}
                               size={30}
+                              aria-label="Portfolio"
                          />
                     </div>
                </Link>
@@ -140,7 +144,11 @@ export function MobileNav() {
                     <div
                          className={`w-full flex flex-col items-center p-3 border-3 ${pathname.startsWith("/contact") ? "bg-main shadow-small border-black " : "border-transparent nav-hover"} mt-3`}
                     >
-                         <TfiEmail color={pathname.startsWith("/contact") ? "#ffffff" : "#000000"} size={30} />
+                         <TfiEmail
+                              color={pathname.startsWith("/contact") ? "#ffffff" : "#000000"}
+                              size={30}
+                              aria-label="contact"
+                         />
                     </div>
                </Link>
           </nav>
