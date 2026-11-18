@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import { ProjectData } from "@/lib/data"
 
 interface CaseStudiesProps {
      type: string
@@ -14,15 +15,27 @@ interface CaseStudiesProps {
 interface ProjectProps {
      type: string
      title: string
-     desc: string
+     desc?: string
+     description?: string
      tags: string[]
-     ctatitle: string
-     ctahref: string
+     slug?: string
+     ctatitle?: string
+     ctahref?: string
      iconhref?: string
      iconalt?: string
+     icon?: ProjectData["icon"]
 }
 
-export function CaseStudy({ type, title, desc, tags, ctatitle, ctahref, image }: CaseStudiesProps) {
+export function CaseStudy({
+     type,
+     title,
+     description: desc,
+     tags,
+     slug,
+     images: [{ src: image }],
+     ctatitle = `Découvrir le case study ${title}`,
+     ctahref = `/portfolio/case-study/${slug}`,
+}: ProjectData & { ctatitle?: string; ctahref?: string }) {
      return (
           <div className="flex flex-col relative shadow-click-big lg:flex-row">
                <div className="bg-main text-white p-4 casestudyborder lg:w-[60%] lg:p-8 ">
@@ -41,8 +54,10 @@ export function CaseStudy({ type, title, desc, tags, ctatitle, ctahref, image }:
                               )
                          })}
                     </div>
-                    <Link href={ctahref}>
-                         <p className="text-2xl ctahover font-bold my-6 lg:text-4xl w-fit">{ctatitle} →</p>
+                    <Link href={ctahref ?? `/portfolio/case-study/${slug}`}>
+                         <p className="text-2xl ctahover font-bold my-6 lg:text-4xl w-fit">
+                              {ctatitle ?? `Découvrir le case study ${title}`} →
+                         </p>
                     </Link>
                </div>
                <div className="flex flex-col items-center justify-center w-full p-6 lg:flex-1">
@@ -61,16 +76,14 @@ export function CaseStudy({ type, title, desc, tags, ctatitle, ctahref, image }:
      )
 }
 
-export function ProjectDiv({
-     type,
-     title,
-     desc,
-     tags,
-     ctatitle,
-     ctahref,
-     iconhref,
-     iconalt = `Icone du projet ${title}`,
-}: ProjectProps) {
+export function ProjectDiv(props: ProjectProps) {
+     const { type, title, tags } = props
+     const desc = props.desc ?? props.description ?? ""
+     const ctatitle = props.ctatitle ?? `Découvrir le projet ${title}`
+     const ctahref = props.ctahref ?? (props.slug ? `/portfolio/projects/${props.slug}` : "/portfolio")
+     const iconhref = props.iconhref ?? props.icon?.src
+     const iconalt = props.iconalt ?? props.icon?.alt ?? `Icone du projet ${title}`
+
      return (
           <div className="bg-white p-5 relative text-main shadow-click-big lg:p-8 flex-1 lg:basis-[calc(50%-12px)]">
                <div className="absolute -top-5 right-5 bg-main shadow-small px-3 py-1 w-fit border-2 border-black text-white lg:text-4xl">

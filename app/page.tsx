@@ -41,14 +41,14 @@ const projets = [
           type: "SITE WEB",
           desc: "Site vitrine pour l'association EPI STUDIO. Design, développement fullstack ainsi que travail d'équipe.",
           tag: "CASE STUDY",
-          href: "/portfolio/epistudios",
+          href: "/portfolio/projects/epistudio",
      },
      {
           title: "PANEL DE GESTION",
           type: "WebApp",
           desc: "Panel de gestion et de suivi de commandes pour mon activité professionnelle.",
           tag: "NEW",
-          href: "/portfolio/panelgestionentreprise",
+          href: "/portfolio/case-study/webdevpanel",
           color: "bg",
      },
 ]

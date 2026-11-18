@@ -4,6 +4,7 @@ import { MainTitle, SectionHR } from "../components/textcomponents"
 import { CTAFinPage, CTAVotreProjet } from "../components/AnimDivs"
 import { CaseStudy, ProjectDiv } from "../components/PortfolioItems"
 import { Metadata } from "next"
+import { projects } from "@/lib/data"
 
 export const metadata: Metadata = {
      metadataBase: new URL("https://gaeltournier.dev/portfolio"),
@@ -22,41 +23,10 @@ export const metadata: Metadata = {
      },
      twitter: { card: "summary_large_image" },
 }
-
-const caseStudies = [
-     {
-          type: "SITE WEB",
-          title: "EPISTUDIO.FR",
-          desc: "Site vitrine pour l'association EPI STUDIO. Design, front-end et back-end, ainsi qu'un vrai travail d'équipe.",
-          tags: ["FULLSTACK", "GESTION D'ÉQUIPES", "NEXT.JS"],
-          ctatitle: "Découvrir le case study EpiStudio",
-          ctahref: "/portfolio/epistudios",
-          image: "/epistudios/indexepi.png",
-     },
-]
-
-const projects = [
-     {
-          type: "Software",
-          title: "FLYINGTODO",
-          desc: "Notion a trop de features, on s'y perd. J'ai créé une application simple pour organiser mes projets et ma journée.",
-          tags: ["ELECTRON", "JAVASCRIPT", "DEPLOIEMENT"],
-          ctatitle: "Découvrir le projet FlyingTodo",
-          ctahref: "/portfolio/flyingtodo",
-          iconhref: "/iconflyingtodovraie-6.png",
-          iconalt: "Icone d'une main tenant une checkmark symbolisant une todo.",
-     },
-     {
-          type: "Site Web",
-          title: "PANEL DE GESTION D'ENTREPRISE",
-          desc: "Panel de gestion d'entreprise pour mon activité de freelance. Le client peut suivre l'avancée de sa commande et retrouver ses documents (devis, facture, etc.) en deux clics.",
-          tags: ["FULLSTACK", "NEXT.JS", "AUTH", "PERMISSIONS"],
-          ctatitle: "Découvrir le site",
-          ctahref: "/portfolio/panelgestionentreprise",
-     },
-]
-
 export default function Portfolio() {
+     const caseStudies = projects.filter((project) => project.study)
+     const otherProjects = projects.filter((project) => !project.study)
+
      return (
           <div className="bg-bg h-screen md:flex">
                <Navbar />
@@ -70,15 +40,15 @@ export default function Portfolio() {
                     <SectionHR number="01" text="CASE STUDY" />
 
                     <div className=" my-12 w-[90%] self-center">
-                         {caseStudies.map((study, index) => (
-                              <CaseStudy key={index} {...study} />
+                         {caseStudies.map((study) => (
+                              <CaseStudy key={study.slug} {...study} />
                          ))}
                     </div>
 
                     <SectionHR number="02" text="AUTRES PROJETS" />
                     <div className=" my-12 w-[90%] self-center flex flex-col gap-10 lg:gap-6 lg:flex-row items-stretch lg:flex-wrap">
-                         {projects.map((proj, index) => {
-                              return <ProjectDiv key={index} {...proj} />
+                         {otherProjects.map((project) => {
+                              return <ProjectDiv key={project.slug} {...project} />
                          })}
                          <CTAVotreProjet />
                     </div>

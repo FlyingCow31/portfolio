@@ -109,7 +109,7 @@ export function StatsDiv({ Main, Sec }: StatsProps) {
                viewport={{ once: true }}
                className="w-full bg-black flex flex-col items-center text-white py-2"
           >
-               <h2 className="italic text-2xl">{Main}</h2>
+               <h2 className="italic text-2xl text-center">{Main}</h2>
                <p className="opacity-50">{Sec}</p>
           </motion.div>
      )
