@@ -1,12 +1,11 @@
 import BackButton, { ButtonCTA } from "@/app/components/buttons"
 import Footer from "@/app/components/Footer"
 import { Navbar, MobileNav } from "@/app/components/Navbar"
-import { FeatureDiv, HeroProject, TechnoDiv } from "@/app/components/ProjectPage"
+import { FeatureDiv, HeroProject, ProjectImageCarousel, TechnoDiv } from "@/app/components/ProjectPage"
 import ProjectJsonLd from "@/app/components/ProjectJsonLd"
 import { TitleDivProject } from "@/app/components/textcomponents"
 import { projects } from "@/lib/data"
 import type { Metadata } from "next"
-import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
@@ -50,7 +49,6 @@ export default async function ProjectPage({ params }: PageProps) {
           notFound()
      }
 
-     const image = project.images[0]
      const caseStudyPath = `/portfolio/projects/${project.slug}`
 
      return (
@@ -66,21 +64,14 @@ export default async function ProjectPage({ params }: PageProps) {
                               scale={project.scale ?? "Projet"}
                               title={project.title}
                               desc={project.heroDescription}
-                              icon={project.icon?.src.replace(/^\//, "")}
+                              icon={project.icon}
                          />
                     </div>
 
                     <div className="bg-white border-y-3 p-6 mt-12">
                          <TitleDivProject text="APERÇU" />
                          <div className="flex justify-center">
-                              <Image
-                                   src={image.src}
-                                   width={image.width}
-                                   height={image.height}
-                                   alt={image.alt}
-                                   priority
-                                   className="border-3 border-black shadow-small"
-                              />
+                              <ProjectImageCarousel images={project.images} />
                          </div>
                     </div>
 

@@ -37,11 +37,11 @@ export const metadata: Metadata = {
 }
 const projets = [
      {
-          title: "EPISTUDIO.FR",
+          title: "STYLHOME",
           type: "SITE WEB",
-          desc: "Site vitrine pour l'association EPI STUDIO. Design, développement fullstack ainsi que travail d'équipe.",
-          tag: "CASE STUDY",
-          href: "/portfolio/projects/epistudio",
+          desc: "Site pour une entreprise de peinture en batiment. Design moderne qui reflète la qualité du travail de l'entreprise.",
+          tag: "SITE WEB",
+          href: "/portfolio/projects/stylhome",
      },
      {
           title: "PANEL DE GESTION",

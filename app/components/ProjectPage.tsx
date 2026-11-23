@@ -1,13 +1,15 @@
 "use client"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { useEffect, useState } from "react"
+import type { ProjectImage } from "@/lib/data"
 
 interface HeroProps {
      type: string
      scale: string
      title: string
      desc: string
-     icon?: string
+     icon?: ProjectImage
 }
 
 interface FeaturesProps {
@@ -20,6 +22,57 @@ interface TechnoProps {
      tags: string[]
 }
 
+export function ProjectImageCarousel({ images }: { images: ProjectImage[] }) {
+     const [activeIndex, setActiveIndex] = useState(0)
+
+     useEffect(() => {
+          if (images.length < 2) {
+               return
+          }
+
+          const intervalId = window.setInterval(() => {
+               setActiveIndex((index) => (index + 1) % images.length)
+          }, 5000)
+
+          return () => window.clearInterval(intervalId)
+     }, [images.length])
+
+     const image = images[activeIndex]
+
+     if (!image) {
+          return null
+     }
+
+     return (
+          <div className="flex flex-col items-center gap-4">
+               <Image
+                    src={image.src}
+                    width={image.width}
+                    height={image.height}
+                    alt={image.alt}
+                    priority={activeIndex === 0}
+                    className="border-3 border-black shadow-small"
+               />
+               {images.length > 1 && (
+                    <div className="flex gap-2" role="group" aria-label="Sélectionner une image">
+                         {images.map((item, index) => (
+                              <button
+                                   key={item.src}
+                                   type="button"
+                                   aria-label={`Afficher l'image ${index + 1}`}
+                                   aria-pressed={index === activeIndex}
+                                   onClick={() => setActiveIndex(index)}
+                                   className={`h-4 w-4 rounded-full border-2 border-black ${
+                                        index === activeIndex ? "bg-black" : "bg-white"
+                                   }`}
+                              />
+                         ))}
+                    </div>
+               )}
+          </div>
+     )
+}
+
 export function HeroProject({ type, scale, title, desc, icon }: HeroProps) {
      return (
           <motion.div
@@ -30,8 +83,15 @@ export function HeroProject({ type, scale, title, desc, icon }: HeroProps) {
                className="flex flex-col w-[90%] self-center p-4 border-3 text-black shadow-big bg-white lg:w-[50%] lg:mr-auto lg:ml-24 lg:flex-row lg:items-center lg:gap-4"
           >
                {icon && (
-                    <div className="w-fit h-fit bg-sec border-2 shadow-small p-3 mb-3">
-                         <Image src={`/${icon}`} height={80} width={80} alt={title} />
+                    <div className="w-fit h-fit shrink-0 bg-sec border-2 shadow-small p-3 mb-3">
+                         <Image
+                              src={icon.src}
+                              height={icon.height}
+                              width={icon.width}
+                              alt={icon.alt}
+                              className="h-32 w-32 object-contain"
+                              unoptimized
+                         />
                     </div>
                )}
                <div>

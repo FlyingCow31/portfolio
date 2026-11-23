@@ -311,10 +311,10 @@ export const projects = [
                },
           ],
           icon: {
-               src: "/iconflyingtodovraie.ico",
+               src: "/iconflyingtodovraie-6.png",
                alt: "Icône de l'application FlyingTodo",
-               width: 80,
-               height: 80,
+               width: 256,
+               height: 256,
           },
           features: [
                {
@@ -329,5 +329,81 @@ export const projects = [
                tags: ["ELECTRON", "JAVASCRIPT", "DEXIE.JS"],
           },
           link: { label: "Découvrez le Projet", url: "https://github.com/FlyingCow31/FlyingToDo" },
+     },
+     // StylHome
+     {
+          slug: "stylhome",
+          type: "Site Web",
+          scale: "Projet Client",
+          title: "STYL'HOME",
+          description: "Site internet pour une entreprise de peinture en batiment.",
+          heroDescription:
+               "Site internet pour une entreprise de peinture en batiment au design premium et moderne. Projet réalisé par Gaël Tournier.",
+          tags: ["NEXT.JS", "DESIGN", "SEO"],
+          metadata: {
+               metadataBase: new URL("https://gaeltournier.dev/portfolio/projects/stylhome"),
+               title: "Site pour un peintre en batiment | Gaël Tournier, développeur à Toulouse",
+               description:
+                    "Découvre un site moderne et épuré mais qui garde son propre charme face aux autres sites. ",
+               alternates: { canonical: "/portfolio/projects/stylhome" },
+               openGraph: {
+                    title: "Site Peintre en Batiment | Gaël Tournier.",
+                    description:
+                         "Découvre un site moderne et épuré mais qui garde son propre charme face aux autres sites.",
+                    type: "website",
+                    locale: "fr_FR",
+                    siteName: "StylHome",
+                    images: [{ url: "/stylhome/stylhomeindex.png", width: 1200, height: 630 }],
+               },
+               twitter: { card: "summary_large_image" },
+          },
+          structuredData: {
+               type: "WebSite",
+               name: "StylHome",
+               description: "Site web pour une entreprise de peinture en batiment. Design moderne et premium.",
+               path: "/portfolio/projects/stylhome",
+               image: "/stylhome/stylhomeindex.png",
+               keywords: ["Site Web", "Typescript", "Next.Js", "SEO", "Design"],
+               liveUrl: "https://stylhome.fr",
+          },
+          images: [
+               {
+                    src: "/stylhome/stylhomeindex.png",
+                    alt: "Page d'accueil du site Stylhome",
+                    width: 840,
+                    height: 840,
+               },
+               {
+                    src: "/stylhome/stylhomegalerie.png",
+                    alt: "Galerie du site Stylhome",
+                    width: 840,
+                    height: 840,
+               },
+               {
+                    src: "/stylhome/stylhomecontact.png",
+                    alt: "Page de contact du site Stylhome",
+                    width: 840,
+                    height: 840,
+               },
+          ],
+          icon: {
+               src: "/stylhome/logostylhome-cropped.webp",
+               alt: "Logo du site web Stylhome",
+               width: 334,
+               height: 334,
+          },
+          features: [
+               {
+                    title: "Design moderne mais parlant",
+                    description:
+                         "Avec ce site, j'ai voulu créer un design moderne et premium, puisque c'est la ligne éditoriale de mon client, mais sans faire un site comme les autres. J'ai donc adopté une typographique manuscrite avec des couleurs proche du beige, du bleu royal et d'un beige/marron. Ce design colle avec la focalisation sur la finition du client. ",
+               },
+          ],
+          technologies: {
+               description:
+                    "Design d'abord créé sur Figma puis codé avec React sur Next.Js. API en Typescript utilisant un serveur SMTP pour l'envoi de mail, ce qui réduit les coûts de mon client. Optimisation SEO ciblée à Lille et alentours.",
+               tags: ["SEO", "Typescript", "Design"],
+          },
+          link: { label: "Découvrez le Projet", url: "https://stylhome.fr" },
      },
 ] satisfies ProjectData[]

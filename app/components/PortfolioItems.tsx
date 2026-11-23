@@ -95,9 +95,10 @@ export function ProjectDiv(props: ProjectProps) {
                               <Image
                                    src={iconhref}
                                    alt={iconalt}
-                                   width={40}
-                                   height={40}
-                                   className="w-10 h-10 lg:w-20 lg:h-20"
+                                   width={props.icon?.width ?? 40}
+                                   height={props.icon?.height ?? 40}
+                                   className="w-10 h-10 object-contain lg:w-20 lg:h-20"
+                                   unoptimized
                               />
                          </div>
                     )}
