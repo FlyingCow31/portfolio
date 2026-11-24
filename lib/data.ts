@@ -70,13 +70,14 @@ export const projects = [
                "Panel de gestion de micro-entreprise spécialisée dans le développement web. Espace client, comptabilité, suivi de commandes, documents et bien plus! Projet open-source réalisé par Gaël Tournier.",
           tags: ["FULLSTACK", "NEXT.JS", "Vercel CRON", "API"],
           metadata: {
-               metadataBase: new URL("https://gaeltournier.dev/portfolio/case-study/webdevpanel"),
+               metadataBase: new URL("https://gaeltournier.dev/"),
                title: "Web-Dev Panel | Gaël Tournier",
                description:
                     "Découvrez Web-Dev Panel, une webapp de gestion d'entreprise, spécialisée pour les développeurs et hébergeurs. Gestion des finances, espace client, todos et bien plus!",
                alternates: { canonical: "/portfolio/case-study/webdevpanel" },
                openGraph: {
                     title: "Web-Dev Panel | Gaël Tournier.",
+                    url: "/portfolio/case-study/webdevpanel",
                     description:
                          "Découvrez Web-Dev Panel, un espace de gestion d'entreprise de développement.Projet fullstack en Next.Js et API.",
                     type: "website",
@@ -216,13 +217,14 @@ export const projects = [
                "Design professionnel, pages simples et développement fullstack: EPI Studio avait besoin qu'on représente sa marque et ses valeurs dans un site web. Projet réalisé par Gaël Tournier.",
           tags: ["FULLSTACK", "NEXT.JS", "DESIGN"],
           metadata: {
-               metadataBase: new URL("https://gaeltournier.dev/portfolio/projects/epistudio"),
+               metadataBase: new URL("https://gaeltournier.dev/"),
                title: "Site internet pour une association | Gaël Tournier",
                description:
                     "Découvrez EpiStudio, le site web que j'ai développé pour l'association de création de contenu open-source. Design, développement fullstack en Next.JS et déploiement.",
                alternates: { canonical: "/portfolio/projects/epistudio" },
                openGraph: {
                     title: "Site internet pour une association | Gaël Tournier.",
+                    url: "/portfolio/projects/epistudio",
                     description:
                          "Découvrez EpiStudio, un site web pour une association de développeurs. Design, développement fullstack Next.Js et déploiement.",
                     type: "website",
@@ -276,13 +278,14 @@ export const projects = [
                "Logiciel de gestion de projet avec Todo List intégrée, avec un focus sur la simplicité. Projet réalisé par Gaël Tournier.",
           tags: ["ELECTRON", "JAVASCRIPT", "DEPLOIEMENT"],
           metadata: {
-               metadataBase: new URL("https://gaeltournier.dev/portfolio/projects/flyingtodo"),
+               metadataBase: new URL("https://gaeltournier.dev/"),
                title: "Application web todolist desktop | Gaël Tournier, développeur freelance à Toulouse",
                description:
                     "Découvrez FlyingTodo, un logiciel Electron de gestion de projet avec Todo List intégrée. Focus sur la simplicité et l'efficacité.",
                alternates: { canonical: "/portfolio/projects/flyingtodo" },
                openGraph: {
                     title: "WebApp Todolist desktop | Gaël Tournier.",
+                    url: "/portfolio/projects/flyingtodo",
                     description:
                          "Découvrez FlyingTodo, un logiciel Electron de gestion de projet avec Todo List intégrée!",
                     type: "website",
@@ -341,18 +344,18 @@ export const projects = [
                "Site internet pour une entreprise de peinture en batiment au design premium et moderne. Projet réalisé par Gaël Tournier.",
           tags: ["NEXT.JS", "DESIGN", "SEO"],
           metadata: {
-               metadataBase: new URL("https://gaeltournier.dev/portfolio/projects/stylhome"),
+               metadataBase: new URL("https://gaeltournier.dev"),
                title: "Site pour un peintre en batiment | Gaël Tournier, développeur à Toulouse",
-               description:
-                    "Découvre un site moderne et épuré mais qui garde son propre charme face aux autres sites. ",
+               description: "Découvre un site moderne et épuré mais qui garde son propre charme face aux autres sites.",
                alternates: { canonical: "/portfolio/projects/stylhome" },
                openGraph: {
                     title: "Site Peintre en Batiment | Gaël Tournier.",
                     description:
                          "Découvre un site moderne et épuré mais qui garde son propre charme face aux autres sites.",
+                    url: "/portfolio/projects/stylhome",
                     type: "website",
                     locale: "fr_FR",
-                    siteName: "StylHome",
+                    siteName: "Gaël Tournier",
                     images: [{ url: "/stylhome/stylhomeindex.png", width: 1200, height: 630 }],
                },
                twitter: { card: "summary_large_image" },
