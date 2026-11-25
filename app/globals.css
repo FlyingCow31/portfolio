@@ -14,12 +14,14 @@
      --border: 50px solid #000000;
      --color-testblack: #0a090c;
      --color-testwhite: #f7f4f9;
+     --color-testRed: #752597;
 }
 
 @theme inline {
      --color-bg: var(--bg-color);
      --color-colerr: var(--color-colerr);
      --color-colsol: var(--color-colsol);
+     --color-testRed: var(--color-testRed);
      --shadow-small: var(--small-dropshadow);
      --shadow-big: var(--big-dropshadow);
      --shadow-secbig: var(--big-dropshadoww);
@@ -82,10 +84,15 @@
           box-shadow: 4px 6px 0px rgba(0, 0, 0, 1);
      }
      .clicanim {
-          transition: all 150ms ease;
+          transition: transform 150ms ease;
      }
      .clicanim:hover {
           transform: translate(4px, 6px);
+     }
+     .clicanim > * {
+          transition: box-shadow 150ms ease;
+     }
+     .clicanim:hover > * {
           box-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
      }
 

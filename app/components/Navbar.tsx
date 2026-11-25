@@ -28,7 +28,7 @@ export function Navbar() {
                     >
                          <RiListCheck3 color={pathname === "/solutions" ? "#ffffff" : "#000000"} size={40} />
                          <p className={`${pathname === "/solutions" ? "text-white" : "text-black"} font-bold`}>
-                              Services
+                              Solutions
                          </p>
                     </div>
                </Link>
