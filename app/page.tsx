@@ -9,6 +9,7 @@ import { PiCodeLight } from "react-icons/pi"
 import { SlSocialGoogle } from "react-icons/sl"
 
 import SkillDiv from "@/app/components/skillsDiv"
+import Testimonials from "@/app/components/Testimonials"
 import Footer from "@/app/components/Footer"
 import { Metadata } from "next"
 export const metadata: Metadata = {
@@ -55,45 +56,55 @@ const projets = [
 
 export default function Home() {
      return (
-          <div className="bg-bg h-screen md:flex">
+          <div className="bg-bg min-h-screen md:h-screen md:flex">
                <Navbar />
                {/*Page Container*/}
                <main className="flex flex-col md:flex-1 overflow-y-auto">
                     {/* Hero */}
 
-                    <div className="bg-white border-3 border-black p-6 w-85 md:w-[70%] lg:w-[50%] shadow-big pb-10 md:mt-10 mt-30 mx-auto md:ml-17 mb-12">
-                         <h1 className="opacity-30 font-bold text-xl font-title">
-                              Développeur Web Freelance à Toulouse
-                         </h1>
-                         <hr className="border border-black w-70 opacity-30 mt-2" />
-                         <h2 className="font-extrabold text-5xl text-black mt-3 md:text-7xl font-title">
-                              GAEL <br /> TOURNIER
-                         </h2>
-                         <p className={"mt-3 md:text-2xl font-semibold md:max-w-145"}>
-                              Développez votre image sur internet grâce à un site personnalisé. Que ça soit un site
-                              vitrine ou une webapp complexe, j'ai une solution pour vous.
-                         </p>
+                    <div className="flex flex-col lg:flex-row lg:items-center lg:gap-14 lg:pr-12 mb-12 md:mt-10 mt-30">
+                         <div className="bg-white border-3 border-black p-6 w-85 md:w-[70%] lg:w-[50%] shadow-big pb-10 mx-auto md:ml-17 lg:shrink-0">
+                              <h1 className="opacity-30 font-bold text-xl font-title">
+                                   Développeur Web Freelance à Toulouse
+                              </h1>
+                              <hr className="border border-black w-70 opacity-30 mt-2" />
+                              <h2 className="font-extrabold text-5xl text-black mt-3 md:text-7xl font-title">
+                                   GAEL <br /> TOURNIER
+                              </h2>
+                              <p className={"mt-3 md:text-2xl font-semibold md:max-w-145"}>
+                                   Développez votre image sur internet grâce à un site personnalisé. Que ça soit un site
+                                   vitrine ou une webapp complexe, j'ai une solution pour vous.
+                              </p>
 
-                         <div className="flex items-center gap-4 mt-5">
-                              <ButtonMain label={"Discutez de votre projet →"} href={"/contact"} />
-                              <div className={"flex ml-10 gap-2 md:gap-6 md:mr-3"}>
-                                   <Link
-                                        href={"https://www.linkedin.com/in/gael-tournier32/?locale=fr"}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="ml-auto"
-                                   >
-                                        <Image src="/icons/linkedinicon.svg" alt="Linkedin" width={32} height={32} />
-                                   </Link>
-                                   <Link
-                                        href={"https://github.com/FlyingCow31"}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="mr-3"
-                                   >
-                                        <Image src="/icons/githubicon.svg" alt="Github" width={32} height={32} />
-                                   </Link>
+                              <div className="flex items-center gap-4 mt-5">
+                                   <ButtonMain label={"Discutez de votre projet →"} href={"/contact"} />
+                                   <div className={"flex ml-10 gap-2 md:gap-6 md:mr-3"}>
+                                        <Link
+                                             href={"https://www.linkedin.com/in/gael-tournier32/?locale=fr"}
+                                             target="_blank"
+                                             rel="noopener noreferrer"
+                                             className="ml-auto"
+                                        >
+                                             <Image
+                                                  src="/icons/linkedinicon.svg"
+                                                  alt="Linkedin"
+                                                  width={32}
+                                                  height={32}
+                                             />
+                                        </Link>
+                                        <Link
+                                             href={"https://github.com/FlyingCow31"}
+                                             target="_blank"
+                                             rel="noopener noreferrer"
+                                             className="mr-3"
+                                        >
+                                             <Image src="/icons/githubicon.svg" alt="Github" width={32} height={32} />
+                                        </Link>
+                                   </div>
                               </div>
+                         </div>
+                         <div className="w-85 md:w-[70%] mx-auto md:ml-17 lg:ml-0 lg:w-auto lg:flex-1 lg:max-w-xl mt-12 lg:mt-0">
+                              <Testimonials />
                          </div>
                     </div>
                     <div className={"flex items-center justify-center"}>

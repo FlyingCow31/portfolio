@@ -50,6 +50,10 @@ export default function Page() {
                               <br />
                               TVA non applicable, article 293 B du Code général des impôts
                          </p>
+                         <p>
+                              Le prestataire déclare être assuré par "Assurances Professionnelles by Hiscox" dans la
+                              catégorie RC Métiers de l'informatique, du 27/09/2026 au 26/09/2027.
+                         </p>
                     </section>
                     <section className="mb-8">
                          <h2 className="text-2xl font-bold mb-3">2. Directeur de la publication</h2>
